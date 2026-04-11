@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply — The Implant Initiative</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cormorant:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0d0f12;--slate:#1e2530;--steel:#2d3a4a;--mid:#4a5568;--muted:#718096;
+  --white:#f7f9fb;--gold:#8aa4be;--accent:#c8d8e8;
+  --font-h:'Plus Jakarta Sans',system-ui,sans-serif;
+  --font-s:'Cormorant',Georgia,serif;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-h);background:var(--ink);color:var(--white);font-size:17px;line-height:1.7;-webkit-font-smoothing:antialiased;min-height:100vh}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:1rem 3.5rem;background:rgba(13,15,18,.95);backdrop-filter:blur(24px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-logo img{height:44px;width:auto;display:block}
+.nav-back{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .2s;display:flex;align-items:center;gap:.5rem}
+.nav-back:hover{color:var(--white)}
+.nav-back::before{content:'←';font-size:14px}
+
+/* LAYOUT */
+.page{min-height:100vh;padding:7rem 3.5rem 5rem;display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;max-width:1300px;margin:0 auto}
+
+/* LEFT — context */
+.left-col{position:sticky;top:6rem}
+.eyebrow{font-size:11px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;display:flex;align-items:center;gap:.75rem}
+.eyebrow::before{content:'';width:20px;height:1px;background:var(--gold);display:block}
+.left-h1{font-weight:800;font-size:clamp(2rem,4vw,3.6rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:1.25rem}
+.left-h1 .em{font-family:var(--font-s);font-weight:400;font-style:italic;color:var(--gold);font-size:1.06em;letter-spacing:-.01em}
+.left-sub{font-size:1rem;color:var(--muted);line-height:1.85;margin-bottom:2.5rem;max-width:420px}
+
+/* Qualifier checklist */
+.qual-list{list-style:none;display:flex;flex-direction:column;gap:.75rem;margin-bottom:2.5rem}
+.qual-item{display:flex;align-items:flex-start;gap:.85rem;font-size:15px;color:rgba(255,255,255,.6);line-height:1.55}
+.qual-check{width:20px;height:20px;border:1px solid rgba(138,164,190,.35);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:.15rem;font-size:10px;color:var(--gold)}
+
+/* Stats row */
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid rgba(255,255,255,.07);margin-top:2.5rem}
+.stat-item{padding:1.25rem;border-right:1px solid rgba(255,255,255,.07)}
+.stat-item:last-child{border-right:none}
+.stat-num{font-size:1.8rem;font-weight:800;color:var(--gold);letter-spacing:-.03em;line-height:1;margin-bottom:.3rem}
+.stat-lbl{font-size:11px;color:var(--muted);letter-spacing:.04em;line-height:1.4}
+
+/* Guarantee strip */
+.guarantee{margin-top:2rem;padding:1rem 1.25rem;border:1px solid rgba(138,164,190,.2);background:rgba(138,164,190,.04);display:flex;align-items:flex-start;gap:.85rem}
+.guarantee-icon{font-size:1.2rem;flex-shrink:0}
+.guarantee-text{font-size:13px;color:rgba(255,255,255,.45);line-height:1.6}
+.guarantee-text strong{color:var(--white);font-weight:600}
+
+/* RIGHT — form */
+.form-card{background:var(--slate);border:1px solid rgba(255,255,255,.08);padding:2.75rem}
+.form-title{font-size:1.3rem;font-weight:700;color:var(--white);margin-bottom:.35rem;letter-spacing:-.01em}
+.form-sub{font-size:14px;color:var(--muted);margin-bottom:2rem;line-height:1.6}
+.form-section{margin-bottom:1.75rem}
+.form-section-label{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:1rem;padding-bottom:.5rem;border-bottom:1px solid rgba(255,255,255,.06)}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-grid.full{grid-template-columns:1fr}
+.field{display:flex;flex-direction:column;gap:.4rem}
+.field label{font-size:13px;font-weight:600;color:rgba(255,255,255,.5);letter-spacing:.03em}
+.field input,.field select,.field textarea{
+  background:rgba(255,255,255,.04);
+  border:1px solid rgba(255,255,255,.1);
+  color:var(--white);
+  font-family:var(--font-h);
+  font-size:15px;
+  padding:.75rem 1rem;
+  outline:none;
+  transition:border-color .2s,background .2s;
+  -webkit-appearance:none;appearance:none;
+  border-radius:2px;
+  width:100%;
+}
+.field input::placeholder,.field textarea::placeholder{color:rgba(255,255,255,.2)}
+.field input:focus,.field select:focus,.field textarea:focus{border-color:rgba(138,164,190,.5);background:rgba(138,164,190,.05)}
+.field select option{background:#1e2530;color:#f7f9fb}
+.field textarea{resize:vertical;min-height:90px;line-height:1.6}
+.field-note{font-size:12px;color:rgba(255,255,255,.25);margin-top:.2rem}
+
+/* Radio-style pills */
+.pill-group{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:.2rem}
+.pill{display:flex;align-items:center}
+.pill input[type=radio],.pill input[type=checkbox]{display:none}
+.pill label{font-size:13px;font-weight:500;color:rgba(255,255,255,.45);border:1px solid rgba(255,255,255,.1);padding:.45rem .9rem;cursor:pointer;transition:border-color .2s,color .2s,background .2s;border-radius:2px}
+.pill input:checked+label{border-color:rgba(138,164,190,.6);color:var(--white);background:rgba(138,164,190,.1)}
+.pill label:hover{border-color:rgba(255,255,255,.25);color:rgba(255,255,255,.75)}
+
+/* Submit */
+.form-submit{margin-top:2rem}
+.btn-submit{width:100%;padding:1.1rem;font-family:var(--font-h);font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);background:var(--white);border:none;cursor:pointer;border-radius:2px;transition:background .2s,transform .15s;display:flex;align-items:center;justify-content:center;gap:.75rem}
+.btn-submit:hover{background:var(--accent);transform:translateY(-2px)}
+.btn-submit .arrow{transition:transform .2s}
+.btn-submit:hover .arrow{transform:translateX(4px)}
+.form-legal{font-size:12px;color:rgba(255,255,255,.2);text-align:center;margin-top:.85rem;line-height:1.55}
+
+/* Success state */
+.success-state{display:none;text-align:center;padding:3rem 2rem}
+.success-icon{font-size:3rem;margin-bottom:1rem}
+.success-title{font-size:1.5rem;font-weight:800;color:var(--white);margin-bottom:.5rem;letter-spacing:-.02em}
+.success-sub{font-size:15px;color:var(--muted);line-height:1.75;max-width:360px;margin:0 auto 1.5rem}
+.success-next{font-size:13px;color:rgba(255,255,255,.3);letter-spacing:.04em}
+
+/* Progress bar */
+.progress-wrap{margin-bottom:2rem}
+.progress-steps{display:flex;gap:0;margin-bottom:.75rem}
+.ps{flex:1;height:3px;background:rgba(255,255,255,.08);transition:background .4s}
+.ps.active{background:var(--gold)}
+.ps.done{background:rgba(138,164,190,.4)}
+.ps+.ps{margin-left:4px}
+.progress-label{font-size:11px;color:rgba(255,255,255,.25);letter-spacing:.06em}
+
+/* Page steps */
+.form-step{display:none}
+.form-step.active{display:block}
+
+/* Cal embed placeholder */
+.cal-wrap{margin-top:1.5rem;border:1px solid rgba(255,255,255,.08);background:rgba(255,255,255,.02);padding:2rem;text-align:center}
+.cal-label{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:.75rem}
+.cal-btn{display:inline-flex;align-items:center;gap:.65rem;font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--ink);background:var(--white);padding:.85rem 1.75rem;text-decoration:none;border-radius:2px;transition:background .2s}
+.cal-btn:hover{background:var(--accent)}
+
+/* Step nav */
+.step-nav{display:flex;justify-content:space-between;align-items:center;margin-top:1.75rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.06)}
+.btn-next,.btn-back{font-family:var(--font-h);font-size:13px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;border:none;cursor:pointer;border-radius:2px;transition:background .2s,color .2s;display:flex;align-items:center;gap:.5rem}
+.btn-next{color:var(--ink);background:var(--white);padding:.75rem 1.5rem}
+.btn-next:hover{background:var(--accent)}
+.btn-back{color:rgba(255,255,255,.35);background:none;padding:.75rem 0}
+.btn-back:hover{color:var(--white)}
+
+@media(max-width:1100px){.page{grid-template-columns:1fr;gap:3rem;padding:6rem 2rem 4rem}.left-col{position:static}}
+@media(max-width:600px){nav{padding:1rem 1.5rem}.page{padding:6rem 1.25rem 3rem}.form-card{padding:1.75rem}.form-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo"><img src="data:image/png;base64,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" alt="The Implant Initiative"></div>
+  <a class="nav-back" href="implant_initiative_landing_page.html">Back to site</a>
+</nav>
+
+<div class="page">
+
+  <!-- LEFT: context -->
+  <div class="left-col">
+    <div class="eyebrow">Apply Now</div>
+    <h1 class="left-h1">Let's see if we're<br>the right <span class="em">fit.</span></h1>
+    <p class="left-sub">This is a short application, not a sales pitch. We use it to understand your practice before the call so we can show you exactly where your pipeline is leaking. Takes 3 minutes.</p>
+
+    <ul class="qual-list">
+      <li class="qual-item"><span class="qual-check">✓</span>You do $100k+ per month in implant production</li>
+      <li class="qual-item"><span class="qual-check">✓</span>You're generating 50+ implant leads per month</li>
+      <li class="qual-item"><span class="qual-check">✓</span>You have a treatment coordinator on staff</li>
+      <li class="qual-item"><span class="qual-check">✓</span>You're investing in paid marketing for implants</li>
+      <li class="qual-item"><span class="qual-check">✓</span>You want to grow production without spending more on ads</li>
+    </ul>
+
+    <div class="stat-row">
+      <div class="stat-item"><div class="stat-num">150+</div><div class="stat-lbl">Practices served</div></div>
+      <div class="stat-item"><div class="stat-num">$10M+</div><div class="stat-lbl">Generated for clients</div></div>
+      <div class="stat-item"><div class="stat-num">3 only</div><div class="stat-lbl">Practices at a time</div></div>
+    </div>
+
+    <div class="guarantee">
+      <div class="guarantee-icon">🛡</div>
+      <div class="guarantee-text"><strong>90-Day Guarantee.</strong> We identify at least $100k in implant production opportunities in 90 days or we keep working at no cost.</div>
+    </div>
+  </div>
+
+  <!-- RIGHT: form -->
+  <div class="right-col">
+    <div class="form-card" id="formCard">
+
+      <div class="progress-wrap">
+        <div class="progress-steps">
+          <div class="ps active" id="ps0"></div>
+          <div class="ps" id="ps1"></div>
+          <div class="ps" id="ps2"></div>
+        </div>
+        <div class="progress-label" id="progressLabel">Step 1 of 3 — Your Practice</div>
+      </div>
+
+      <form id="applyForm" onsubmit="return false">
+
+        <!-- STEP 1: Practice info -->
+        <div class="form-step active" id="step0">
+          <div class="form-title">Tell us about your practice</div>
+          <div class="form-sub">Basic info so we can review before the call.</div>
+
+          <div class="form-section">
+            <div class="form-grid">
+              <div class="field">
+                <label>First name *</label>
+                <input type="text" id="firstName" placeholder="Devyn" required>
+              </div>
+              <div class="field">
+                <label>Last name *</label>
+                <input type="text" id="lastName" placeholder="Grillo" required>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-grid">
+              <div class="field">
+                <label>Email *</label>
+                <input type="email" id="email" placeholder="you@practice.com" required>
+              </div>
+              <div class="field">
+                <label>Phone number *</label>
+                <input type="tel" id="phone" placeholder="(555) 000-0000" required>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-grid full">
+              <div class="field">
+                <label>Practice name *</label>
+                <input type="text" id="practiceName" placeholder="Smile Dental Studio" required>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-grid">
+              <div class="field">
+                <label>City</label>
+                <input type="text" id="city" placeholder="Austin">
+              </div>
+              <div class="field">
+                <label>State</label>
+                <input type="text" id="state" placeholder="TX">
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-grid full">
+              <div class="field">
+                <label>Practice website</label>
+                <input type="url" id="website" placeholder="https://yourpractice.com">
+              </div>
+            </div>
+          </div>
+
+          <div class="step-nav">
+            <div></div>
+            <button class="btn-next" onclick="nextStep()">Next <span class="arrow">→</span></button>
+          </div>
+        </div>
+
+        <!-- STEP 2: Pipeline numbers -->
+        <div class="form-step" id="step1">
+          <div class="form-title">Your current numbers</div>
+          <div class="form-sub">Be honest — the more accurate, the more useful our analysis will be on the call.</div>
+
+          <div class="form-section">
+            <div class="form-section-label">Monthly implant production</div>
+            <div class="pill-group">
+              <div class="pill"><input type="radio" name="production" id="p1" value="100k-200k"><label for="p1">$100k – $200k</label></div>
+              <div class="pill"><input type="radio" name="production" id="p2" value="200k-400k"><label for="p2">$200k – $400k</label></div>
+              <div class="pill"><input type="radio" name="production" id="p3" value="400k-700k"><label for="p3">$400k – $700k</label></div>
+              <div class="pill"><input type="radio" name="production" id="p4" value="700k+"><label for="p4">$700k+</label></div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-section-label">Monthly implant leads</div>
+            <div class="pill-group">
+              <div class="pill"><input type="radio" name="leads" id="l1" value="20-50"><label for="l1">20 – 50</label></div>
+              <div class="pill"><input type="radio" name="leads" id="l2" value="50-100"><label for="l2">50 – 100</label></div>
+              <div class="pill"><input type="radio" name="leads" id="l3" value="100-200"><label for="l3">100 – 200</label></div>
+              <div class="pill"><input type="radio" name="leads" id="l4" value="200+"><label for="l4">200+</label></div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-section-label">Estimated consult show rate</div>
+            <div class="pill-group">
+              <div class="pill"><input type="radio" name="showrate" id="sr1" value="under50"><label for="sr1">Under 50%</label></div>
+              <div class="pill"><input type="radio" name="showrate" id="sr2" value="50-65"><label for="sr2">50 – 65%</label></div>
+              <div class="pill"><input type="radio" name="showrate" id="sr3" value="65-80"><label for="sr3">65 – 80%</label></div>
+              <div class="pill"><input type="radio" name="showrate" id="sr4" value="80plus"><label for="sr4">80%+</label></div>
+              <div class="pill"><input type="radio" name="showrate" id="sr5" value="unsure"><label for="sr5">Not sure</label></div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-section-label">Estimated treatment acceptance rate</div>
+            <div class="pill-group">
+              <div class="pill"><input type="radio" name="acceptance" id="a1" value="under20"><label for="a1">Under 20%</label></div>
+              <div class="pill"><input type="radio" name="acceptance" id="a2" value="20-35"><label for="a2">20 – 35%</label></div>
+              <div class="pill"><input type="radio" name="acceptance" id="a3" value="35-50"><label for="a3">35 – 50%</label></div>
+              <div class="pill"><input type="radio" name="acceptance" id="a4" value="50plus"><label for="a4">50%+</label></div>
+              <div class="pill"><input type="radio" name="acceptance" id="a5" value="unsure"><label for="a5">Not sure</label></div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-section-label">Current marketing spend on implants (monthly)</div>
+            <div class="pill-group">
+              <div class="pill"><input type="radio" name="adspend" id="as1" value="under5k"><label for="as1">Under $5k</label></div>
+              <div class="pill"><input type="radio" name="adspend" id="as2" value="5k-10k"><label for="as2">$5k – $10k</label></div>
+              <div class="pill"><input type="radio" name="adspend" id="as3" value="10k-20k"><label for="as3">$10k – $20k</label></div>
+              <div class="pill"><input type="radio" name="adspend" id="as4" value="20k+"><label for="as4">$20k+</label></div>
+            </div>
+          </div>
+
+          <div class="step-nav">
+            <button class="btn-back" onclick="prevStep()">← Back</button>
+            <button class="btn-next" onclick="nextStep()">Next <span class="arrow">→</span></button>
+          </div>
+        </div>
+
+        <!-- STEP 3: Context + schedule -->
+        <div class="form-step" id="step2">
+          <div class="form-title">One last thing</div>
+          <div class="form-sub">Help us understand what's happening in your practice so we can make the call worth your time.</div>
+
+          <div class="form-section">
+            <div class="form-section-label">Biggest challenge right now</div>
+            <div class="pill-group">
+              <div class="pill"><input type="checkbox" name="challenge" id="c1" value="not_enough_leads"><label for="c1">Not enough leads</label></div>
+              <div class="pill"><input type="checkbox" name="challenge" id="c2" value="low_show_rate"><label for="c2">Low show rate</label></div>
+              <div class="pill"><input type="checkbox" name="challenge" id="c3" value="low_acceptance"><label for="c3">Low case acceptance</label></div>
+              <div class="pill"><input type="checkbox" name="challenge" id="c4" value="tc_performance"><label for="c4">TC performance</label></div>
+              <div class="pill"><input type="checkbox" name="challenge" id="c5" value="no_data"><label for="c5">No visibility into pipeline</label></div>
+              <div class="pill"><input type="checkbox" name="challenge" id="c6" value="marketing_roi"><label for="c6">Poor marketing ROI</label></div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-grid full">
+              <div class="field">
+                <label>Do you have a treatment coordinator on staff?</label>
+                <div class="pill-group" style="margin-top:.35rem">
+                  <div class="pill"><input type="radio" name="has_tc" id="tc1" value="yes"><label for="tc1">Yes, full time</label></div>
+                  <div class="pill"><input type="radio" name="has_tc" id="tc2" value="part"><label for="tc2">Yes, part time</label></div>
+                  <div class="pill"><input type="radio" name="has_tc" id="tc3" value="no"><label for="tc3">No</label></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-grid full">
+              <div class="field">
+                <label>Anything else we should know before the call?</label>
+                <textarea id="notes" placeholder="Your situation, goals, timeline, anything relevant..."></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-section">
+            <div class="form-section-label">How did you hear about us?</div>
+            <div class="field">
+              <select id="source">
+                <option value="" disabled selected>Select one</option>
+                <option value="referral">Referral from another dentist</option>
+                <option value="social">Social media</option>
+                <option value="podcast">Podcast</option>
+                <option value="search">Google search</option>
+                <option value="event">Event or conference</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-submit">
+            <button class="btn-submit" id="submitBtn" onclick="submitForm()">
+              Submit Application <span class="arrow">→</span>
+            </button>
+          </div>
+
+          <div class="step-nav" style="border:none;padding:0;margin-top:.75rem">
+            <button class="btn-back" onclick="prevStep()">← Back</button>
+            <div></div>
+          </div>
+
+          <p class="form-legal">By submitting you agree to be contacted by The Implant Initiative. We respect your privacy and never share your information.</p>
+        </div>
+
+      </form>
+
+      <!-- SUCCESS STATE -->
+      <div class="success-state" id="successState">
+        <div class="success-icon">✓</div>
+        <div class="success-title">Application received.</div>
+        <div class="success-sub">We review every application personally. You'll hear from Devyn or Beau within 1 business day to schedule your discovery call.</div>
+        <div class="cal-wrap">
+          <div class="cal-label">Or schedule now</div>
+          <a class="cal-btn" href="https://calendly.com/theimplantinitiative" target="_blank">Pick a time →</a>
+        </div>
+        <div class="success-next" style="margin-top:1.5rem">Questions? Email us at <a href="mailto:devyn@theimplantinitiative.com" style="color:var(--gold)">devyn@theimplantinitiative.com</a></div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<script>
+var currentStep = 0;
+var totalSteps = 3;
+
+function updateProgress() {
+  for (var i = 0; i < totalSteps; i++) {
+    var ps = document.getElementById('ps' + i);
+    if (i < currentStep) ps.className = 'ps done';
+    else if (i === currentStep) ps.className = 'ps active';
+    else ps.className = 'ps';
+  }
+  var labels = ['Step 1 of 3 — Your Practice', 'Step 2 of 3 — Your Numbers', 'Step 3 of 3 — Your Situation'];
+  document.getElementById('progressLabel').textContent = labels[currentStep];
+}
+
+function validateStep(idx) {
+  if (idx === 0) {
+    var first = document.getElementById('firstName').value.trim();
+    var last  = document.getElementById('lastName').value.trim();
+    var email = document.getElementById('email').value.trim();
+    var phone = document.getElementById('phone').value.trim();
+    var name  = document.getElementById('practiceName').value.trim();
+    if (!first || !last || !email || !phone || !name) {
+      highlight(['firstName','lastName','email','phone','practiceName'], first, last, email, phone, name);
+      return false;
+    }
+    if (!/\S+@\S+\.\S+/.test(email)) {
+      document.getElementById('email').style.borderColor = 'rgba(220,80,80,.6)';
+      return false;
+    }
+  }
+  return true;
+}
+
+function highlight(ids) {
+  var vals = Array.prototype.slice.call(arguments, 1);
+  ids.forEach(function(id, i) {
+    var el = document.getElementById(id);
+    if (!vals[i]) el.style.borderColor = 'rgba(220,80,80,.6)';
+    else el.style.borderColor = '';
+  });
+}
+
+function nextStep() {
+  if (!validateStep(currentStep)) return;
+  document.getElementById('step' + currentStep).classList.remove('active');
+  currentStep++;
+  document.getElementById('step' + currentStep).classList.add('active');
+  updateProgress();
+  document.getElementById('formCard').scrollIntoView({behavior:'smooth', block:'start'});
+}
+
+function prevStep() {
+  document.getElementById('step' + currentStep).classList.remove('active');
+  currentStep--;
+  document.getElementById('step' + currentStep).classList.add('active');
+  updateProgress();
+}
+
+function submitForm() {
+  var btn = document.getElementById('submitBtn');
+  btn.textContent = 'Submitting...';
+  btn.disabled = true;
+
+  // Collect all data
+  var data = {
+    firstName:    document.getElementById('firstName').value,
+    lastName:     document.getElementById('lastName').value,
+    email:        document.getElementById('email').value,
+    phone:        document.getElementById('phone').value,
+    practice:     document.getElementById('practiceName').value,
+    city:         document.getElementById('city').value,
+    state:        document.getElementById('state').value,
+    website:      document.getElementById('website').value,
+    notes:        document.getElementById('notes').value,
+    source:       document.getElementById('source').value,
+    production:   (document.querySelector('input[name=production]:checked')||{}).value || '',
+    leads:        (document.querySelector('input[name=leads]:checked')||{}).value || '',
+    showrate:     (document.querySelector('input[name=showrate]:checked')||{}).value || '',
+    acceptance:   (document.querySelector('input[name=acceptance]:checked')||{}).value || '',
+    adspend:      (document.querySelector('input[name=adspend]:checked')||{}).value || '',
+    has_tc:       (document.querySelector('input[name=has_tc]:checked')||{}).value || '',
+    challenges:   Array.from(document.querySelectorAll('input[name=challenge]:checked')).map(function(el){return el.value;}).join(', ')
+  };
+
+  // Simulate submission (replace with actual endpoint / Zapier / Make webhook)
+  setTimeout(function() {
+    document.getElementById('applyForm').style.display = 'none';
+    document.querySelector('.progress-wrap').style.display = 'none';
+    document.querySelector('.form-title') && (document.querySelector('.form-title').style.display = 'none');
+    document.getElementById('successState').style.display = 'block';
+    console.log('Application data:', data);
+  }, 1200);
+}
+</script>
+</body>
+</html>
