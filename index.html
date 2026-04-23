@@ -30,8 +30,9 @@ nav.scrolled{padding:.65rem 3.5rem}
 .hero-split{max-width:1400px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:center;position:relative;z-index:2}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:.75rem;font-size:12px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;padding:.4rem .9rem;border:1px solid rgba(138,164,190,.25);border-radius:20px}
 .hero-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold)}
-.hero-h1{font-weight:800;font-size:clamp(2rem,4vw,3.8rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:1.5rem}
+.hero-h1{font-weight:800;font-size:clamp(2rem,4vw,3.8rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:1rem}
 .hero-h1 .em{font-family:var(--font-s);font-weight:400;font-style:italic;color:var(--gold);letter-spacing:-.01em;font-size:1.08em}
+.hero-tag{font-family:var(--font-s);font-style:italic;font-weight:500;font-size:clamp(1.5rem,2.4vw,2.1rem);color:var(--gold);line-height:1.25;margin-bottom:2rem;letter-spacing:-.005em}
 .hero-sub{font-size:1.05rem;color:var(--muted);line-height:1.85;max-width:480px;margin-bottom:2rem}
 .hero-ctas{display:flex;gap:1.25rem;flex-wrap:wrap;align-items:center}
 .btn-primary{display:inline-flex;align-items:center;gap:.75rem;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);background:var(--white);padding:1rem 2rem;text-decoration:none;border-radius:2px;transition:background .2s,transform .2s;white-space:nowrap}
@@ -446,6 +447,7 @@ footer{border-top:1px solid rgba(255,255,255,.05);padding:2rem 3.5rem;display:fl
     <div>
       <div class="hero-eyebrow reveal">90-Day Implant Growth Program</div>
       <h1 class="hero-h1 reveal d1">Add <span class="em">$50k</span> in new<br>implant production<br>in 90 days.</h1>
+      <p class="hero-tag reveal d2">Without spending any more money on marketing.</p>
       <p class="hero-sub reveal d2">We install the systems, scripts, and coaching that close the gap between your leads and your accepted cases. Guaranteed ROI or we work for free until you hit it.</p>
 
       <div class="hero-ctas reveal d3">
@@ -781,7 +783,7 @@ footer{border-top:1px solid rgba(255,255,255,.05);padding:2rem 3.5rem;display:fl
 
       <div class="prog-phase">
         <div class="prog-node">W3</div>
-        <div class="prog-head"><div class="prog-title">Reactivation Blast <span class="prog-value"><span class="prog-value-lbl">Value</span> $5,000</span></div></div>
+        <div class="prog-head"><div class="prog-title">Pipeline Activation <span class="prog-value"><span class="prog-value-lbl">Value</span> $5,000</span></div></div>
         <p class="prog-sub">Your unclosed treatment plans are a six-figure pile sitting in the PMS. We wake them up. This is usually where the first $25–50k of production comes from.</p>
         <div class="prog-items">
           <div class="prog-item"><span class="prog-check">✓</span><span><strong>Targeted reactivation campaign</strong> with strong offers</span></div>
@@ -796,7 +798,7 @@ footer{border-top:1px solid rgba(255,255,255,.05);padding:2rem 3.5rem;display:fl
         <p class="prog-sub">Systems installed. Now we drive weekly execution until the $50k target is crushed.</p>
         <div class="prog-items">
           <div class="prog-item"><span class="prog-check">✓</span><span><strong>Weekly Thursday consult reviews</strong> with your TC</span></div>
-          <div class="prog-item"><span class="prog-check">✓</span><span><strong>Monthly reactivation blasts</strong> to keep volume flowing</span></div>
+          <div class="prog-item"><span class="prog-check">✓</span><span><strong>Monthly pipeline activations</strong> to keep volume flowing</span></div>
           <div class="prog-item"><span class="prog-check">✓</span><span><strong>Monthly doctor strategy call</strong> on production and trajectory</span></div>
           <div class="prog-item"><span class="prog-check">✓</span><span><strong>Unlimited Slack access</strong> every business day</span></div>
         </div>
@@ -899,7 +901,7 @@ footer{border-top:1px solid rgba(255,255,255,.05);padding:2rem 3.5rem;display:fl
           <div class="os-item-full">
             <div class="os-item-icon">📣</div>
             <div class="os-item-body">
-              <div class="os-item-title">Reactivation Blast (Week 3 + Monthly)</div>
+              <div class="os-item-title">Pipeline Activation (Week 3 + Monthly)</div>
               <div class="os-item-desc">We wake up your unclosed treatment plans with strong, targeted offers focused on full arch cases. This is the "free lead gen" that drives immediate volume while the system is still being installed.</div>
             </div>
           </div>
@@ -971,7 +973,7 @@ footer{border-top:1px solid rgba(255,255,255,.05);padding:2rem 3.5rem;display:fl
     <div class="faq-list reveal d2">
       <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)"><span class="faq-q">What size practice is this right for?</span><span class="faq-icon">+</span></button><div class="faq-body"><div class="faq-body-inner">We work with implant practices doing $100k+ per month in implant production, generating 50+ leads per month, with a treatment coordinator on staff and an active marketing investment. If you're below those numbers, we'll tell you on the call. This isn't the right fit yet, and we respect your time too much to pretend otherwise.</div></div></div>
       <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)"><span class="faq-q">Do I need to fire my marketing agency?</span><span class="faq-icon">+</span></button><div class="faq-body"><div class="faq-body-inner">No. We work alongside your existing agency and hold them accountable to production outcomes, not just ad metrics. Most of our clients keep their agency. They just finally have someone making sure those leads turn into accepted cases.</div></div></div>
-      <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)"><span class="faq-q">How quickly will we see results?</span><span class="faq-icon">+</span></button><div class="faq-body"><div class="faq-body-inner">Most practices see early directional movement in KPIs within the first 2–3 weeks. The Week 3 reactivation blast often produces booked full-arch consults before the month is out. The full $50k+ production target is built to hit inside 90 days. And if it doesn't, we keep working at no cost until it does.</div></div></div>
+      <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)"><span class="faq-q">How quickly will we see results?</span><span class="faq-icon">+</span></button><div class="faq-body"><div class="faq-body-inner">Most practices see early directional movement in KPIs within the first 2–3 weeks. The Week 3 Pipeline Activation often produces booked full-arch consults before the month is out. The full $50k+ production target is built to hit inside 90 days. And if it doesn't, we keep working at no cost until it does.</div></div></div>
       <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)"><span class="faq-q">How is this different from a consultant or coaching program?</span><span class="faq-icon">+</span></button><div class="faq-body"><div class="faq-body-inner">Traditional consultants do a training day, hand over a binder, and disappear. Coaching programs give you frameworks to implement yourself. This is a 90-day implementation program. We are inside your practice every single week, in your Slack, in your data, coaching your specific team on your specific cases. We don't leave after the binder. We stay until the production shows up.</div></div></div>
       <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)"><span class="faq-q">Why only 3 practices at a time?</span><span class="faq-icon">+</span></button><div class="faq-body"><div class="faq-body-inner">Because we work directly with your leadership, treatment coordinators, front desk, and marketing vendors. There is a real limit to how many practices we can do this without compromising quality. This isn't a marketing tactic. It's how we deliver results that actually stick.</div></div></div>
       <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)"><span class="faq-q">What happens after the 90 days?</span><span class="faq-icon">+</span></button><div class="faq-body"><div class="faq-body-inner">Three options, your choice. (1) Graduate and take everything we installed to run it yourself. (2) Downsell to our Maintenance Plan for ongoing advisory to keep the systems tuned. (3) Upgrade to our Growth Plan where we take over your marketing end-to-end. We deliver a 12-month roadmap at day 90 either way, so you walk out with a plan whether you continue with us or not.</div></div></div>
