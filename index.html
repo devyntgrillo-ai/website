@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>The Implant Initiative | The First Growth Partner for Implant Practices</title>
+<title>The Implant Initiative | The First Internal Growth Partner for Implant Practices</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cormorant:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -30,7 +30,7 @@ nav.scrolled{padding:.65rem 3.5rem}
 .hero-split{max-width:1400px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1.1fr;gap:5rem;align-items:center;position:relative;z-index:2}
 .hero-eyebrow{display:inline-flex;align-items:center;gap:.75rem;font-size:12px;font-weight:600;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;padding:.4rem .9rem;border:1px solid rgba(138,164,190,.25);border-radius:20px}
 .hero-eyebrow::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold)}
-.hero-h1{font-weight:800;font-size:clamp(2.4rem,5.2vw,5rem);line-height:1.05;letter-spacing:-.03em;margin-bottom:1rem}
+.hero-h1{font-weight:800;font-size:clamp(1.5rem,2.8vw,2.75rem);line-height:1.15;letter-spacing:-.02em;margin-bottom:1rem}
 .hero-h1 .em{font-family:var(--font-s);font-weight:400;font-style:italic;color:var(--gold);letter-spacing:-.01em;font-size:1.08em}
 .hero-tag{font-family:var(--font-s);font-style:italic;font-weight:500;font-size:clamp(1.15rem,1.8vw,1.6rem);color:#5ecc8a;line-height:1.35;margin-bottom:2rem;letter-spacing:.005em;display:inline-block;position:relative}
 .hero-tag::before{content:'';position:absolute;left:-1rem;top:.2em;bottom:.2em;width:3px;background:#5ecc8a;border-radius:2px}
@@ -290,6 +290,20 @@ h2 .em{font-family:var(--font-s);font-weight:400;font-style:italic;color:var(--g
 .sfm{display:flex;flex-direction:column;gap:.15rem}
 .sfm-val{font-size:1.3rem;font-weight:800;color:#5ecc8a;line-height:1;letter-spacing:-.02em}
 .sfm-lbl{font-size:10px;font-weight:600;color:rgba(255,255,255,.5);letter-spacing:.12em;text-transform:uppercase}
+
+/* 3-pillar program section */
+.pillars{margin-top:4.5rem;display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;position:relative;z-index:2}
+.pillar{padding:2.5rem 2rem;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.07);border-radius:4px;display:flex;flex-direction:column;gap:.85rem;transition:background .3s,border-color .3s,transform .3s}
+.pillar:hover{background:rgba(138,164,190,.05);border-color:rgba(138,164,190,.25);transform:translateY(-2px)}
+.pillar-num{font-family:var(--font-s);font-style:italic;font-size:2.5rem;font-weight:400;color:var(--gold);line-height:1;opacity:.7;letter-spacing:-.02em}
+.pillar-eye{font-size:10px;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:.25rem}
+.pillar-title{font-size:1.25rem;font-weight:700;color:var(--white);line-height:1.3;letter-spacing:-.015em;margin:0}
+.pillar-desc{font-size:14px;color:var(--muted);line-height:1.7;margin:0}
+
+@media (max-width:900px){
+  .pillars{grid-template-columns:1fr;gap:1rem;margin-top:3rem}
+  .pillar{padding:2rem 1.5rem}
+}
 footer{border-top:1px solid rgba(255,255,255,.05);padding:2.5rem 3.5rem 1.75rem;display:flex;flex-direction:column;gap:1.5rem}
 .f-row{display:flex;align-items:flex-start;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
 .f-info{display:flex;flex-direction:column;gap:.4rem;font-size:11px;color:rgba(255,255,255,.4);line-height:1.55;letter-spacing:.02em}
@@ -482,7 +496,7 @@ footer{border-top:1px solid rgba(255,255,255,.05);padding:2.5rem 3.5rem 1.75rem;
   <div class="hero-split">
     <div>
       <div class="hero-eyebrow reveal">90-Day Implant Growth Accelerator</div>
-      <h1 class="hero-h1 reveal d1">The First Growth Partner<br>for Implant Practices</h1>
+      <h1 class="hero-h1 reveal d1">The First Internal Growth<br>Partner for Implant Practices</h1>
       <p class="hero-tag reveal d2">Scale your implant production without scaling your ad spend.</p>
       <p class="hero-sub reveal d2">We install the systems, scripts, and coaching that close the gap between your leads and your accepted cases. Guaranteed ROI or we work for free until you hit it.</p>
 
@@ -776,125 +790,6 @@ footer{border-top:1px solid rgba(255,255,255,.05);padding:2.5rem 3.5rem 1.75rem;
 
 <div class="s has-ambient">
   <div class="ambient-grid"></div>
-  <div class="ambient-glow ag-top"></div>
-  <div class="ambient-glow ag-bottom"></div>
-  <div class="s-inner">
-    <div class="s-eye reveal">The 90-Day Program</div>
-    <h2 class="reveal d1">Exactly how we add<br><span class="em">$50k in 90 days.</span></h2>
-    <p class="s-sub reveal d2">Not a course. Not a binder. A structured 90-day sprint where we install the systems, train your team, and work inside your practice every single week until the production shows up.</p>
-
-    <div class="prog-wrap reveal d3">
-      <div class="prog-rail"></div>
-
-      <div class="prog-phase pp-featured">
-        <div class="prog-node pn-filled">★</div>
-        <div class="prog-feat-badge">⚡ Starts Before Day 1</div>
-        <div class="prog-head"><div class="prog-title">Onboarding &amp; Foundation</div></div>
-        <p class="prog-sub">We build the intelligence layer before we touch your team. Every week after runs on real data.</p>
-        <div class="prog-items">
-          <div class="prog-item"><span class="prog-check">✓</span><span><strong>Custom KPI Dashboard</strong> integrated to your PMS</span></div>
-          <div class="prog-item"><span class="prog-check">✓</span><span><strong>Closing Consults Course + TC Certification</strong></span></div>
-          <div class="prog-item"><span class="prog-check">✓</span><span><strong>Strategy Kickoff Call</strong> with full baseline audit</span></div>
-          <div class="prog-item"><span class="prog-check">✓</span><span><strong>HIPAA-Compliant Slack Workspace</strong></span></div>
-        </div>
-      </div>
-
-      <div class="prog-phase">
-        <div class="prog-node">W1</div>
-        <div class="prog-head"><div class="prog-title">Front Office Booking System</div></div>
-        <p class="prog-sub">Most practices lose 30–40% of qualified implant leads at the front desk. That stops this week.</p>
-        <div class="prog-items">
-          <div class="prog-item"><span class="prog-check">✓</span><span><strong>Proven call scripts</strong> for leads, confirmations, and show-ups</span></div>
-          <div class="prog-item"><span class="prog-check">✓</span><span><strong>Full role-play session</strong> with your front office team</span></div>
-          <div class="prog-item"><span class="prog-check">✓</span><span><strong>Live call review</strong> with direct feedback</span></div>
-        </div>
-      </div>
-
-      <div class="prog-phase">
-        <div class="prog-node">W2</div>
-        <div class="prog-head"><div class="prog-title">TC Closing System</div></div>
-        <p class="prog-sub">The highest-leverage seat in your practice. One trained TC can add six figures a year.</p>
-        <div class="prog-items">
-          <div class="prog-item"><span class="prog-check">✓</span><span><strong>Full Closing Consults playbook</strong> customized to your practice</span></div>
-          <div class="prog-item"><span class="prog-check">✓</span><span><strong>Live consult coaching</strong> on a real patient, real time</span></div>
-        </div>
-      </div>
-
-      <div class="sig-feat">
-        <div class="sig-feat-eye">🎬 Our Signature System</div>
-        <div class="sig-feat-title">Live Consult Recording &amp; Review. <span class="hl">The closing rate multiplier.</span></div>
-        <p class="sig-feat-desc">This is what actually moves case acceptance. We record real consults with real patients, then review them with your TC every single week. We hear the exact objection. We hear the exact hesitation. We hear the moment the close slipped. And we fix it before the next consult walks in. Most TCs have never been coached on an actual recorded consult in their entire career. Our clients do it weekly.</p>
-        <div class="sig-feat-metrics">
-          <div class="sfm"><div class="sfm-val">2–3x</div><div class="sfm-lbl">Typical close rate lift</div></div>
-          <div class="sfm"><div class="sfm-val">Weekly</div><div class="sfm-lbl">Cadence of reviews</div></div>
-          <div class="sfm"><div class="sfm-val">100%</div><div class="sfm-lbl">HIPAA compliant</div></div>
-        </div>
-      </div>
-
-      <div class="prog-phase">
-        <div class="prog-node">W3</div>
-        <div class="prog-head"><div class="prog-title">Pipeline Activation</div></div>
-        <p class="prog-sub">Your unclosed treatment plans are a six-figure pile sitting in the PMS. We wake them up. This is usually where the first $25–50k of production comes from.</p>
-        <div class="prog-items">
-          <div class="prog-item"><span class="prog-check">✓</span><span><strong>Targeted reactivation campaign</strong> with strong offers</span></div>
-          <div class="prog-item"><span class="prog-check">✓</span><span><strong>Full arch priority</strong> for bigger revenue, faster wins</span></div>
-          <div class="prog-item"><span class="prog-check">✓</span><span><strong>Free lead gen effect</strong> with zero ad spend</span></div>
-        </div>
-      </div>
-
-      <div class="prog-phase">
-        <div class="prog-node">⟳</div>
-        <div class="prog-head"><div class="prog-title">Ongoing Execution · Weeks 4–12</div></div>
-        <p class="prog-sub">Systems installed. Now we drive weekly execution until the $50k target is crushed.</p>
-        <div class="prog-items">
-          <div class="prog-item"><span class="prog-check">✓</span><span><strong>Weekly Thursday consult recording reviews</strong> with your TC</span></div>
-          <div class="prog-item"><span class="prog-check">✓</span><span><strong>Monthly pipeline activations</strong> to keep volume flowing</span></div>
-          <div class="prog-item"><span class="prog-check">✓</span><span><strong>Monthly doctor strategy call</strong> on production and trajectory</span></div>
-          <div class="prog-item"><span class="prog-check">✓</span><span><strong>Unlimited Slack access</strong> every business day</span></div>
-        </div>
-      </div>
-
-      <div class="prog-phase">
-        <div class="prog-node pn-filled">90</div>
-        <div class="prog-head"><div class="prog-title">12-Month Growth Roadmap</div></div>
-        <p class="prog-sub">You finish with production added, a trained team, and a clear plan for what's next. Yours to keep.</p>
-        <div class="prog-items">
-          <div class="prog-item"><span class="prog-check">✓</span><span><strong>Custom 12-month growth roadmap</strong> for your practice</span></div>
-          <div class="prog-item"><span class="prog-check">✓</span><span><strong>Continuation call</strong> to review results and next steps</span></div>
-          <div class="prog-item"><span class="prog-check">✓</span><span><strong>Three clear next-step options</strong>, your choice</span></div>
-        </div>
-      </div>
-    </div>
-
-    <div class="guar-callout reveal d4">
-      <div class="guar-shield">🛡</div>
-      <div class="guar-eyebrow">The Guarantee</div>
-      <h3 class="guar-title">$50,000 in new production in 90 days. Or <span class="em">we work for free</span> until you hit it.</h3>
-      <p class="guar-sub">We only take on practices we're confident we can move. If we don't hit the $50,000 production target by day 90, we keep working at zero additional cost until we do. Your investment is capped. The work is not. That's how aligned we are on your outcome.</p>
-      <a class="guar-cta" href="https://www.theimplantinitiative.com/apply">See If You Qualify →</a>
-    </div>
-  </div>
-</div>
-
-<div class="s" style="background:rgba(255,255,255,0.01)">
-  <div class="s-inner">
-    <div class="s-eye reveal">Client Results</div>
-    <h2 class="reveal d1">Real practices.<br><span class="em">Real production.</span></h2>
-    <p class="s-sub reveal d2">Every number below came from a practice that was already running paid ads and getting leads. The difference was what happened after the lead came in. Most cleared the $50k guarantee well before day 90.</p>
-    <div class="cs-grid">
-      <div class="cs-card reveal d1"><div class="cs-headline"><span class="cs-hl-name">Dr. Gurung</span><span class="cs-hl-result">$110,000 in new production in 4 months</span><div class="cs-context"><strong>90-day context:</strong> On pace for ~$82k in the first 90 days alone. Exceeded the $50k guarantee by month 2.</div></div><div class="cs-stars"><span class="cs-star">★</span><span class="cs-star">★</span><span class="cs-star">★</span><span class="cs-star">★</span><span class="cs-star">★</span></div><div class="cs-ba"><div class="cs-ba-col"><div class="cs-ba-label before">Before</div><div class="cs-ba-stat">Low consult conversion</div><div class="cs-ba-stat">No follow-up system</div><div class="cs-ba-stat">Inconsistent TC process</div></div><div class="cs-ba-arrow">→</div><div class="cs-ba-col"><div class="cs-ba-label after">After</div><div class="cs-ba-stat highlight">+$110,000 in 4 months</div><div class="cs-ba-stat highlight">Cases closing same-day</div><div class="cs-ba-stat highlight">TC fully converted</div></div></div><div class="cs-divider"></div><div class="cs-quote">"As of right now we have closed another $110,000 in just 4 months of working with Devyn."</div><div class="cs-meta"><div class="cs-name">Dr. Gurung</div><div class="cs-tag">Implant Practice</div></div></div>
-      <div class="cs-card reveal d2"><div class="cs-headline"><span class="cs-hl-name">Devin</span><span class="cs-hl-result">$65,000 closed in the very first month</span><div class="cs-context"><strong>90-day context:</strong> Guarantee cleared in 30 days. 1.3X the $50k target before the program was even 1/3 complete.</div></div><div class="cs-stars"><span class="cs-star">★</span><span class="cs-star">★</span><span class="cs-star">★</span><span class="cs-star">★</span><span class="cs-star">★</span></div><div class="cs-ba"><div class="cs-ba-col"><div class="cs-ba-label before">Before</div><div class="cs-ba-stat">Month 1, no cases closed</div><div class="cs-ba-stat">Leads not converting</div><div class="cs-ba-stat">No booking system</div></div><div class="cs-ba-arrow">→</div><div class="cs-ba-col"><div class="cs-ba-label after">After</div><div class="cs-ba-stat highlight">$65,000 closed in Month 1</div><div class="cs-ba-stat highlight">First lead: 2 cases closed</div><div class="cs-ba-stat highlight">System installed week 1</div></div></div><div class="cs-divider"></div><div class="cs-quote">"We are in our first month and already closed our first lead, a husband and wife, two cases for $65,000."</div><div class="cs-meta"><div class="cs-name">Devin</div><div class="cs-tag">Client</div></div></div>
-      <div class="cs-card reveal d3"><div class="cs-headline"><span class="cs-hl-name">Dr. Patel</span><span class="cs-hl-result">$22,000 first case, same-day acceptance</span></div><div class="cs-stars"><span class="cs-star">★</span><span class="cs-star">★</span><span class="cs-star">★</span><span class="cs-star">★</span><span class="cs-star">★</span></div><div class="cs-ba"><div class="cs-ba-col"><div class="cs-ba-label before">Before</div><div class="cs-ba-stat">No cases from new leads</div><div class="cs-ba-stat">Weak treatment presentation</div><div class="cs-ba-stat">No conversion framework</div></div><div class="cs-ba-arrow">→</div><div class="cs-ba-col"><div class="cs-ba-label after">After</div><div class="cs-ba-stat highlight">$22,000 first case closed</div><div class="cs-ba-stat highlight">Full arch, same-day accept</div><div class="cs-ba-stat highlight">Proven framework installed</div></div></div><div class="cs-divider"></div><div class="cs-quote">"We closed our first case for $22,000 top and bottom snap-in denture. They are very good, they know their stuff."</div><div class="cs-meta"><div class="cs-name">Dr. Patel</div><div class="cs-tag">Implant Practice</div></div></div>
-      <div class="cs-card reveal d1"><div class="cs-headline"><span class="cs-hl-name">Dr. Will</span><span class="cs-hl-result">9 consults, 9 conversions in first 45 days</span><div class="cs-context"><strong>90-day context:</strong> 100% consult-to-case conversion in the first 45 days. The closing system working exactly as designed.</div></div><div class="cs-stars"><span class="cs-star">★</span><span class="cs-star">★</span><span class="cs-star">★</span><span class="cs-star">★</span><span class="cs-star">★</span></div><div class="cs-ba"><div class="cs-ba-col"><div class="cs-ba-label before">Before</div><div class="cs-ba-stat">Low consult show rate</div><div class="cs-ba-stat">Poor conversion ratio</div><div class="cs-ba-stat">Losing leads after booking</div></div><div class="cs-ba-arrow">→</div><div class="cs-ba-col"><div class="cs-ba-label after">After</div><div class="cs-ba-stat highlight">~100% consult conversion</div><div class="cs-ba-stat highlight">9 of 9 consults closed</div><div class="cs-ba-stat highlight">In the first 45 days</div></div></div><div class="cs-divider"></div><div class="cs-quote">"Of those 9 consults in 45 days, almost every one of them have converted."</div><div class="cs-meta"><div class="cs-name">Dr. Will</div><div class="cs-tag">Implant Practice</div></div></div>
-      <div class="cs-card reveal d2"><div class="cs-headline"><span class="cs-hl-name">Dr. Minnoch</span><span class="cs-hl-result">22X return on implant ad spend</span></div><div class="cs-stars"><span class="cs-star">★</span><span class="cs-star">★</span><span class="cs-star">★</span><span class="cs-star">★</span><span class="cs-star">★</span></div><div class="cs-ba"><div class="cs-ba-col"><div class="cs-ba-label before">Before</div><div class="cs-ba-stat">Ad spend not converting</div><div class="cs-ba-stat">No lead tracking system</div><div class="cs-ba-stat">Poor marketing ROI</div></div><div class="cs-ba-arrow">→</div><div class="cs-ba-col"><div class="cs-ba-label after">After</div><div class="cs-ba-stat highlight">22X return on ad spend</div><div class="cs-ba-stat highlight">Full lead attribution</div><div class="cs-ba-stat highlight">Dramatically more exposure</div></div></div><div class="cs-divider"></div><div class="cs-quote">"Devyn has greatly increased our exposure to implant patients through strategic campaigns and tracking. Highly recommended."</div><div class="cs-meta"><div class="cs-name">Dr. Minnoch</div><div class="cs-tag">Implant Practice</div></div></div>
-      <div class="cs-card reveal d3"><div class="cs-headline"><span class="cs-hl-name">Dr. Morgan</span><span class="cs-hl-result">First case closed was their biggest yet</span></div><div class="cs-stars"><span class="cs-star">★</span><span class="cs-star">★</span><span class="cs-star">★</span><span class="cs-star">★</span><span class="cs-star">★</span></div><div class="cs-ba"><div class="cs-ba-col"><div class="cs-ba-label before">Before</div><div class="cs-ba-stat">Inconsistent implant cases</div><div class="cs-ba-stat">No structured sales process</div><div class="cs-ba-stat">Underperforming first cases</div></div><div class="cs-ba-arrow">→</div><div class="cs-ba-col"><div class="cs-ba-label after">After</div><div class="cs-ba-stat highlight">Very large first case</div><div class="cs-ba-stat highlight">Structured presentation</div><div class="cs-ba-stat highlight">Pleasantly surprised</div></div></div><div class="cs-divider"></div><div class="cs-quote">"This has been a very successful endeavor for us. Our first case was very very big. Give it a try, you will be pleasantly surprised."</div><div class="cs-meta"><div class="cs-name">Dr. Morgan</div><div class="cs-tag">Implant Practice</div></div></div>
-    </div>
-
-  </div>
-</div>
-
-<div class="s has-ambient">
-  <div class="ambient-grid"></div>
   <div class="ambient-glow"></div>
   <div class="s-inner">
     <div class="s-eye reveal">The Difference</div>
@@ -940,28 +835,28 @@ footer{border-top:1px solid rgba(255,255,255,.05);padding:2.5rem 3.5rem 1.75rem;
             <div class="os-item-icon">📞</div>
             <div class="os-item-body">
               <div class="os-item-title">Front Office Booking System (Week 1)</div>
-              <div class="os-item-desc">Call scripts, confirmation sequences, role-play coaching, and a live call review with direct feedback on how your team handles real leads.</div>
+              <div class="os-item-desc">A complete operating system for how your front desk handles implant leads, from inquiry to confirmed consult. Built around accepted cases, not just appointments booked.</div>
             </div>
           </div>
           <div class="os-item-full">
             <div class="os-item-icon">🎯</div>
             <div class="os-item-body">
               <div class="os-item-title">TC Consult Closing System (Week 2)</div>
-              <div class="os-item-desc">Complete closing playbook plus a live consult review with your TC on a real case and real patient, real-time coaching to lock in the framework.</div>
+              <div class="os-item-desc">Our proprietary closing framework installed with your TC and reinforced with live, real-patient coaching. Customized to your practice, financing, and patient demographic.</div>
             </div>
           </div>
           <div class="os-item-full">
             <div class="os-item-icon">📣</div>
             <div class="os-item-body">
               <div class="os-item-title">Pipeline Activation (Week 3 + Monthly)</div>
-              <div class="os-item-desc">We wake up your unclosed treatment plans with strong, targeted offers focused on full arch cases. This is the "free lead gen" that drives immediate volume while the system is still being installed.</div>
+              <div class="os-item-desc">A targeted campaign engineered to convert dormant treatment plans into booked consults. Often produces the program's first wave of new production before week 4.</div>
             </div>
           </div>
           <div class="os-item-full">
             <div class="os-item-icon">🗣️</div>
             <div class="os-item-body">
               <div class="os-item-title">Live Consult Recording &amp; Review (Weekly)</div>
-              <div class="os-item-desc">Every Thursday we review 2–3 of your TC's actual recorded consults with real patients, giving specific feedback on tone, transitions, objection handling, and closing technique. This is the single biggest driver of close rate lift in the program.</div>
+              <div class="os-item-desc">Real consults reviewed weekly with your TC. Specific, surgical feedback on what worked and what didn't. The single biggest driver of close rate lift in the program.</div>
             </div>
           </div>
           <div class="os-item-full">
