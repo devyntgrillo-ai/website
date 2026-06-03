@@ -4,19 +4,19 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<title>CaseLift · We Do The Heavy Lifting</title>
-<meta name="description" content="CaseLift records dental consultations, analyzes objections, and follows up with every patient automatically. Lift the production you're losing. $997/month. $50k guarantee." />
+<title>CaseLift · Recover More High-Value Dental Cases</title>
+<meta name="description" content="CaseLift records dental consultations, analyzes objections, and follows up with every patient automatically. Recover the production you're losing. $997/month. $50k guarantee." />
 <link rel="canonical" href="https://caselift.io/" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://caselift.io/" />
 <meta property="og:site_name" content="CaseLift" />
-<meta property="og:title" content="We Do The Heavy Lifting To Get You More Cases" />
-<meta property="og:description" content="CaseLift lifts dental case acceptance automatically: records consults, follows up with patients, recovers unconverted production. Works for implants, Invisalign, full arch, cosmetic + more." />
+<meta property="og:title" content="Recover More High-Value Dental Cases" />
+<meta property="og:description" content="CaseLift recovers dental cases automatically: records consults, follows up with patients, recovers unconverted production. Works for implants, Invisalign, full arch, cosmetic + more." />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="We Do The Heavy Lifting To Get You More Cases" />
-<meta name="twitter:description" content="CaseLift lifts dental case acceptance automatically: records consults, follows up with patients, recovers unconverted production." />
+<meta name="twitter:title" content="Recover More High-Value Dental Cases" />
+<meta name="twitter:description" content="CaseLift recovers dental cases automatically: records consults, follows up with patients, recovers unconverted production." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -80,10 +80,6 @@
   .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 22px; letter-spacing: -0.025em; color: #fff; transition: color 0.4s var(--ease); }
   nav.scrolled .logo { color: var(--ink); }
   .logo-mark { width: 36px; height: 36px; flex-shrink: 0; display: block; }
-  /* Two-tone wordmark: "Case" inherits the adaptive logo color (white on the
-     hero, ink once scrolled over white); "Lift" stays brand blue everywhere. */
-  .logo .lg-lift { color: var(--brand); }
-  nav.scrolled .logo .lg-lift { color: var(--brand); }
   .nav-links { display: flex; align-items: center; gap: 32px; }
   .nav-links a.link { font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.85); transition: color 0.4s var(--ease), opacity 0.2s; }
   nav.scrolled .nav-links a.link { color: var(--ink); }
@@ -322,21 +318,20 @@
   .faq-item .faq-a { padding: 0 0 26px; font-size: 16px; color: var(--gray); line-height: 1.65; max-width: 710px; }
 
   /* ---------- Footer ---------- */
-  footer { background: #070b14; color: rgba(255,255,255,0.6); padding: 64px 0 40px; }
-  .foot-top { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 32px; padding-bottom: 40px; border-bottom: 1px solid rgba(255,255,255,0.08); }
-  .foot-brand { max-width: 320px; }
-  .foot-brand .logo { color: #fff; margin-bottom: 14px; }
-  .foot-brand p { font-size: 14.5px; line-height: 1.6; }
-  .foot-contact { margin-top: 16px; font-size: 14.5px; }
-  .foot-contact a { color: var(--brand-2); font-weight: 600; }
-  .foot-links { display: flex; gap: 30px 36px; flex-wrap: wrap; align-items: flex-start; max-width: 420px; }
-  .foot-links a { font-size: 14.5px; transition: color 0.2s; }
+  footer { background: #070b14; color: rgba(255,255,255,0.6); padding: 60px 0 36px; }
+  .foot-main { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; padding-bottom: 34px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .foot-main .logo { color: #fff; }
+  .foot-tag { font-size: 14.5px; color: rgba(255,255,255,0.6); }
+  .foot-email { font-size: 14px; color: var(--brand-2); font-weight: 600; }
+  /* HIPAA badge: centered, no card - just the shield + label. */
+  .foot-hipaa { display: inline-flex; align-items: center; gap: 9px; margin-top: 2px; }
+  .foot-hipaa .shield { width: 20px; height: 24px; flex-shrink: 0; }
+  .foot-hipaa span { font-size: 12.5px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.7); }
+  /* Footer links: one clean centered row. */
+  .foot-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 28px; margin-top: 6px; }
+  .foot-links a { font-size: 14.5px; color: rgba(255,255,255,0.6); transition: color 0.2s; }
   .foot-links a:hover { color: #fff; }
-  .hipaa-badge { display: inline-flex; align-items: center; gap: 13px; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.13); border-radius: 14px; padding: 13px 20px; margin-top: 22px; }
-  .hipaa-badge .shield { width: 30px; height: 36px; flex-shrink: 0; }
-  .hipaa-badge .ht strong { display: block; color: #fff; font-size: 14px; font-weight: 800; letter-spacing: 0.05em; }
-  .hipaa-badge .ht span { font-size: 11px; color: rgba(255,255,255,0.55); letter-spacing: 0.18em; text-transform: uppercase; }
-  .foot-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px; padding-top: 28px; font-size: 13px; }
+  .foot-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 14px; padding-top: 26px; font-size: 13px; }
   .foot-badges { color: rgba(255,255,255,0.4); }
 
   /* ---------- Reveal animations ---------- */
@@ -598,7 +593,7 @@
   <div class="hero-bg"></div>
   <div class="wrap">
     <div class="badge hero-anim d1"><span class="dot"></span>DENTISTS LOOKING TO GROW PRODUCTION:</div>
-    <h1 class="hero-title hero-anim d2">We Do The Heavy Lifting To Recover <span class="accent">More High-Value Dental Cases</span></h1>
+    <h1 class="hero-title hero-anim d2">We Recover <span class="accent">More High-Value Dental Cases</span></h1>
     <p class="hero-sub hero-anim d3">CaseLift listens to your dental consultations, coaches you on every objection, and automatically follows up to close more cases.</p>
     <div class="hero-ctas hero-anim d4">
       <a href="/apply" class="btn btn-brand">Schedule A Demo</a>
@@ -706,7 +701,7 @@
   <div class="wrap sec-center">
     <div class="eyebrow reveal">How it works</div>
     <h2 class="sec-title reveal" data-delay="1">How CaseLift Recovers Lost Treatment Plans</h2>
-    <p class="sec-lead reveal" data-delay="2">Your TC records the consult. CaseLift does the heavy lifting after.</p>
+    <p class="sec-lead reveal" data-delay="2">Your TC records the consult. CaseLift does the rest.</p>
   </div>
   <div class="wrap">
     <div class="steps">
@@ -738,8 +733,8 @@
         <div class="step-num">4</div>
         <div class="step-body">
           <div class="step-ico">🤝</div>
-          <h3>Your TC closes the lifted case</h3>
-          <p>When a patient replies, your TC is notified instantly and takes over. CaseLift shows them the full analysis, coaching insights, and suggested responses. The heavy lifting is done. Your TC just closes.</p>
+          <h3>Your TC closes the recovered case</h3>
+          <p>When a patient replies, your TC is notified instantly and takes over. CaseLift shows them the full analysis, coaching insights, and suggested responses. The hard part is done. Your TC just closes.</p>
         </div>
       </div>
     </div>
@@ -1002,7 +997,7 @@
       </details>
       <details class="faq-item reveal">
         <summary>Does CaseLift only work for implants?</summary>
-        <div class="faq-a">No. CaseLift lifts cases for any high-value dental treatment, implants, full arch, Invisalign, cosmetic, sleep apnea, full mouth rehab. If a patient left without scheduling, CaseLift follows up until they do.</div>
+        <div class="faq-a">No. CaseLift recovers cases for any high-value dental treatment, implants, full arch, Invisalign, cosmetic, sleep apnea, full mouth rehab. If a patient left without scheduling, CaseLift follows up until they do.</div>
       </details>
       <details class="faq-item reveal">
         <summary>What if our practice does a mix of treatments?</summary>
@@ -1026,11 +1021,11 @@
       </details>
       <details class="faq-item reveal">
         <summary>What is the guarantee?</summary>
-        <div class="faq-a">If CaseLift doesn't lift $50,000 in production within 90 days, we work with you for free until you get there.</div>
+        <div class="faq-a">If CaseLift doesn't recover $50,000 in production within 90 days, we work with you for free until you get there.</div>
       </details>
       <details class="faq-item reveal">
         <summary>How is CaseLift different from other dental software?</summary>
-        <div class="faq-a">Most dental software tracks what happened. CaseLift changes what happens next. It doesn't just show you unconverted patients, it follows up with them, lifts them back into your schedule, and tracks every dollar recovered. No other platform does this.</div>
+        <div class="faq-a">Most dental software tracks what happened. CaseLift changes what happens next. It doesn't just show you unconverted patients, it follows up with them, brings them back into your schedule, and tracks every dollar recovered. No other platform does this.</div>
       </details>
     </div>
   </div>
@@ -1040,35 +1035,32 @@
 <section class="final-cta">
   <div class="glow"></div>
   <div class="wrap">
-    <h2 class="reveal">Ready to lift the cases you're losing?</h2>
-    <p class="reveal" data-delay="1">Your TC records the consult. CaseLift handles everything after. $50,000 lifted in 90 days, guaranteed.</p>
+    <h2 class="reveal">Ready to recover the production walking out your door?</h2>
+    <p class="reveal" data-delay="1">CaseLift analyzes every consultation, coaches your TC, and follows up automatically. $50,000 in recovered production in 90 days, guaranteed.</p>
     <div class="reveal" data-delay="2"><a href="/apply" class="btn btn-brand">Schedule A Demo</a></div>
-    <p class="final-note reveal" data-delay="3">$997/month · Cancel anytime · Limited spots available</p>
   </div>
 </section>
 
 <!-- ============ FOOTER ============ -->
 <footer>
   <div class="wrap">
-    <div class="foot-top">
-      <div class="foot-brand">
-        <div class="logo">
-          <svg class="logo-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <defs><linearGradient id="clGradFoot" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#06B6D4"/></linearGradient></defs>
-            <rect width="32" height="32" rx="8" fill="url(#clGradFoot)"/>
-            <path d="M16 6.5 L23.5 15.5 H19 V20.5 H13 V15.5 H8.5 Z" fill="#fff"/>
-            <rect x="10.5" y="23" width="11" height="2.6" rx="1.3" fill="#fff" opacity="0.9"/>
-          </svg>CaseLift</div>
-        <p>We do the heavy lifting.</p>
-        <div class="foot-contact"><a href="mailto:hello@caselift.io">hello@caselift.io</a></div>
-        <div class="hipaa-badge">
-          <svg class="shield" viewBox="0 0 48 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <defs><linearGradient id="hg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#06B6D4"/></linearGradient></defs>
-            <path d="M24 2 L44 10 V26 C44 40 35 50 24 54 C13 50 4 40 4 26 V10 Z" fill="url(#hg)"/>
-            <path d="M16 27 l6 6 l11 -13" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
-          </svg>
-          <div class="ht"><strong>HIPAA</strong><span>Compliant</span></div>
-        </div>
+    <div class="foot-main">
+      <div class="logo">
+        <svg class="logo-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs><linearGradient id="clGradFoot" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#06B6D4"/></linearGradient></defs>
+          <rect width="32" height="32" rx="8" fill="url(#clGradFoot)"/>
+          <path d="M16 6.5 L23.5 15.5 H19 V20.5 H13 V15.5 H8.5 Z" fill="#fff"/>
+          <rect x="10.5" y="23" width="11" height="2.6" rx="1.3" fill="#fff" opacity="0.9"/>
+        </svg>CaseLift</div>
+      <p class="foot-tag">We recover the cases you're losing.</p>
+      <a class="foot-email" href="mailto:hello@caselift.io">hello@caselift.io</a>
+      <div class="foot-hipaa">
+        <svg class="shield" viewBox="0 0 48 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <defs><linearGradient id="hg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#06B6D4"/></linearGradient></defs>
+          <path d="M24 2 L44 10 V26 C44 40 35 50 24 54 C13 50 4 40 4 26 V10 Z" fill="url(#hg)"/>
+          <path d="M16 27 l6 6 l11 -13" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
+        <span>HIPAA Compliant</span>
       </div>
       <div class="foot-links">
         <a href="/apply">Apply</a>
