@@ -80,6 +80,10 @@
   .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 22px; letter-spacing: -0.025em; color: #fff; transition: color 0.4s var(--ease); }
   nav.scrolled .logo { color: var(--ink); }
   .logo-mark { width: 36px; height: 36px; flex-shrink: 0; display: block; }
+  /* Two-tone wordmark: "Case" inherits the adaptive logo color (white on the
+     hero, ink once scrolled over white); "Lift" stays brand blue everywhere. */
+  .logo .lg-lift { color: var(--brand); }
+  nav.scrolled .logo .lg-lift { color: var(--brand); }
   .nav-links { display: flex; align-items: center; gap: 32px; }
   .nav-links a.link { font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.85); transition: color 0.4s var(--ease), opacity 0.2s; }
   nav.scrolled .nav-links a.link { color: var(--ink); }
@@ -274,6 +278,22 @@
   .price-list li.guar .ck { background: var(--grad); color: #fff; }
   .price-note { margin-top: 18px; font-size: 13.5px; color: var(--gray-light); }
 
+  /* ---------- Get-a-price (tailored quote) ---------- */
+  .quote-card { max-width: 760px; margin: 52px auto 0; background: #fff; border: 1px solid var(--line); border-radius: 26px;
+    padding: 44px; box-shadow: 0 30px 70px rgba(15,23,42,0.10); position: relative; overflow: hidden; }
+  .quote-card::before { content:''; position:absolute; top:0; left:0; right:0; height:5px; background: var(--grad); }
+  .qf-factors { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 14px; margin-bottom: 30px; }
+  .qf-factors span { font-size: 13px; font-weight: 600; color: var(--brand); background: rgba(37,99,235,0.08); border: 1px solid rgba(37,99,235,0.16); padding: 7px 14px; border-radius: 999px; }
+  .qf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 20px; }
+  .qf-field { text-align: left; }
+  .qf-field label { display: block; font-size: 13px; font-weight: 600; color: var(--gray); margin-bottom: 7px; }
+  .qf-field input, .qf-field select { width: 100%; padding: 13px 15px; font-size: 15px; font-family: inherit; color: var(--ink);
+    background: var(--bg-light); border: 1px solid var(--line); border-radius: 12px; transition: border-color 0.2s, box-shadow 0.2s; appearance: none; }
+  .qf-field input:focus, .qf-field select:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 3px rgba(37,99,235,0.14); background: #fff; }
+  .qf-submit { width: 100%; margin-top: 26px; font-size: 17px; padding: 17px 30px; }
+  .qf-note { margin-top: 16px; font-size: 13.5px; color: var(--gray-light); text-align: center; }
+  .qf-note b { color: var(--ink); font-weight: 700; }
+
   /* ---------- Final CTA ---------- */
   .final-cta { background: var(--black); color: #fff; text-align: center; padding: 116px 0; position: relative; overflow: hidden; }
   .final-cta .glow { position: absolute; inset: 0; background: radial-gradient(50% 60% at 50% 50%, rgba(37,99,235,0.22), transparent 70%); }
@@ -343,6 +363,36 @@
   .stat-num { font-size: clamp(40px, 6vw, 60px); font-weight: 800; letter-spacing: -0.04em; line-height: 1; background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
   .stat-desc { font-size: 15.5px; color: var(--gray); line-height: 1.55; margin-top: 14px; }
   .sec-dark .stat-desc { color: rgba(255,255,255,0.7); }
+
+  /* ---------- Proof / follow-up stats (dark section) ---------- */
+  .proof { padding: 60px 0 64px; }
+  .proof-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; max-width: 920px; margin: 34px auto 0; }
+  .ps-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius); padding: 30px 24px; text-align: center; transition: transform 0.4s var(--ease), border-color 0.4s var(--ease); }
+  .ps-card:hover { transform: translateY(-6px); border-color: rgba(6,182,212,0.45); }
+  .ps-num { font-size: clamp(46px, 7vw, 64px); font-weight: 900; letter-spacing: -0.04em; line-height: 1; background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+  .ps-num span { font-size: 0.55em; font-weight: 800; }
+  .ps-label { font-size: 15px; color: rgba(255,255,255,0.66); line-height: 1.5; margin-top: 14px; }
+  .ps-label b { color: #fff; font-weight: 700; }
+
+  .proof-vis { max-width: 920px; margin: 44px auto 0; }
+  .pv-track { display: flex; gap: 6px; }
+  .pv-cell { flex: 1; height: 52px; border-radius: 9px; display: flex; align-items: center; justify-content: center; position: relative;
+    background: rgba(244,63,94,0.14); border: 1px solid rgba(244,63,94,0.26); color: rgba(255,255,255,0.55); transition: transform 0.3s var(--ease); }
+  .pv-cell .pv-n { font-size: 13px; font-weight: 700; }
+  .pv-cell.quit, .pv-cell.quit4 { background: rgba(244,63,94,0.26); border-color: rgba(244,63,94,0.6); color: #fff; }
+  .pv-cell.close { background: var(--grad); border-color: transparent; color: #fff; box-shadow: 0 6px 18px rgba(37,99,235,0.3); }
+  .pv-cell.close:hover { transform: translateY(-4px); }
+  /* Stat callouts pinned above the two quit markers. */
+  .pv-cell.quit::after, .pv-cell.quit4::after { position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%);
+    font-size: 11px; font-weight: 800; letter-spacing: 0.04em; white-space: nowrap; color: #fda4af; }
+  .pv-cell.quit::after { content: '44% quit'; }
+  .pv-cell.quit4::after { content: '92% quit'; }
+  .pv-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 26px; margin-top: 22px; font-size: 13.5px; color: rgba(255,255,255,0.7); }
+  .pv-leg { display: inline-flex; align-items: center; gap: 9px; }
+  .pv-leg i { width: 15px; height: 15px; border-radius: 5px; flex-shrink: 0; }
+  .pv-leg .lg-quit { background: rgba(244,63,94,0.5); border: 1px solid rgba(244,63,94,0.7); }
+  .pv-leg .lg-close { background: var(--grad); }
+  .proof-src { margin-top: 24px; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
 
   /* ---------- Product tour ---------- */
   .tour-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 56px; }
@@ -469,6 +519,8 @@
     .calc { grid-template-columns: 1fr; gap: 28px; padding: 28px; }
     .calc-out { border-left: none; border-top: 1px solid rgba(255,255,255,0.1); padding-left: 0; padding-top: 28px; }
     .stat-grid, .tour-grid, .inside-grid { grid-template-columns: 1fr; }
+    .proof-stats { grid-template-columns: 1fr; max-width: 420px; }
+    .qf-grid { grid-template-columns: 1fr; }
   }
   @media (max-width: 760px) {
     .nav-links { display: none; }
@@ -480,6 +532,11 @@
     .hero-ctas .btn { width: 100%; }
     .guarantee { flex-direction: column; }
     .guarantee p { text-align: center; }
+    /* 12 tiny touchpoint cells: shrink + drop the pinned stat labels so nothing overflows. */
+    .pv-track { gap: 4px; }
+    .pv-cell { height: 40px; border-radius: 7px; }
+    .pv-cell .pv-n { font-size: 10px; }
+    .pv-cell.quit::after, .pv-cell.quit4::after { display: none; }
   }
 
   /* ---------- Reduced motion ---------- */
@@ -501,12 +558,12 @@
         <rect width="32" height="32" rx="8" fill="url(#clGrad)"/>
         <path d="M16 6.5 L23.5 15.5 H19 V20.5 H13 V15.5 H8.5 Z" fill="#fff"/>
         <rect x="10.5" y="23" width="11" height="2.6" rx="1.3" fill="#fff" opacity="0.9"/>
-      </svg>CaseLift</a>
+      </svg>Case<span class="lg-lift">Lift</span></a>
     <div class="nav-links">
       <a href="#how" class="link">How It Works</a>
       <a href="#how-it-works" class="link">Product Tour</a>
       <a href="#results" class="link">Results</a>
-      <a href="#pricing" class="link">Pricing</a>
+      <a href="#get-price" class="link">Pricing</a>
       <a href="#faq" class="link">FAQ</a>
     </div>
     <div class="nav-cta-wrap">
@@ -521,7 +578,7 @@
   <a href="#how">How It Works</a>
   <a href="#how-it-works">Product Tour</a>
   <a href="#results">Results</a>
-  <a href="#pricing">Pricing</a>
+  <a href="#get-price">Pricing</a>
   <a href="#faq">FAQ</a>
   <a href="/login">Log In</a>
   <a href="/apply" class="btn btn-brand">Schedule A Demo</a>
@@ -575,8 +632,46 @@
 <!-- ============ SOCIAL PROOF BAR ============ -->
 <section class="proof">
   <div class="wrap">
-    <div class="pl1">CaseLift is lifting production at dental practices across the country</div>
-    <div class="proof-callout"><p>Research shows that <b>80% of tx plans require 5 to 12 follow-up touchpoints</b> before closing. Despite this, <b>44% of treatment coordinators give up after just ONE attempt</b>, and <b>92% stop after the 4th attempt</b>. (Salesforce)</p></div>
+    <div class="pl1">CaseLift is growing production at dental practices across the country</div>
+
+    <div class="proof-stats">
+      <div class="ps-card reveal">
+        <div class="ps-num">80<span>%</span></div>
+        <div class="ps-label">of treatment plans need <b>5&ndash;12 follow-ups</b> before they close</div>
+      </div>
+      <div class="ps-card reveal" data-delay="1">
+        <div class="ps-num">44<span>%</span></div>
+        <div class="ps-label">of treatment coordinators give up after <b>just one attempt</b></div>
+      </div>
+      <div class="ps-card reveal" data-delay="2">
+        <div class="ps-num">92<span>%</span></div>
+        <div class="ps-label">have stopped following up <b>by the 4th attempt</b></div>
+      </div>
+    </div>
+
+    <!-- Drop-off visual: TCs quit in the first few attempts; most cases only
+         close in the 5–12 window they never reach. -->
+    <div class="proof-vis reveal" data-delay="1">
+      <div class="pv-track" aria-hidden="true">
+        <div class="pv-cell quit"><span class="pv-n">1</span></div>
+        <div class="pv-cell"><span class="pv-n">2</span></div>
+        <div class="pv-cell"><span class="pv-n">3</span></div>
+        <div class="pv-cell quit4"><span class="pv-n">4</span></div>
+        <div class="pv-cell close"><span class="pv-n">5</span></div>
+        <div class="pv-cell close"><span class="pv-n">6</span></div>
+        <div class="pv-cell close"><span class="pv-n">7</span></div>
+        <div class="pv-cell close"><span class="pv-n">8</span></div>
+        <div class="pv-cell close"><span class="pv-n">9</span></div>
+        <div class="pv-cell close"><span class="pv-n">10</span></div>
+        <div class="pv-cell close"><span class="pv-n">11</span></div>
+        <div class="pv-cell close"><span class="pv-n">12</span></div>
+      </div>
+      <div class="pv-legend">
+        <span class="pv-leg"><i class="lg-quit"></i>Where most TCs quit</span>
+        <span class="pv-leg"><i class="lg-close"></i>Where most cases actually close &mdash; CaseLift never stops here</span>
+      </div>
+    </div>
+    <div class="proof-src">Source: Salesforce</div>
   </div>
 </section>
 
@@ -874,6 +969,56 @@
   </div>
 </section>
 
+<!-- ============ GET A PRICE ============ -->
+<section class="sec sec-light" id="get-price">
+  <div class="wrap sec-center">
+    <div class="eyebrow reveal">Pricing</div>
+    <h2 class="sec-title reveal" data-delay="1">Pricing built around your practice</h2>
+    <p class="sec-lead reveal" data-delay="2">CaseLift is priced to your consult volume and case mix &mdash; not a one-size-fits-all plan. Tell us about your practice and we&rsquo;ll send a tailored quote, usually the same day.</p>
+  </div>
+  <div class="wrap">
+    <div class="quote-card reveal">
+      <div class="qf-factors">
+        <span>Scales with consult volume</span>
+        <span>Your case mix</span>
+        <span>Number of locations</span>
+      </div>
+      <form class="quote-form" action="/apply" method="get">
+        <div class="qf-grid">
+          <div class="qf-field">
+            <label for="qPractice">Practice name</label>
+            <input id="qPractice" name="practice" type="text" placeholder="Bright Smile Dental" required />
+          </div>
+          <div class="qf-field">
+            <label for="qEmail">Work email</label>
+            <input id="qEmail" name="email" type="email" placeholder="you@practice.com" required />
+          </div>
+          <div class="qf-field">
+            <label for="qVolume">High-value consults / month</label>
+            <select id="qVolume" name="volume">
+              <option>Under 20</option>
+              <option selected>20&ndash;50</option>
+              <option>50&ndash;100</option>
+              <option>100+</option>
+            </select>
+          </div>
+          <div class="qf-field">
+            <label for="qType">Primary case type</label>
+            <select id="qType" name="case_type">
+              <option>Implants / full arch</option>
+              <option>Invisalign / ortho</option>
+              <option>Cosmetic</option>
+              <option>Mixed high-value</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-brand qf-submit">Get My Custom Price &rarr;</button>
+        <p class="qf-note">No commitment. Every plan includes our <b>$50,000 in 90 days</b> recovery guarantee.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
 <!-- ============ FEATURES ============ -->
 <section class="sec sec-light" id="features">
   <div class="wrap sec-center">
@@ -959,7 +1104,7 @@
             <rect width="32" height="32" rx="8" fill="url(#clGradFoot)"/>
             <path d="M16 6.5 L23.5 15.5 H19 V20.5 H13 V15.5 H8.5 Z" fill="#fff"/>
             <rect x="10.5" y="23" width="11" height="2.6" rx="1.3" fill="#fff" opacity="0.9"/>
-          </svg>CaseLift</div>
+          </svg>Case<span class="lg-lift">Lift</span></div>
         <p>We do the heavy lifting.</p>
         <div class="foot-contact"><a href="mailto:hello@caselift.io">hello@caselift.io</a></div>
         <div class="hipaa-badge">
