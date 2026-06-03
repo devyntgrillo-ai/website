@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 <title>CaseLift · Recover More High-Value Dental Cases</title>
-<meta name="description" content="CaseLift records dental consultations, analyzes objections, and follows up with every patient automatically. Recover the production you're losing. $997/month. $50k guarantee." />
+<meta name="description" content="CaseLift records dental consultations, analyzes objections, and follows up with every patient automatically. Recover the production you're losing. $997/month. $20k guarantee." />
 <link rel="canonical" href="https://caselift.io/" />
 
 <!-- Open Graph -->
@@ -20,6 +20,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="preconnect" href="https://logo.clearbit.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
 <style>
   :root {
@@ -80,6 +81,8 @@
   .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 22px; letter-spacing: -0.025em; color: #fff; transition: color 0.4s var(--ease); }
   nav.scrolled .logo { color: var(--ink); }
   .logo-mark { width: 36px; height: 36px; flex-shrink: 0; display: block; }
+  .beta { font-size: 9.5px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--brand); background: rgba(37,99,235,0.14); border: 1px solid rgba(37,99,235,0.4); padding: 2px 6px; border-radius: 5px; line-height: 1; align-self: center; }
+  nav.scrolled .beta { color: var(--brand); }
   .nav-links { display: flex; align-items: center; gap: 32px; }
   .nav-links a.link { font-size: 15px; font-weight: 500; color: rgba(255,255,255,0.85); transition: color 0.4s var(--ease), opacity 0.2s; }
   nav.scrolled .nav-links a.link { color: var(--ink); }
@@ -271,33 +274,10 @@
   .price-list li { display: flex; gap: 12px; align-items: flex-start; font-size: 15.5px; color: var(--ink); line-height: 1.45; }
   .price-list .ck { width: 22px; height: 22px; flex-shrink: 0; border-radius: 50%; background: rgba(37,99,235,0.12); color: var(--brand); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; margin-top: 1px; }
   .price-list li.guar { font-weight: 700; }
-  /* Value-stack pricing table */
-  .price-list.vstack { max-width: 560px; }
-  .price-list.vstack li { align-items: center; justify-content: space-between; gap: 14px; }
-  .price-list.vstack .vs-item { flex: 1; }
-  .price-list.vstack .vs-val { font-weight: 700; color: var(--gray); white-space: nowrap; font-size: 14.5px; }
-  .price-list.vstack li.guar .vs-val { color: var(--brand); }
-  .vs-total { max-width: 560px; margin: 4px auto 0; display: flex; justify-content: space-between; align-items: baseline; padding-top: 18px; border-top: 1px solid var(--line); font-size: 16px; font-weight: 600; color: var(--ink); }
-  .vs-total-num { font-size: 24px; font-weight: 800; letter-spacing: -0.02em; }
   .vs-cta { margin-top: 28px; font-size: 17px; padding: 17px 36px; }
   .price-list li.guar .ck { background: var(--grad); color: #fff; }
   .price-note { margin-top: 18px; font-size: 13.5px; color: var(--gray-light); }
 
-  /* ---------- Get-a-price (tailored quote) ---------- */
-  .quote-card { max-width: 760px; margin: 52px auto 0; background: #fff; border: 1px solid var(--line); border-radius: 26px;
-    padding: 44px; box-shadow: 0 30px 70px rgba(15,23,42,0.10); position: relative; overflow: hidden; }
-  .quote-card::before { content:''; position:absolute; top:0; left:0; right:0; height:5px; background: var(--grad); }
-  .qf-factors { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 14px; margin-bottom: 30px; }
-  .qf-factors span { font-size: 13px; font-weight: 600; color: var(--brand); background: rgba(37,99,235,0.08); border: 1px solid rgba(37,99,235,0.16); padding: 7px 14px; border-radius: 999px; }
-  .qf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 20px; }
-  .qf-field { text-align: left; }
-  .qf-field label { display: block; font-size: 13px; font-weight: 600; color: var(--gray); margin-bottom: 7px; }
-  .qf-field input, .qf-field select { width: 100%; padding: 13px 15px; font-size: 15px; font-family: inherit; color: var(--ink);
-    background: var(--bg-light); border: 1px solid var(--line); border-radius: 12px; transition: border-color 0.2s, box-shadow 0.2s; appearance: none; }
-  .qf-field input:focus, .qf-field select:focus { outline: none; border-color: var(--brand); box-shadow: 0 0 0 3px rgba(37,99,235,0.14); background: #fff; }
-  .qf-submit { width: 100%; margin-top: 26px; font-size: 17px; padding: 17px 30px; }
-  .qf-note { margin-top: 16px; font-size: 13.5px; color: var(--gray-light); text-align: center; }
-  .qf-note b { color: var(--ink); font-weight: 700; }
 
   /* ---------- Final CTA ---------- */
   .final-cta { background: var(--black); color: #fff; text-align: center; padding: 116px 0; position: relative; overflow: hidden; }
@@ -358,15 +338,6 @@
   .proof-callout p { font-size: 15.5px; line-height: 1.65; color: rgba(255,255,255,0.85); }
   .proof-callout b { color: #fff; font-weight: 700; }
 
-  /* ---------- Stat grid (hidden leak + results) ---------- */
-  .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 56px; }
-  .stat-card { border-radius: var(--radius); padding: 38px 28px; text-align: center; border: 1px solid var(--line); background: #fff; transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease), border-color 0.4s; }
-  .stat-card:hover { transform: translateY(-6px); box-shadow: 0 24px 50px rgba(15,23,42,0.10); }
-  .sec-dark .stat-card { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.1); }
-  .sec-dark .stat-card:hover { border-color: rgba(6,182,212,0.45); box-shadow: none; }
-  .stat-num { font-size: clamp(40px, 6vw, 60px); font-weight: 800; letter-spacing: -0.04em; line-height: 1; background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-  .stat-desc { font-size: 15.5px; color: var(--gray); line-height: 1.55; margin-top: 14px; }
-  .sec-dark .stat-desc { color: rgba(255,255,255,0.7); }
 
   /* ---------- Proof / follow-up stats (dark section) ---------- */
   .proof { padding: 60px 0 64px; }
@@ -378,24 +349,17 @@
   .ps-label { font-size: 15px; color: rgba(255,255,255,0.66); line-height: 1.5; margin-top: 14px; }
   .ps-label b { color: #fff; font-weight: 700; }
 
-  .proof-vis { max-width: 920px; margin: 44px auto 0; }
-  .pv-track { display: flex; gap: 6px; }
-  .pv-cell { flex: 1; height: 52px; border-radius: 9px; display: flex; align-items: center; justify-content: center; position: relative;
-    background: rgba(244,63,94,0.14); border: 1px solid rgba(244,63,94,0.26); color: rgba(255,255,255,0.55); transition: transform 0.3s var(--ease); }
-  .pv-cell .pv-n { font-size: 13px; font-weight: 700; }
-  .pv-cell.quit, .pv-cell.quit4 { background: rgba(244,63,94,0.26); border-color: rgba(244,63,94,0.6); color: #fff; }
-  .pv-cell.close { background: var(--grad); border-color: transparent; color: #fff; box-shadow: 0 6px 18px rgba(37,99,235,0.3); }
-  .pv-cell.close:hover { transform: translateY(-4px); }
-  /* Stat callouts pinned above the two quit markers. */
-  .pv-cell.quit::after, .pv-cell.quit4::after { position: absolute; bottom: calc(100% + 8px); left: 50%; transform: translateX(-50%);
-    font-size: 11px; font-weight: 800; letter-spacing: 0.04em; white-space: nowrap; color: #fda4af; }
-  .pv-cell.quit::after { content: '44% quit'; }
-  .pv-cell.quit4::after { content: '92% quit'; }
-  .pv-legend { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 26px; margin-top: 22px; font-size: 13.5px; color: rgba(255,255,255,0.7); }
-  .pv-leg { display: inline-flex; align-items: center; gap: 9px; }
-  .pv-leg i { width: 15px; height: 15px; border-radius: 5px; flex-shrink: 0; }
-  .pv-leg .lg-quit { background: rgba(244,63,94,0.5); border: 1px solid rgba(244,63,94,0.7); }
-  .pv-leg .lg-close { background: var(--grad); }
+  /* Clean two-zone drop-off bar (replaces the busy 12-cell track). */
+  .dropoff { display: flex; gap: 10px; max-width: 720px; margin: 40px auto 0; }
+  .do-zone { border-radius: 14px; padding: 20px 22px; display: flex; flex-direction: column; gap: 5px; text-align: left; }
+  .do-zone.quit { flex: 4; background: rgba(244,63,94,0.12); border: 1px solid rgba(244,63,94,0.3); }
+  .do-zone.close { flex: 8; background: var(--grad); box-shadow: 0 10px 30px rgba(37,99,235,0.28); }
+  .do-label { font-size: 12.5px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase; }
+  .do-zone.quit .do-label { color: #fda4af; }
+  .do-zone.close .do-label { color: #fff; }
+  .do-cap { font-size: 14px; line-height: 1.4; }
+  .do-zone.quit .do-cap { color: rgba(255,255,255,0.7); }
+  .do-zone.close .do-cap { color: rgba(255,255,255,0.92); }
   .proof-src { margin-top: 24px; font-size: 12px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
 
   /* ---------- Product tour ---------- */
@@ -407,9 +371,12 @@
   .tour-step p { font-size: 15px; color: var(--gray); line-height: 1.6; }
 
   /* ---------- Integrations ---------- */
-  .intg-row { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; margin-top: 50px; }
-  .intg-pill { font-size: 15px; font-weight: 600; color: rgba(255,255,255,0.9); background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.14); border-radius: 999px; padding: 12px 24px; transition: border-color 0.3s, transform 0.3s var(--ease); }
-  .intg-pill:hover { border-color: rgba(6,182,212,0.5); transform: translateY(-2px); }
+  .intg-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 50px; }
+  .intg-card { background: #fff; border-radius: 14px; height: 96px; display: flex; align-items: center; justify-content: center; padding: 20px; transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease); }
+  .intg-card:hover { transform: translateY(-3px); box-shadow: 0 14px 30px rgba(0,0,0,0.25); }
+  .intg-card img { max-height: 38px; max-width: 100%; object-fit: contain; }
+  .intg-name { display: none; font-size: 16px; font-weight: 700; color: var(--ink); letter-spacing: -0.01em; text-align: center; }
+  .intg-more { text-align: center; margin-top: 28px; font-size: 14.5px; color: rgba(255,255,255,0.55); }
 
   /* ---------- Lost-production calculator ---------- */
   .calc { max-width: 920px; margin: 56px auto 0; background: var(--black); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius); padding: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
@@ -426,12 +393,6 @@
   .calc-out .co-year .co-label { color: var(--brand-2); }
   .calc-out .co-year .co-val { font-size: clamp(40px, 6vw, 58px); line-height: 1; background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
 
-  /* ---------- What's inside (simplified 3-col) ---------- */
-  .inside-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; margin-top: 56px; }
-  .inside-card { text-align: center; padding: 12px; }
-  .inside-ico { width: 60px; height: 60px; margin: 0 auto 18px; border-radius: 16px; background: linear-gradient(135deg,#eff6ff,#ecfeff); display: flex; align-items: center; justify-content: center; font-size: 28px; line-height: 1; }
-  .inside-card h3 { font-size: 19px; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 9px; }
-  .inside-card p { font-size: 15px; color: var(--gray); line-height: 1.6; }
 
   /* ---------- Product Tour showcases ---------- */
   .showcase { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; margin-top: 64px; }
@@ -522,9 +483,9 @@
   @media (max-width: 820px) {
     .calc { grid-template-columns: 1fr; gap: 28px; padding: 28px; }
     .calc-out { border-left: none; border-top: 1px solid rgba(255,255,255,0.1); padding-left: 0; padding-top: 28px; }
-    .stat-grid, .tour-grid, .inside-grid { grid-template-columns: 1fr; }
+    .tour-grid { grid-template-columns: 1fr; }
     .proof-stats { grid-template-columns: 1fr; max-width: 420px; }
-    .qf-grid { grid-template-columns: 1fr; }
+    .intg-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 760px) {
     .nav-links { display: none; }
@@ -532,15 +493,10 @@
     .sec { padding: 76px 0; }
     .hero { padding: 140px 0 80px; }
     .treat-grid, .feat-grid, .roi-grid { grid-template-columns: 1fr; }
-    .foot-top { flex-direction: column; }
     .hero-ctas .btn { width: 100%; }
     .guarantee { flex-direction: column; }
     .guarantee p { text-align: center; }
-    /* 12 tiny touchpoint cells: shrink + drop the pinned stat labels so nothing overflows. */
-    .pv-track { gap: 4px; }
-    .pv-cell { height: 40px; border-radius: 7px; }
-    .pv-cell .pv-n { font-size: 10px; }
-    .pv-cell.quit::after, .pv-cell.quit4::after { display: none; }
+    .dropoff { flex-direction: column; }
   }
 
   /* ---------- Reduced motion ---------- */
@@ -562,7 +518,7 @@
         <rect width="32" height="32" rx="8" fill="url(#clGrad)"/>
         <path d="M16 6.5 L23.5 15.5 H19 V20.5 H13 V15.5 H8.5 Z" fill="#fff"/>
         <rect x="10.5" y="23" width="11" height="2.6" rx="1.3" fill="#fff" opacity="0.9"/>
-      </svg>CaseLift</a>
+      </svg>CaseLift<span class="beta">Beta</span></a>
     <div class="nav-links">
       <a href="#how" class="link">How It Works</a>
       <a href="#how-it-works" class="link">Product Tour</a>
@@ -571,7 +527,7 @@
       <a href="#faq" class="link">FAQ</a>
     </div>
     <div class="nav-cta-wrap">
-      <a href="/login" class="nav-login">Log In</a>
+      <a href="https://app.caselift.io" class="nav-login">Log In</a>
       <a href="/apply" class="btn btn-brand btn-sm">Schedule A Demo</a>
       <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
     </div>
@@ -584,7 +540,7 @@
   <a href="#results">Results</a>
   <a href="#get-price">Pricing</a>
   <a href="#faq">FAQ</a>
-  <a href="/login">Log In</a>
+  <a href="https://app.caselift.io">Log In</a>
   <a href="/apply" class="btn btn-brand">Schedule A Demo</a>
 </div>
 
@@ -593,7 +549,7 @@
   <div class="hero-bg"></div>
   <div class="wrap">
     <div class="badge hero-anim d1"><span class="dot"></span>DENTISTS LOOKING TO GROW PRODUCTION:</div>
-    <h1 class="hero-title hero-anim d2">We Recover <span class="accent">More High-Value Dental Cases</span></h1>
+    <h1 class="hero-title hero-anim d2">We Do The Heavy Lifting To Recover <span class="accent">High-Value Dental Cases</span></h1>
     <p class="hero-sub hero-anim d3">CaseLift listens to your dental consultations, coaches you on every objection, and automatically follows up to close more cases.</p>
     <div class="hero-ctas hero-anim d4">
       <a href="/apply" class="btn btn-brand">Schedule A Demo</a>
@@ -653,26 +609,16 @@
       </div>
     </div>
 
-    <!-- Drop-off visual: TCs quit in the first few attempts; most cases only
-         close in the 5–12 window they never reach. -->
-    <div class="proof-vis reveal" data-delay="1">
-      <div class="pv-track" aria-hidden="true">
-        <div class="pv-cell quit"><span class="pv-n">1</span></div>
-        <div class="pv-cell"><span class="pv-n">2</span></div>
-        <div class="pv-cell"><span class="pv-n">3</span></div>
-        <div class="pv-cell quit4"><span class="pv-n">4</span></div>
-        <div class="pv-cell close"><span class="pv-n">5</span></div>
-        <div class="pv-cell close"><span class="pv-n">6</span></div>
-        <div class="pv-cell close"><span class="pv-n">7</span></div>
-        <div class="pv-cell close"><span class="pv-n">8</span></div>
-        <div class="pv-cell close"><span class="pv-n">9</span></div>
-        <div class="pv-cell close"><span class="pv-n">10</span></div>
-        <div class="pv-cell close"><span class="pv-n">11</span></div>
-        <div class="pv-cell close"><span class="pv-n">12</span></div>
+    <!-- Drop-off at a glance: TCs quit in the first few attempts; most cases
+         only close in the window they never reach. -->
+    <div class="dropoff reveal" data-delay="1" aria-hidden="true">
+      <div class="do-zone quit">
+        <span class="do-label">Attempts 1&ndash;4</span>
+        <span class="do-cap">Where most TCs quit</span>
       </div>
-      <div class="pv-legend">
-        <span class="pv-leg"><i class="lg-quit"></i>Where most TCs quit</span>
-        <span class="pv-leg"><i class="lg-close"></i>Where most cases actually close, CaseLift never stops here</span>
+      <div class="do-zone close">
+        <span class="do-label">Attempts 5&ndash;12</span>
+        <span class="do-cap">Where most cases close, and CaseLift never stops</span>
       </div>
     </div>
     <div class="proof-src">Source: Salesforce</div>
@@ -687,9 +633,8 @@
   </div>
   <div class="wrap">
     <div class="problem-body">
-      <p class="reveal">Every week, patients sit in your consult room, hear your treatment plan, and leave without scheduling. Your TC follows up once, maybe twice, then moves on.</p>
-      <p class="reveal">That production is gone. But it doesn't have to be.</p>
-      <p class="reveal">The average dental practice loses <span class="money">$30,000–$50,000 every month</span> in unconverted treatment plans. Not because the treatment wasn't right. Not because the patient couldn't afford it.</p>
+      <p class="reveal">Patients hear your treatment plan and leave without scheduling. Your TC follows up once or twice, then moves on, and that production is gone.</p>
+      <p class="reveal">The average practice loses <span class="money">$30,000–$50,000 every month</span> in unconverted treatment plans. Not because the treatment was wrong, or the patient couldn't afford it.</p>
       <div class="punch reveal">Because nobody followed up <span>enough.</span></div>
       <p class="fix reveal">CaseLift fixes that.</p>
     </div>
@@ -854,16 +799,17 @@
     <h2 class="sec-title reveal" data-delay="1">Works With Your Existing Stack</h2>
   </div>
   <div class="wrap">
-    <div class="intg-row reveal">
-      <span class="intg-pill">Dentrix</span>
-      <span class="intg-pill">Eaglesoft</span>
-      <span class="intg-pill">Carestream</span>
-      <span class="intg-pill">Open Dental</span>
-      <span class="intg-pill">Weave</span>
-      <span class="intg-pill">Birdeye</span>
-      <span class="intg-pill">Slack</span>
-      <span class="intg-pill">Google Workspace</span>
+    <div class="intg-grid reveal">
+      <div class="intg-card"><img src="https://logo.clearbit.com/dentrix.com" alt="Dentrix" width="120" height="40" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" /><span class="intg-name">Dentrix</span></div>
+      <div class="intg-card"><img src="https://logo.clearbit.com/eaglesoft.com" alt="Eaglesoft" width="120" height="40" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" /><span class="intg-name">Eaglesoft</span></div>
+      <div class="intg-card"><img src="https://logo.clearbit.com/opendental.com" alt="Open Dental" width="120" height="40" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" /><span class="intg-name">Open Dental</span></div>
+      <div class="intg-card"><img src="https://logo.clearbit.com/curvedental.com" alt="Curve Dental" width="120" height="40" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" /><span class="intg-name">Curve Dental</span></div>
+      <div class="intg-card"><img src="https://logo.clearbit.com/carestreamdental.com" alt="Carestream" width="120" height="40" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" /><span class="intg-name">Carestream</span></div>
+      <div class="intg-card"><img src="https://logo.clearbit.com/dolphinimaging.com" alt="Dolphin" width="120" height="40" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" /><span class="intg-name">Dolphin</span></div>
+      <div class="intg-card"><img src="https://logo.clearbit.com/getweave.com" alt="Weave" width="120" height="40" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" /><span class="intg-name">Weave</span></div>
+      <div class="intg-card"><img src="https://logo.clearbit.com/birdeye.com" alt="Birdeye" width="120" height="40" loading="lazy" referrerpolicy="no-referrer" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" /><span class="intg-name">Birdeye</span></div>
     </div>
+    <p class="intg-more reveal">And 20+ more, all synced automatically through our universal integration engine.</p>
   </div>
 </section>
 
@@ -951,7 +897,7 @@
         </div>
       </div>
     </div>
-    <p class="calc-note reveal">CaseLift follows up with every one of those patients, automatically. Our guarantee: <strong>$50,000 in recovered production in 90 days, or we work with you for free until you get there.</strong></p>
+    <p class="calc-note reveal">CaseLift follows up with every one of those patients, automatically. Our guarantee: <strong>$20,000 in recovered production in 90 days, or we work with you for free until you get there.</strong></p>
     <div class="roi-cta reveal">
       <a href="/apply.html" class="btn btn-red">Schedule A Demo</a>
     </div>
@@ -962,8 +908,8 @@
 <section class="sec sec-light" id="get-price">
   <div class="wrap sec-center">
     <div class="eyebrow reveal">Pricing</div>
-    <h2 class="sec-title reveal" data-delay="1">Simple, transparent pricing.</h2>
-    <p class="sec-lead reveal" data-delay="2">One flat monthly rate. Every feature included. No setup fees, no contracts.</p>
+    <h2 class="sec-title reveal" data-delay="1">Customized, ROI-based pricing.</h2>
+    <p class="sec-lead reveal" data-delay="2">Your price is built around the production CaseLift recovers for you. Every feature included, no setup fees, no contracts.</p>
   </div>
   <div class="wrap">
     <div class="price-card reveal">
@@ -975,7 +921,7 @@
         <li><span class="ck">✓</span>Treatment coordinator coaching on every consult</li>
         <li><span class="ck">✓</span>Production recovery &amp; ROI attribution tracking</li>
         <li><span class="ck">✓</span>PMS integration &amp; automatic patient sync</li>
-        <li class="guar"><span class="ck">★</span>$50,000 in 90 days recovery guarantee</li>
+        <li class="guar"><span class="ck">★</span>$20,000 in 90 days recovery guarantee</li>
       </ul>
       <p class="price-note">Pricing is based on your practice's case volume. We'll build your custom quote on the call.</p>
       <a href="/apply.html" class="btn btn-brand vs-cta">Get My Custom Price &rarr;</a>
@@ -1021,7 +967,7 @@
       </details>
       <details class="faq-item reveal">
         <summary>What is the guarantee?</summary>
-        <div class="faq-a">If CaseLift doesn't recover $50,000 in production within 90 days, we work with you for free until you get there.</div>
+        <div class="faq-a">If CaseLift doesn't recover $20,000 in production within 90 days, we work with you for free until you get there.</div>
       </details>
       <details class="faq-item reveal">
         <summary>How is CaseLift different from other dental software?</summary>
@@ -1036,7 +982,7 @@
   <div class="glow"></div>
   <div class="wrap">
     <h2 class="reveal">Ready to recover the production walking out your door?</h2>
-    <p class="reveal" data-delay="1">CaseLift analyzes every consultation, coaches your TC, and follows up automatically. $50,000 in recovered production in 90 days, guaranteed.</p>
+    <p class="reveal" data-delay="1">CaseLift analyzes every consultation, coaches your TC, and follows up automatically. $20,000 in recovered production in 90 days, guaranteed.</p>
     <div class="reveal" data-delay="2"><a href="/apply" class="btn btn-brand">Schedule A Demo</a></div>
   </div>
 </section>
@@ -1064,7 +1010,7 @@
       </div>
       <div class="foot-links">
         <a href="/apply">Apply</a>
-        <a href="/login">Login</a>
+        <a href="https://app.caselift.io">Login</a>
         <a href="#">Privacy Policy</a>
         <a href="#">Terms</a>
         <a href="#">HIPAA Policy</a>
