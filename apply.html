@@ -45,15 +45,10 @@
   .apply h1 { font-size: clamp(32px, 5vw, 48px); font-weight: 800; letter-spacing: -0.035em; line-height: 1.08; margin-bottom: 16px; }
   .apply .sub { font-size: 18px; color: rgba(255,255,255,0.72); max-width: 600px; margin: 0 auto; line-height: 1.55; }
 
-  /* Coffee offer - prominent amber callout directly above the calendar */
-  .coffee-hero { max-width: 640px; margin: 40px auto 0; text-align: center; position: relative; overflow: hidden;
-    background: linear-gradient(180deg, rgba(245,158,11,0.12), rgba(245,158,11,0.04));
-    border: 1px solid rgba(245,158,11,0.45); border-radius: 22px; padding: 34px 34px 32px;
-    box-shadow: 0 18px 50px rgba(245,158,11,0.16); }
-  .coffee-hero .cup { font-size: 44px; line-height: 1; }
-  .coffee-hero h2 { font-size: clamp(22px, 3.2vw, 28px); font-weight: 800; letter-spacing: -0.02em; color: var(--gold); margin: 14px 0 12px; }
-  .coffee-hero p { font-size: 16px; color: rgba(255,255,255,0.85); line-height: 1.6; max-width: 520px; margin: 0 auto; }
-  .coffee-hero p b { color: #fff; font-weight: 700; }
+  /* Coffee offer - compact, secondary note above the calendar */
+  .coffee-note { display: inline-flex; align-items: center; gap: 9px; margin-top: 20px; font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.82); background: rgba(245,158,11,0.10); border: 1px solid rgba(245,158,11,0.35); border-radius: 999px; padding: 9px 18px; }
+  .coffee-note .cup { font-size: 17px; line-height: 1; }
+  .coffee-note b { color: var(--gold); font-weight: 700; }
 
   /* Calendar embed card */
   .cal-card { max-width: 800px; margin: 28px auto 0; background: #fff; border-radius: 22px; overflow: hidden; box-shadow: 0 30px 70px rgba(0,0,0,0.30); padding: 8px; min-height: 760px; }
@@ -63,7 +58,6 @@
 
   @media (max-width: 600px) {
     .apply { padding: 48px 0 64px; }
-    .coffee-hero { padding: 28px 22px; }
     .cal-card iframe { min-height: 900px; }
   }
 </style>
@@ -84,11 +78,7 @@
     <h1>See CaseLift In Action</h1>
     <p class="sub">30 minutes. We'll show you exactly how much production your practice is leaving on the table, and how CaseLift recovers it.</p>
 
-    <div class="coffee-hero">
-      <div class="cup">☕</div>
-      <h2>We'll Buy You a Coffee</h2>
-      <p>Pick a time below and we'll send you a <b>$10 Starbucks gift card</b> just for showing up to the call. No pitch pressure. 30 minutes. We'll build your custom ROI projection on the spot.</p>
-    </div>
+    <div class="coffee-note"><span class="cup">☕</span><span>Show up to the call and the coffee's on us &mdash; a <b>$10 gift card</b>, our treat.</span></div>
 
     <div class="cal-card">
       <iframe src="https://api.leadconnectorhq.com/widget/booking/22peC38j3DZGbOHu3c9z" style="width: 100%;border:none;overflow: hidden;" scrolling="no" id="22peC38j3DZGbOHu3c9z_1780513980295"></iframe>
