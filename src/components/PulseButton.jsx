@@ -10,8 +10,8 @@ export default function PulseButton({ children, href = '#', variant = 'primary',
   }
   return (
     <a href={href} onClick={onClick}
-      className={`group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-electric-400 to-electric px-7 py-3.5 text-sm font-bold text-white shadow-glow transition hover:scale-[1.02] motion-safe:animate-pulseGlow ${className}`}>
-      <span className="pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent group-hover:motion-safe:animate-sheen" />
+      className={`cl-btn-primary group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-electric-400 to-electric px-7 py-3.5 text-sm font-bold text-white shadow-glow transition hover:scale-[1.02] motion-safe:animate-pulseGlow ${className}`}>
+      <span className="cl-sheen pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent group-hover:motion-safe:animate-sheen" />
       <span className="relative z-10 flex items-center gap-2">{children}</span>
     </a>
   )

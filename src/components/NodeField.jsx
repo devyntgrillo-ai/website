@@ -26,9 +26,11 @@ export default function NodeField({ density = 'med', intensity = 1, greenBias = 
     const ctx = canvas.getContext('2d')
     const reduced = prefersReduced()
     const isMobile = window.matchMedia('(max-width: 768px)').matches
+    // Apple-style light theme: deeper, sparser, whisper-quiet mesh on white.
+    const isLight = typeof document !== 'undefined' && document.documentElement.classList.contains('theme-light')
 
     let w = 0, h = 0, dpr = Math.min(window.devicePixelRatio || 1, 2)
-    const COUNT = { low: 20, med: 36, high: 54 }[density] * (isMobile ? 0.5 : 1)
+    const COUNT = { low: 20, med: 36, high: 54 }[density] * (isMobile ? 0.5 : 1) * (isLight ? 0.65 : 1)
     const MAX_DIST = isMobile ? 160 : 215
     const nodes = []
     let edges = []
@@ -99,7 +101,9 @@ export default function NodeField({ density = 'med', intensity = 1, greenBias = 
       for (const [i, j] of edges) {
         const a = nodes[i], b = nodes[j]
         const near = mouse.active && (Math.hypot(mouse.x - a.x, mouse.y - a.y) < 170 || Math.hypot(mouse.x - b.x, mouse.y - b.y) < 170)
-        ctx.strokeStyle = `rgba(${a.green && b.green ? mix(ELECTRIC, GREEN, 0.8) : '96,165,250'},${(near ? 0.55 : 0.22) * intensity})`
+        const edgeCol = a.green && b.green ? mix(ELECTRIC, GREEN, 0.8) : (isLight ? '14,165,233' : '96,165,250')
+        const edgeA = isLight ? (near ? 0.32 : 0.12) : (near ? 0.55 : 0.22)
+        ctx.strokeStyle = `rgba(${edgeCol},${edgeA * intensity})`
         ctx.lineWidth = near ? 1.3 : 1
         ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke()
       }
@@ -119,9 +123,9 @@ export default function NodeField({ density = 'med', intensity = 1, greenBias = 
           const col = mix(ELECTRIC, GREEN, Math.min(1, depth * 0.7 + (b.green ? 0.3 : 0) + greenBias * 0.3))
           const x = lerp(a.x, b.x, p.t), y = lerp(a.y, b.y, p.t)
           ctx.beginPath()
-          ctx.fillStyle = `rgba(${col},${Math.min(1, 1.1 * intensity)})`
-          ctx.shadowColor = `rgba(${col},1)`; ctx.shadowBlur = 12
-          ctx.arc(x, y, 2.6, 0, Math.PI * 2); ctx.fill()
+          ctx.fillStyle = `rgba(${col},${Math.min(1, (isLight ? 0.85 : 1.1) * intensity)})`
+          ctx.shadowColor = `rgba(${col},1)`; ctx.shadowBlur = isLight ? 7 : 12
+          ctx.arc(x, y, isLight ? 2.2 : 2.6, 0, Math.PI * 2); ctx.fill()
           ctx.shadowBlur = 0
         }
       }
