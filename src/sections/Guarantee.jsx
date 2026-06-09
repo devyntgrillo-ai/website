@@ -33,7 +33,7 @@ function Seal() {
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
         <span className="font-display text-5xl font-extrabold text-money">3X</span>
-        <span className="mt-1 text-[10px] font-bold uppercase tracking-[0.2em] text-money-300">in 90 days</span>
+        <span className="mt-1 text-[10px] font-bold uppercase tracking-[0.2em] text-money-600">in 90 days</span>
       </div>
     </div>
   )
@@ -41,22 +41,22 @@ function Seal() {
 
 export default function Guarantee() {
   return (
-    <section className="relative overflow-hidden bg-ink py-28">
+    <section className="relative overflow-hidden bg-paper py-28">
       <NodeField density="med" intensity={0.7} greenBias={0.85} className="opacity-60" />
       <div className="container-c relative text-center">
         <RevealSection>
           <Seal />
-          <span className="mt-8 inline-flex items-center rounded-full border border-money/40 bg-money/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.15em] text-money-300">
+          <span className="mt-8 inline-flex items-center rounded-full border border-money/40 bg-money/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.15em] text-money-600">
             3X ROI in 90 days or it's free
           </span>
-          <h2 className="mx-auto mt-6 max-w-3xl font-display text-section font-bold text-white">
+          <h2 className="mx-auto mt-6 max-w-3xl font-display text-section font-bold text-headline">
             Triple your investment in 90 days, <span className="text-money">or you don't pay.</span>
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-400">
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted">
             If CaseLift does not return at least 3X what you pay in your first 90 days, your membership is free until it does.
             We track recovery against your real production data, not our word for it. No fine print, no games.
           </p>
-          <p className="mt-4 text-sm text-slate-500">Verified against your actual PMS production.</p>
+          <p className="mt-4 text-sm text-faint">Verified against your actual PMS production.</p>
           <div className="mt-9 flex justify-center">
             <PulseButton href={APPLY_URL}>Schedule A Demo</PulseButton>
           </div>

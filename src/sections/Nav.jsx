@@ -18,36 +18,36 @@ export default function Nav() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
   return (
-    <header className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${scrolled ? 'border-b border-white/10 bg-ink/80 backdrop-blur-xl' : ''}`}>
+    <header className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${scrolled ? 'border-b border-line bg-white/70 backdrop-blur-xl' : ''}`}>
       <nav className="container-c flex h-16 items-center justify-between">
-        <a href="#top" className="flex items-center gap-2 font-display text-lg font-extrabold tracking-tight text-white">
+        <a href="#top" className="flex items-center gap-2 font-display text-lg font-extrabold tracking-tight text-headline">
           <span className="relative flex h-2.5 w-2.5">
             <span className="absolute inline-flex h-full w-full motion-safe:animate-ping rounded-full bg-electric/70" />
             <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-electric" />
           </span>
           CaseLift
-          <span className="rounded-full border border-electric/40 px-1.5 py-0.5 text-[10px] font-semibold text-electric-300">Beta</span>
+          <span className="rounded-full border border-electric/40 px-1.5 py-0.5 text-[10px] font-semibold text-accent">Beta</span>
         </a>
         <div className="hidden items-center gap-8 md:flex">
           {LINKS.map((l) => (
-            <a key={l.href} href={l.href} className="nav-link text-sm font-medium text-slate-300 transition hover:text-white">{l.label}</a>
+            <a key={l.href} href={l.href} className="nav-link text-sm font-medium text-body transition hover:text-headline">{l.label}</a>
           ))}
         </div>
         <div className="flex items-center gap-3">
-          <a href={APP_URL} className="hidden text-sm font-semibold text-slate-300 transition hover:text-white sm:inline">Log In</a>
+          <a href={APP_URL} className="hidden text-sm font-semibold text-body transition hover:text-headline sm:inline">Log In</a>
           <PulseButton href={APPLY_URL} className="!px-5 !py-2.5 text-[13px]">Schedule A Demo</PulseButton>
-          <button onClick={() => setOpen(!open)} aria-label="Menu" className="md:hidden text-slate-200">
+          <button onClick={() => setOpen(!open)} aria-label="Menu" className="md:hidden text-headline">
             <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
           </button>
         </div>
       </nav>
       {open && (
-        <div className="border-t border-white/10 bg-ink/95 backdrop-blur-xl md:hidden">
+        <div className="border-t border-line bg-white/95 backdrop-blur-xl md:hidden">
           <div className="container-c flex flex-col gap-1 py-3">
             {LINKS.map((l) => (
-              <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="rounded-lg px-2 py-2.5 text-sm font-medium text-slate-300 hover:bg-white/5">{l.label}</a>
+              <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="rounded-lg px-2 py-2.5 text-sm font-medium text-body hover:bg-black/[0.04]">{l.label}</a>
             ))}
-            <a href={APP_URL} className="rounded-lg px-2 py-2.5 text-sm font-medium text-slate-300 hover:bg-white/5">Log In</a>
+            <a href={APP_URL} className="rounded-lg px-2 py-2.5 text-sm font-medium text-body hover:bg-black/[0.04]">Log In</a>
           </div>
         </div>
       )}

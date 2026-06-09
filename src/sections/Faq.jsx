@@ -17,11 +17,11 @@ const FAQS = [
 function Item({ q, a, open, onToggle }) {
   const id = useId()
   return (
-    <div className="border-b border-white/10">
+    <div className="border-b border-line">
       <button onClick={onToggle} aria-expanded={open} aria-controls={id}
         className="flex w-full items-center justify-between gap-4 py-5 text-left">
-        <span className="text-[16px] font-semibold text-white">{q}</span>
-        <span className={`shrink-0 text-electric-300 transition-transform duration-300 ${open ? 'rotate-45' : ''}`}>
+        <span className="text-[16px] font-semibold text-headline">{q}</span>
+        <span className={`shrink-0 text-accent transition-transform duration-300 ${open ? 'rotate-45' : ''}`}>
           <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2"><path d="M10 4v12M4 10h12" /></svg>
         </span>
       </button>
@@ -30,7 +30,7 @@ function Item({ q, a, open, onToggle }) {
           <motion.div id={id}
             initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }} className="overflow-hidden">
-            <p className="pb-5 pr-8 text-[15px] leading-relaxed text-slate-400">{a}</p>
+            <p className="pb-5 pr-8 text-[15px] leading-relaxed text-muted">{a}</p>
           </motion.div>
         )}
       </AnimatePresence>
@@ -41,11 +41,11 @@ function Item({ q, a, open, onToggle }) {
 export default function Faq() {
   const [open, setOpen] = useState(0)
   return (
-    <section id="faq" className="relative bg-ink py-24 sm:py-32">
+    <section id="faq" className="relative bg-paper py-24 sm:py-32">
       <div className="container-c max-w-3xl">
         <RevealSection>
           <p className="eyebrow">FAQ</p>
-          <h2 className="mt-4 font-display text-section font-bold text-white">Questions, answered</h2>
+          <h2 className="mt-4 font-display text-section font-bold text-headline">Questions, answered</h2>
         </RevealSection>
         <RevealSection className="mt-10">
           {FAQS.map((f, i) => (

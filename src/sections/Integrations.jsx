@@ -18,7 +18,7 @@ function LogoChip({ name, domain, i }) {
   const [failed, setFailed] = useState(false)
   return (
     <div
-      className="group flex h-20 items-center justify-center rounded-xl border border-white/10 bg-white/95 px-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-electric/50 hover:shadow-glow motion-safe:animate-breathe"
+      className="group flex h-20 items-center justify-center rounded-xl border border-line bg-white/95 px-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-electric/50 hover:shadow-glow motion-safe:animate-breathe"
       style={{ animationDelay: `${(i % 5) * 0.4}s` }}
     >
       {failed ? (
@@ -39,12 +39,12 @@ function LogoChip({ name, domain, i }) {
 
 export default function Integrations() {
   return (
-    <section className="relative bg-ink py-24">
+    <section className="relative bg-paper py-24">
       <div className="container-c">
         <RevealSection className="max-w-2xl">
           <p className="eyebrow">Integrations</p>
-          <h2 className="mt-4 font-display text-section font-bold text-white">It runs on top of the software you already use</h2>
-          <p className="mt-5 text-lg text-slate-400">
+          <h2 className="mt-4 font-display text-section font-bold text-headline">It runs on top of the software you already use</h2>
+          <p className="mt-5 text-lg text-muted">
             CaseLift plugs into your practice management system and syncs patients automatically. No rip and replace, no new logins for your front desk.
           </p>
         </RevealSection>
@@ -53,7 +53,7 @@ export default function Integrations() {
             <LogoChip key={l.name} name={l.name} domain={l.domain} i={i} />
           ))}
         </RevealSection>
-        <p className="mt-8 text-center text-sm text-slate-500">And 20+ more, synced automatically through our universal integration engine.</p>
+        <p className="mt-8 text-center text-sm text-faint">And 20+ more, synced automatically through our universal integration engine.</p>
       </div>
     </section>
   )

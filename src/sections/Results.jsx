@@ -10,29 +10,29 @@ const TESTIMONIALS = [
 
 export default function Results() {
   return (
-    <section id="results" className="relative bg-ink py-24 sm:py-32">
+    <section id="results" className="relative bg-paper py-24 sm:py-32">
       <div className="container-c">
         <RevealSection className="max-w-2xl">
           <p className="eyebrow">Results</p>
-          <h2 className="mt-4 font-display text-section font-bold text-white">Practices are pulling back production they had written off</h2>
+          <h2 className="mt-4 font-display text-section font-bold text-headline">Practices are pulling back production they had written off</h2>
         </RevealSection>
         <RevealSection stagger className="mt-12 grid gap-5 lg:grid-cols-3">
           {TESTIMONIALS.map((t) => (
             <RevealItem key={t.name}>
               <GlowCard border className="h-full p-6">
                 <div className="flex gap-0.5 text-money">{'★★★★★'}</div>
-                <p className="mt-4 text-[15px] leading-relaxed text-slate-300">{t.quote}</p>
-                <div className="mt-6 border-t border-white/10 pt-4">
-                  <div className={`font-display text-3xl font-extrabold ${t.green ? 'text-money' : 'text-white'}`}>{t.stat}</div>
-                  <div className="text-xs uppercase tracking-wide text-slate-500">{t.statLabel}</div>
-                  <div className="mt-3 text-sm font-semibold text-white">{t.name}</div>
-                  <div className="text-xs text-slate-500">{t.role}</div>
+                <p className="mt-4 text-[15px] leading-relaxed text-body">{t.quote}</p>
+                <div className="mt-6 border-t border-line pt-4">
+                  <div className={`font-display text-3xl font-extrabold ${t.green ? 'text-money' : 'text-headline'}`}>{t.stat}</div>
+                  <div className="text-xs uppercase tracking-wide text-faint">{t.statLabel}</div>
+                  <div className="mt-3 text-sm font-semibold text-headline">{t.name}</div>
+                  <div className="text-xs text-faint">{t.role}</div>
                 </div>
               </GlowCard>
             </RevealItem>
           ))}
         </RevealSection>
-        <RevealSection className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 rounded-2xl border border-white/10 bg-space-800/40 px-6 py-5 text-center text-sm text-slate-400">
+        <RevealSection className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 rounded-2xl border border-line bg-panel px-6 py-5 text-center text-sm text-muted">
           {['4.8/5 average', '200+ practices', '$2.3M in recovered production', '6+ treatment types', 'avg 15% recovery rate', '$30k+ recovered per practice in the first 90 days'].map((s, i) => (
             <span key={i} className="font-medium"><span className="text-money">{s.split(' ')[0]}</span> {s.split(' ').slice(1).join(' ')}</span>
           ))}

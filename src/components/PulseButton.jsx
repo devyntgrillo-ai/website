@@ -1,18 +1,17 @@
-/** Primary CTA: electric glow + slow pulse + sheen sweep on hover. */
+/** Apple-style primary CTA: solid accent pill. Ghost: clean outline. */
 export default function PulseButton({ children, href = '#', variant = 'primary', className = '', onClick }) {
   if (variant === 'ghost') {
     return (
       <a href={href} onClick={onClick}
-        className={`inline-flex items-center justify-center gap-2 rounded-xl border border-white/15 px-6 py-3.5 text-sm font-semibold text-slate-100 transition hover:border-white/30 hover:bg-white/5 ${className}`}>
+        className={`inline-flex items-center justify-center gap-2 rounded-full border border-line2 px-6 py-3.5 text-sm font-semibold text-headline transition hover:border-black/25 hover:bg-black/[0.03] ${className}`}>
         {children}
       </a>
     )
   }
   return (
     <a href={href} onClick={onClick}
-      className={`cl-btn-primary group relative inline-flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-gradient-to-r from-electric-400 to-electric px-7 py-3.5 text-sm font-bold text-white shadow-glow transition hover:scale-[1.02] motion-safe:animate-pulseGlow ${className}`}>
-      <span className="cl-sheen pointer-events-none absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/40 to-transparent group-hover:motion-safe:animate-sheen" />
-      <span className="relative z-10 flex items-center gap-2">{children}</span>
+      className={`inline-flex items-center justify-center gap-2 rounded-full bg-accent px-7 py-3.5 text-sm font-semibold text-headline transition-colors hover:bg-accent-hover ${className}`}>
+      {children}
     </a>
   )
 }

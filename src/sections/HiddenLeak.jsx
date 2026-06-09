@@ -45,7 +45,7 @@ function LeakViz() {
           />
         ))}
       </svg>
-      <div className="pointer-events-none absolute bottom-1 right-2 text-[11px] font-medium uppercase tracking-wide text-slate-600">
+      <div className="pointer-events-none absolute bottom-1 right-2 text-[11px] font-medium uppercase tracking-wide text-faint2">
         cases walking out
       </div>
     </div>
@@ -54,18 +54,18 @@ function LeakViz() {
 
 export default function HiddenLeak() {
   return (
-    <section className="relative overflow-hidden bg-ink py-24 sm:py-32">
+    <section className="relative overflow-hidden bg-paper py-24 sm:py-32">
       <NodeField density="low" intensity={0.45} greenBias={0.1} className="opacity-50" />
       <div className="container-c relative">
         <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr]">
           <RevealSection className="max-w-2xl">
             <p className="eyebrow">The Hidden Leak</p>
-            <h2 className="mt-4 font-display text-section font-bold text-white">
-              Your practice already earned these patients. <span className="text-slate-500">Then it let them walk.</span>
+            <h2 className="mt-4 font-display text-section font-bold text-headline">
+              Your practice already earned these patients. <span className="text-faint">Then it let them walk.</span>
             </h2>
-            <p className="mt-6 text-lg leading-relaxed text-slate-400">
+            <p className="mt-6 text-lg leading-relaxed text-muted">
               You spent the marketing dollars. You spent the chair time. The patient heard a five-figure treatment plan and said
-              {' '}<span className="text-slate-200">"let me think about it."</span> Your coordinator followed up once, maybe twice, then moved on.
+              {' '}<span className="text-headline">"let me think about it."</span> Your coordinator followed up once, maybe twice, then moved on.
               That case did not say no. It just never got the nudge it needed. Multiply that by every week of the year.
             </p>
           </RevealSection>
@@ -76,20 +76,20 @@ export default function HiddenLeak() {
 
         <RevealSection stagger className="mt-14 grid gap-5 sm:grid-cols-3">
           {STATS.map((s, i) => (
-            <div key={i} className="rounded-2xl border border-white/10 bg-space-800/50 p-6 transition hover:border-electric/30">
-              <div className="font-display text-5xl font-extrabold text-electric-300">
+            <div key={i} className="rounded-2xl border border-line bg-panel p-6 transition hover:border-electric/30">
+              <div className="font-display text-5xl font-extrabold text-accent">
                 {s.prefix}<StatCounter value={s.v} suffix={s.suffix} />
               </div>
-              <p className="mt-3 text-sm leading-relaxed text-slate-400">{s.label}</p>
+              <p className="mt-3 text-sm leading-relaxed text-muted">{s.label}</p>
             </div>
           ))}
         </RevealSection>
 
         <RevealSection className="mt-12">
-          <p className="text-xl font-semibold text-white">
+          <p className="text-xl font-semibold text-headline">
             That is six and seven figures slipping out the door every year. <span className="text-grad">CaseLift plugs the leak.</span>
           </p>
-          <p className="mt-3 text-xs text-slate-600">Source: Salesforce</p>
+          <p className="mt-3 text-xs text-faint2">Source: Salesforce</p>
         </RevealSection>
       </div>
     </section>

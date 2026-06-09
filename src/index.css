@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-:root { color-scheme: dark; }
+:root { color-scheme: light; }
 
 html { scroll-behavior: smooth; }
 @media (prefers-reduced-motion: reduce) {
@@ -10,54 +10,50 @@ html { scroll-behavior: smooth; }
 }
 
 body {
-  @apply bg-ink text-slate-200 font-sans antialiased;
+  @apply bg-paper text-body font-sans antialiased;
   font-size: 18px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
 
+/* Apple typography cue: tight tracking on large heads. */
+h1, h2 { letter-spacing: -0.022em; }
+
 @layer components {
   /* Gradient text treatment for emphasized headline words. */
   .text-grad {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(100deg, #38BDF8 0%, #0EA5E9 55%, #34D399 100%);
+    background-image: linear-gradient(100deg, #0284C7 0%, #0EA5E9 50%, #059669 100%);
   }
   .eyebrow {
-    @apply text-xs font-semibold uppercase tracking-[0.18em] text-electric-400;
+    @apply text-xs font-semibold uppercase tracking-[0.18em] text-accent;
   }
   .container-c { @apply mx-auto w-full max-w-content px-5 sm:px-8; }
 }
 
-/* Glass surface used by GlowCard. */
+/* Clean white card with soft elevation (replaces the dark glass). */
 .glass {
-  background: rgba(17, 24, 39, 0.6);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-/* Powered-on card hover: lift, brighter border, deeper inner glow. */
-.glass {
+  border: 1px solid rgba(0, 0, 0, 0.07);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 12px 32px -16px rgba(0,0,0,0.14);
   transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s ease, border-color 0.4s ease;
 }
 .glass:hover {
   transform: translateY(-3px);
-  border-color: rgba(14,165,233,0.35);
-  box-shadow: 0 18px 50px -22px rgba(14,165,233,0.45), inset 0 0 30px -18px rgba(56,189,248,0.5);
+  border-color: rgba(0, 0, 0, 0.10);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05), 0 22px 48px -20px rgba(0,0,0,0.22);
 }
-.ring-anim:hover::before { opacity: 1; }
 
-/* Deep-background aurora: felt, not noticed. Screen-blended over the dark
-   sections so it reads as luminous depth without washing out the copy. */
+/* Deep-background depth: a faint cool wash. Felt, not noticed. */
 .aurora {
-  position: fixed; inset: -20%; z-index: 30; pointer-events: none;
-  mix-blend-mode: screen; opacity: 0.55;
+  position: fixed; inset: -20%; z-index: 0; pointer-events: none; opacity: 0.6;
   background:
-    radial-gradient(40% 38% at 18% 10%, rgba(14,165,233,0.20), transparent 70%),
-    radial-gradient(42% 40% at 84% 26%, rgba(56,189,248,0.14), transparent 70%),
-    radial-gradient(50% 46% at 72% 90%, rgba(16,185,129,0.20), transparent 72%),
-    radial-gradient(38% 34% at 22% 82%, rgba(16,185,129,0.12), transparent 70%);
+    radial-gradient(38% 34% at 16% 8%, rgba(14,165,233,0.08), transparent 70%),
+    radial-gradient(46% 42% at 80% 88%, rgba(16,185,129,0.07), transparent 72%),
+    radial-gradient(36% 32% at 70% 18%, rgba(14,165,233,0.05), transparent 70%);
   filter: blur(44px);
   animation: auroraDrift 26s ease-in-out infinite alternate;
   will-change: transform;
@@ -68,21 +64,15 @@ body {
   100% { transform: translate3d(-1%, 1%, 0) scale(1.04); }
 }
 
-/* Whisper-quiet film grain across the whole page. */
-.grain {
-  position: fixed; inset: 0; z-index: 31; pointer-events: none; opacity: 0.05; mix-blend-mode: overlay;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-/* Luminous core behind the hero headline so it never sits on flat black. */
+/* Luminous core behind the hero headline. */
 .hero-glow {
   position: absolute; pointer-events: none; z-index: 0;
   left: 0; top: 8%; width: 60%; height: 70%;
-  background: radial-gradient(50% 50% at 35% 40%, rgba(14,165,233,0.22), rgba(14,165,233,0.06) 45%, transparent 72%);
+  background: radial-gradient(50% 50% at 35% 40%, rgba(14,165,233,0.10), transparent 72%);
   filter: blur(30px);
   animation: heroBreathe 7s ease-in-out infinite alternate;
 }
-@keyframes heroBreathe { from { opacity: 0.75; } to { opacity: 1; } }
+@keyframes heroBreathe { from { opacity: 0.7; } to { opacity: 1; } }
 
 /* Animated underline on nav links. */
 .nav-link { position: relative; }
@@ -90,37 +80,18 @@ body {
   content: ''; position: absolute; left: 0; right: 0; bottom: -4px; height: 1.5px;
   background: linear-gradient(90deg, #0EA5E9, #10B981);
   transform: scaleX(0); transform-origin: left; transition: transform 0.3s ease;
-  box-shadow: 0 0 8px rgba(14,165,233,0.7);
 }
 .nav-link:hover::after { transform: scaleX(1); }
 
 /* Celebratory glow flare for the ROI / booked numbers. */
 @keyframes flare {
   0% { text-shadow: 0 0 0 rgba(16,185,129,0); }
-  35% { text-shadow: 0 0 28px rgba(16,185,129,0.85), 0 0 8px rgba(16,185,129,0.6); }
+  35% { text-shadow: 0 0 22px rgba(16,185,129,0.6), 0 0 8px rgba(16,185,129,0.45); }
   100% { text-shadow: 0 0 0 rgba(16,185,129,0); }
 }
 .flare { animation: flare 0.9s ease-out; }
 
-/* Conic animated border ring (powered-on look). */
-.ring-anim::before {
-  content: '';
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  padding: 1px;
-  background: conic-gradient(from var(--ang, 0deg), transparent 0deg, #0EA5E9 70deg, #10B981 140deg, transparent 200deg, transparent 360deg);
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  animation: ringspin 6s linear infinite;
-  opacity: 0.7;
-}
-@property --ang { syntax: '<angle>'; inherits: false; initial-value: 0deg; }
-@keyframes ringspin { to { --ang: 360deg; } }
-
 @media (prefers-reduced-motion: reduce) {
-  .ring-anim::before { animation: none; }
   .animate-breathe, .animate-pulseGlow, .animate-spinSlow, .animate-sheen { animation: none !important; }
   .aurora, .hero-glow, .flare { animation: none !important; }
   .glass { transition: none; }
@@ -130,125 +101,16 @@ body {
 input[type='range'].cl-range {
   -webkit-appearance: none; appearance: none;
   height: 6px; border-radius: 9999px;
-  background: linear-gradient(90deg, #0EA5E9 var(--pct, 50%), #232c44 var(--pct, 50%));
+  background: linear-gradient(90deg, #0071E3 var(--pct, 50%), #E3E3E8 var(--pct, 50%));
   outline: none;
 }
 input[type='range'].cl-range::-webkit-slider-thumb {
   -webkit-appearance: none; appearance: none;
   width: 22px; height: 22px; border-radius: 9999px;
-  background: #fff; border: 3px solid #0EA5E9; cursor: pointer;
-  box-shadow: 0 0 16px -2px rgba(14,165,233,0.7);
+  background: #fff; border: 3px solid #0071E3; cursor: pointer;
+  box-shadow: 0 1px 6px rgba(0,0,0,0.18);
 }
 input[type='range'].cl-range::-moz-range-thumb {
   width: 22px; height: 22px; border-radius: 9999px;
-  background: #fff; border: 3px solid #0EA5E9; cursor: pointer;
+  background: #fff; border: 3px solid #0071E3; cursor: pointer;
 }
-
-/* ============================================================
-   APPLE-STYLE LIGHT THEME
-   A scoped override layer (html.theme-light) that re-skins the dark
-   build to a clean, light, restrained aesthetic: white + #f5f5f7 grays,
-   near-black text, soft shadows instead of neon glow, motion dialed down.
-   ============================================================ */
-.theme-light body { background: #ffffff; color: #1d1d1f; }
-
-/* Surfaces */
-.theme-light .bg-ink { background-color: #ffffff !important; }
-.theme-light .bg-ink\/80 { background-color: rgba(255,255,255,0.72) !important; }
-.theme-light .bg-ink\/95 { background-color: rgba(255,255,255,0.95) !important; }
-.theme-light .bg-space-800\/40,
-.theme-light .bg-space-800\/50,
-.theme-light .bg-space-800\/60 { background-color: #f5f5f7 !important; }
-.theme-light .bg-space-700,
-.theme-light .bg-space-700\/40,
-.theme-light .bg-space-700\/60 { background-color: #ececed !important; }
-.theme-light .bg-space-600 { background-color: #e3e3e8 !important; }
-.theme-light .bg-white\/5 { background-color: rgba(0,0,0,0.04) !important; }
-
-/* Kill the dark hero/section gradient fades (they darken a light page) */
-.theme-light .from-ink\/30,
-.theme-light .to-ink { background-image: none !important; }
-
-/* Text */
-.theme-light .text-white { color: #1d1d1f !important; }
-.theme-light .text-slate-100,
-.theme-light .text-slate-200 { color: #1d1d1f !important; }
-.theme-light .text-slate-300 { color: #3a3a3c !important; }
-.theme-light .text-slate-400 { color: #6e6e73 !important; }
-.theme-light .text-slate-500 { color: #86868b !important; }
-.theme-light .text-slate-600 { color: #aeaeb2 !important; }
-.theme-light .text-electric-300,
-.theme-light .text-electric-400 { color: #0071e3 !important; }
-.theme-light .text-rose-300 { color: #d70015 !important; }
-.theme-light .eyebrow { color: #0071e3 !important; }
-.theme-light .text-grad {
-  background-image: linear-gradient(100deg, #0284c7 0%, #0ea5e9 50%, #059669 100%);
-}
-
-/* Borders */
-.theme-light .border-white\/10 { border-color: rgba(0,0,0,0.08) !important; }
-.theme-light .border-white\/15 { border-color: rgba(0,0,0,0.12) !important; }
-.theme-light .hover\:border-white\/30:hover { border-color: rgba(0,0,0,0.22) !important; }
-
-/* Glass cards become clean white Apple cards with soft shadow */
-.theme-light .glass {
-  background: rgba(255,255,255,0.85) !important;
-  border: 1px solid rgba(0,0,0,0.07) !important;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 12px 32px -16px rgba(0,0,0,0.14);
-}
-.theme-light .glass:hover {
-  transform: translateY(-3px);
-  border-color: rgba(0,0,0,0.1) !important;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05), 0 22px 48px -20px rgba(0,0,0,0.22);
-}
-/* Drop the neon conic border; Apple favors a clean hairline */
-.theme-light .ring-anim::before { display: none !important; }
-
-/* Soften the colored glows to gentle elevation shadows */
-.theme-light .shadow-glow { box-shadow: 0 10px 34px -14px rgba(14,165,233,0.28) !important; }
-.theme-light .shadow-glow-green { box-shadow: 0 10px 34px -14px rgba(16,185,129,0.28) !important; }
-
-/* Background depth: Apple is clean. Drop grain, keep a faint cool wash. */
-.theme-light .grain { display: none !important; }
-.theme-light .aurora {
-  mix-blend-mode: normal; opacity: 0.5;
-  background:
-    radial-gradient(38% 34% at 16% 8%, rgba(14,165,233,0.07), transparent 70%),
-    radial-gradient(46% 42% at 80% 88%, rgba(16,185,129,0.06), transparent 72%);
-}
-.theme-light .hero-glow {
-  background: radial-gradient(50% 50% at 35% 40%, rgba(14,165,233,0.10), transparent 72%);
-}
-
-/* Nav: light, airy underline already works; keep blur on scroll */
-.theme-light .nav-link::after { box-shadow: none; }
-
-/* Primary CTA: Apple pill (solid blue, rounded-full, no neon pulse) */
-.theme-light .cl-btn-primary {
-  background: #0071e3 !important;
-  border-radius: 9999px !important;
-  box-shadow: none !important;
-  animation: none !important;
-  font-weight: 600;
-}
-.theme-light .cl-btn-primary:hover { background: #0077ed !important; transform: none; }
-.theme-light .cl-sheen { display: none !important; }
-
-/* Ghost button reads as a clean light outline */
-.theme-light .border-white\/15 { border-color: rgba(0,0,0,0.14) !important; }
-.theme-light .hover\:bg-white\/5:hover { background-color: rgba(0,0,0,0.04) !important; }
-
-/* Slider track on light */
-.theme-light input[type='range'].cl-range {
-  background: linear-gradient(90deg, #0071e3 var(--pct, 50%), #e3e3e8 var(--pct, 50%));
-}
-.theme-light input[type='range'].cl-range::-webkit-slider-thumb {
-  border-color: #0071e3; box-shadow: 0 1px 6px rgba(0,0,0,0.18);
-}
-
-/* Apple typography cues: tighter tracking, lighter weight on big heads */
-.theme-light h1, .theme-light h2 { letter-spacing: -0.022em; }
-.theme-light .font-extrabold { font-weight: 700; }
-
-/* Logo chips already white; give them a clean light border on light bg */
-.theme-light .bg-white\/95 { border-color: rgba(0,0,0,0.08) !important; }

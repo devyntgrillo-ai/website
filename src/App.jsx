@@ -15,10 +15,9 @@ import EnergyBeam from './components/EnergyBeam'
 
 export default function App() {
   return (
-    <div className="relative min-h-screen overflow-x-clip bg-ink">
-      {/* Deep-background depth: aurora wash + whisper-quiet film grain. */}
+    <div className="relative min-h-screen overflow-x-clip bg-paper">
+      {/* Faint cool background wash for depth. */}
       <div className="aurora" aria-hidden="true" />
-      <div className="grain" aria-hidden="true" />
 
       <div className="relative z-[2]">
         <Nav />

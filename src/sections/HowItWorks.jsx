@@ -10,13 +10,13 @@ function RecordingMock() {
   useEffect(() => { const id = setInterval(() => setS((x) => x + 1), 1000); return () => clearInterval(id) }, [])
   const steps = ['Transcribing live', 'De-identifying', 'Extracting objections', 'Estimating case value']
   return (
-    <div className="rounded-xl border border-white/10 bg-space-800/60 p-5">
+    <div className="rounded-xl border border-line bg-panel p-5">
       <div className="flex items-center justify-between">
-        <span className="flex items-center gap-2 text-xs font-semibold text-electric-300">
+        <span className="flex items-center gap-2 text-xs font-semibold text-accent">
           <span className="relative flex h-2.5 w-2.5"><span className="absolute inline-flex h-full w-full motion-safe:animate-ping rounded-full bg-rose-500/60" /><span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-rose-500" /></span>
           Recording consult
         </span>
-        <span className="font-mono text-sm tabular-nums text-white">{fmt(s)}</span>
+        <span className="font-mono text-sm tabular-nums text-headline">{fmt(s)}</span>
       </div>
       <div className="mt-4 flex h-10 items-center gap-[3px]">
         {Array.from({ length: 38 }).map((_, i) => (
@@ -25,8 +25,8 @@ function RecordingMock() {
       </div>
       <div className="mt-4 space-y-2">
         {steps.map((t, i) => (
-          <div key={t} className="flex items-center gap-2 text-[13px] text-slate-400">
-            <span className={`flex h-4 w-4 items-center justify-center rounded-full text-[9px] ${i <= (s % 5) ? 'bg-money text-white' : 'bg-space-600 text-slate-500'}`}>{i <= (s % 5) ? '✓' : ''}</span>
+          <div key={t} className="flex items-center gap-2 text-[13px] text-muted">
+            <span className={`flex h-4 w-4 items-center justify-center rounded-full text-[9px] ${i <= (s % 5) ? 'bg-money text-headline' : 'bg-panel3 text-faint'}`}>{i <= (s % 5) ? '✓' : ''}</span>
             {t}
           </div>
         ))}
@@ -37,21 +37,21 @@ function RecordingMock() {
 
 function SequenceMock() {
   return (
-    <div className="rounded-xl border border-white/10 bg-space-800/60 p-5">
-      <div className="flex items-center justify-between text-xs"><span className="font-semibold text-white">Follow-up sequence · Margaret C.</span><span className="text-money-300">self-optimizing</span></div>
+    <div className="rounded-xl border border-line bg-panel p-5">
+      <div className="flex items-center justify-between text-xs"><span className="font-semibold text-headline">Follow-up sequence · Margaret C.</span><span className="text-money-600">self-optimizing</span></div>
       {[
         { d: 'Day 0', c: 'SMS', t: 'Loved meeting you today, Margaret.', now: false },
         { d: 'Day 2', c: 'SMS', t: 'Quick joint call with your husband?', now: true },
         { d: 'Day 5', c: 'Email', t: 'The financing option we discussed', now: false },
       ].map((m, i) => (
-        <div key={i} className={`mt-2 flex items-center gap-3 rounded-lg border px-3 py-2 text-[13px] ${m.now ? 'border-electric/40 bg-electric/5' : 'border-white/10 bg-space-700/40'}`}>
-          <span className="w-12 shrink-0 text-xs text-slate-500">{m.d}</span>
-          <span className="shrink-0 rounded bg-space-600 px-1.5 py-0.5 text-[10px] text-slate-300">{m.c}</span>
-          <span className="min-w-0 flex-1 truncate text-slate-300">{m.t}</span>
-          {m.now && <span className="flex items-center gap-1 text-[10px] font-semibold text-electric-300"><span className="h-1.5 w-1.5 rounded-full bg-electric motion-safe:animate-ping" />sending</span>}
+        <div key={i} className={`mt-2 flex items-center gap-3 rounded-lg border px-3 py-2 text-[13px] ${m.now ? 'border-electric/40 bg-electric/5' : 'border-line bg-panel2'}`}>
+          <span className="w-12 shrink-0 text-xs text-faint">{m.d}</span>
+          <span className="shrink-0 rounded bg-panel3 px-1.5 py-0.5 text-[10px] text-body">{m.c}</span>
+          <span className="min-w-0 flex-1 truncate text-body">{m.t}</span>
+          {m.now && <span className="flex items-center gap-1 text-[10px] font-semibold text-accent"><span className="h-1.5 w-1.5 rounded-full bg-electric motion-safe:animate-ping" />sending</span>}
         </div>
       ))}
-      <div className="mt-3 flex items-center gap-2 rounded-lg border border-money/20 bg-money/5 px-3 py-2 text-[12px] text-money-300">
+      <div className="mt-3 flex items-center gap-2 rounded-lg border border-money/20 bg-money/5 px-3 py-2 text-[12px] text-money-600">
         ★ Leading with the highest-replying message across every CaseLift practice.
       </div>
     </div>
@@ -60,16 +60,16 @@ function SequenceMock() {
 
 function ConversationsMock() {
   return (
-    <div className="rounded-xl border border-white/10 bg-space-800/60 p-5">
-      <div className="flex items-center justify-between border-b border-white/10 pb-3">
-        <span className="text-sm font-semibold text-white">Robert M.</span>
-        <span className="rounded-full bg-money/15 px-2 py-0.5 text-[11px] font-semibold text-money-300">$41,000 · financing</span>
+    <div className="rounded-xl border border-line bg-panel p-5">
+      <div className="flex items-center justify-between border-b border-line pb-3">
+        <span className="text-sm font-semibold text-headline">Robert M.</span>
+        <span className="rounded-full bg-money/15 px-2 py-0.5 text-[11px] font-semibold text-money-600">$41,000 · financing</span>
       </div>
       <div className="mt-3 space-y-2">
-        <div className="ml-auto max-w-[80%] rounded-2xl rounded-tr-sm bg-electric/15 px-3 py-2 text-[13px] text-slate-100">Hi Robert, were you able to look at the monthly option we set up?</div>
-        <div className="max-w-[80%] rounded-2xl rounded-tl-sm bg-space-700 px-3 py-2 text-[13px] text-slate-200">Yeah that actually works. Can I come in next week?</div>
+        <div className="ml-auto max-w-[80%] rounded-2xl rounded-tr-sm bg-electric/15 px-3 py-2 text-[13px] text-headline">Hi Robert, were you able to look at the monthly option we set up?</div>
+        <div className="max-w-[80%] rounded-2xl rounded-tl-sm bg-panel2 px-3 py-2 text-[13px] text-headline">Yeah that actually works. Can I come in next week?</div>
       </div>
-      <div className="mt-3 rounded-lg border border-white/10 bg-space-700/40 px-3 py-2 text-[12px] text-slate-400">Rebooked for Tuesday 2:00 PM</div>
+      <div className="mt-3 rounded-lg border border-line bg-panel2 px-3 py-2 text-[12px] text-muted">Rebooked for Tuesday 2:00 PM</div>
     </div>
   )
 }
@@ -77,13 +77,13 @@ function ConversationsMock() {
 function CertMock() {
   const courses = [{ n: 'Handling the price objection', p: 100 }, { n: 'The spouse conversation', p: 72 }, { n: 'Creating urgency without pressure', p: 40 }]
   return (
-    <div className="rounded-xl border border-white/10 bg-space-800/60 p-5">
-      <div className="text-sm font-semibold text-white">TC Certification</div>
+    <div className="rounded-xl border border-line bg-panel p-5">
+      <div className="text-sm font-semibold text-headline">TC Certification</div>
       <div className="mt-4 space-y-3">
         {courses.map((c) => (
           <div key={c.n}>
-            <div className="flex items-center justify-between text-[13px] text-slate-300"><span>{c.n}</span><span className="text-slate-500">{c.p}%</span></div>
-            <div className="mt-1 h-1.5 overflow-hidden rounded-full bg-space-600"><div className="h-full rounded-full bg-gradient-to-r from-electric to-money" style={{ width: `${c.p}%` }} /></div>
+            <div className="flex items-center justify-between text-[13px] text-body"><span>{c.n}</span><span className="text-faint">{c.p}%</span></div>
+            <div className="mt-1 h-1.5 overflow-hidden rounded-full bg-panel3"><div className="h-full rounded-full bg-gradient-to-r from-electric to-money" style={{ width: `${c.p}%` }} /></div>
           </div>
         ))}
       </div>
@@ -100,12 +100,12 @@ const STEPS = [
 
 export default function HowItWorks() {
   return (
-    <section id="how" className="relative bg-ink py-24 sm:py-32">
+    <section id="how" className="relative bg-paper py-24 sm:py-32">
       <div className="container-c">
         <RevealSection className="max-w-2xl">
           <p className="eyebrow">How It Works</p>
-          <h2 className="mt-4 font-display text-section font-bold text-white">From consult to closed case, on autopilot</h2>
-          <p className="mt-5 text-lg text-slate-400">
+          <h2 className="mt-4 font-display text-section font-bold text-headline">From consult to closed case, on autopilot</h2>
+          <p className="mt-5 text-lg text-muted">
             CaseLift sits between your coordinator and every patient who walked without scheduling. It turns unfinished consults into booked, paid cases while your team sleeps.
           </p>
         </RevealSection>
@@ -116,14 +116,14 @@ export default function HowItWorks() {
               <RevealSection className={`grid items-center gap-8 lg:grid-cols-2 ${i % 2 ? 'lg:[&>*:first-child]:order-2' : ''}`}>
                 <div>
                   <div className="flex items-center gap-3">
-                    <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-electric/15 font-display text-lg font-bold text-electric-300">{step.n}</span>
+                    <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-electric/15 font-display text-lg font-bold text-accent">{step.n}</span>
                     <span className="eyebrow">Step {step.n}</span>
                   </div>
-                  <h3 className="mt-4 font-display text-2xl font-bold text-white sm:text-3xl">{step.title}</h3>
-                  <p className="mt-4 text-[15px] leading-relaxed text-slate-400">{step.body}</p>
+                  <h3 className="mt-4 font-display text-2xl font-bold text-headline sm:text-3xl">{step.title}</h3>
+                  <p className="mt-4 text-[15px] leading-relaxed text-muted">{step.body}</p>
                   <ul className="mt-5 space-y-2">
                     {step.bullets.map((b) => (
-                      <li key={b} className="flex items-center gap-2.5 text-[15px] text-slate-300">
+                      <li key={b} className="flex items-center gap-2.5 text-[15px] text-body">
                         <svg className="h-4 w-4 shrink-0 text-money" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-7.5 7.5a1 1 0 01-1.4 0L3.3 9.7a1 1 0 011.4-1.4l3.1 3.1 6.8-6.8a1 1 0 011.4 0z" clipRule="evenodd" /></svg>
                         {b}
                       </li>
