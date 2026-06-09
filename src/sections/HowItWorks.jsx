@@ -12,7 +12,7 @@ function RecordingMock() {
   return (
     <div className="rounded-xl border border-line bg-panel p-5">
       <div className="flex items-center justify-between">
-        <span className="flex items-center gap-2 text-xs font-semibold text-accent">
+        <span className="flex items-center gap-2 text-xs font-semibold text-electric-700">
           <span className="relative flex h-2.5 w-2.5"><span className="absolute inline-flex h-full w-full motion-safe:animate-ping rounded-full bg-rose-500/60" /><span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-rose-500" /></span>
           Recording consult
         </span>
@@ -38,7 +38,7 @@ function RecordingMock() {
 function SequenceMock() {
   return (
     <div className="rounded-xl border border-line bg-panel p-5">
-      <div className="flex items-center justify-between text-xs"><span className="font-semibold text-headline">Follow-up sequence · Margaret C.</span><span className="text-money-600">self-optimizing</span></div>
+      <div className="flex items-center justify-between text-xs"><span className="font-semibold text-headline">Follow-up sequence · Margaret C.</span><span className="text-money-700">self-optimizing</span></div>
       {[
         { d: 'Day 0', c: 'SMS', t: 'Loved meeting you today, Margaret.', now: false },
         { d: 'Day 2', c: 'SMS', t: 'Quick joint call with your husband?', now: true },
@@ -48,10 +48,10 @@ function SequenceMock() {
           <span className="w-12 shrink-0 text-xs text-faint">{m.d}</span>
           <span className="shrink-0 rounded bg-panel3 px-1.5 py-0.5 text-[10px] text-body">{m.c}</span>
           <span className="min-w-0 flex-1 truncate text-body">{m.t}</span>
-          {m.now && <span className="flex items-center gap-1 text-[10px] font-semibold text-accent"><span className="h-1.5 w-1.5 rounded-full bg-electric motion-safe:animate-ping" />sending</span>}
+          {m.now && <span className="flex items-center gap-1 text-[10px] font-semibold text-electric-700"><span className="h-1.5 w-1.5 rounded-full bg-electric motion-safe:animate-ping" />sending</span>}
         </div>
       ))}
-      <div className="mt-3 flex items-center gap-2 rounded-lg border border-money/20 bg-money/5 px-3 py-2 text-[12px] text-money-600">
+      <div className="mt-3 flex items-center gap-2 rounded-lg border border-money/20 bg-money/5 px-3 py-2 text-[12px] text-money-700">
         ★ Leading with the highest-replying message across every CaseLift practice.
       </div>
     </div>
@@ -63,7 +63,7 @@ function ConversationsMock() {
     <div className="rounded-xl border border-line bg-panel p-5">
       <div className="flex items-center justify-between border-b border-line pb-3">
         <span className="text-sm font-semibold text-headline">Robert M.</span>
-        <span className="rounded-full bg-money/15 px-2 py-0.5 text-[11px] font-semibold text-money-600">$41,000 · financing</span>
+        <span className="rounded-full bg-money/15 px-2 py-0.5 text-[11px] font-semibold text-money-700">$41,000 · financing</span>
       </div>
       <div className="mt-3 space-y-2">
         <div className="ml-auto max-w-[80%] rounded-2xl rounded-tr-sm bg-electric/15 px-3 py-2 text-[13px] text-headline">Hi Robert, were you able to look at the monthly option we set up?</div>
@@ -92,10 +92,10 @@ function CertMock() {
 }
 
 const STEPS = [
-  { n: 1, title: 'It listens to the consult', body: 'Hit record at the start of any high-value consult. CaseLift transcribes in real time and analyzes the conversation the second it ends. No hardware, no manual notes, nothing to install.', bullets: ['Records right in the browser', 'Live transcription, auto de-identified', 'Objections and case value extracted instantly'], Mock: RecordingMock },
-  { n: 2, title: 'It builds a follow-up sequence around each patient', body: 'CaseLift does not blast a template. It writes a sequence around each patient’s exact objection and how ready they were to say yes. Text and email, as many touches as the case needs, timed to the moment they are most likely to book. And it gets smarter every day: it learns which messages earn replies across every practice on CaseLift and leads with the winners.', bullets: ['Written for each patient’s specific objection', 'As many personalized touches as the case needs', 'Self-optimizing toward what actually converts'], Mock: SequenceMock },
-  { n: 3, title: 'Every reply lands with full context', body: 'When a patient replies, it hits your coordinator with the whole story attached: the case, the objection, the dollar amount. No scrambling, no cold reintroductions. Your coordinator always knows exactly what to say next.', bullets: ['Two-way text and email in one thread', 'Case value and objection pinned to every conversation', 'Your coordinator walks in already knowing the patient'], Mock: ConversationsMock },
-  { n: 4, title: 'Your coordinator gets better every week', body: 'Every membership includes the TC Certification library: guided courses and objection-handling playbooks built by a coordinator who has personally closed seven figures in cases. Your software closes cases and your team levels up at the same time.', bullets: ['Guided video courses, self-paced', 'Real objection scripts that close', 'Track every team member’s progress'], Mock: CertMock },
+  { n: 1, title: 'CaseLift hears the real objection, not the polite one', body: 'Your coordinator remembers the gist. CaseLift remembers every word, and the exact reason the patient walked. Recorded and analyzed the second the consult ends.', bullets: ['Records right in the browser', 'Live transcription, auto de-identified', 'Objections and case value extracted instantly'], Mock: RecordingMock },
+  { n: 2, title: 'CaseLift does the follow-up your team never has time for', body: 'Five to twelve personalized touches per patient, built around their specific objection, sent automatically by text and email. The work that actually closes big cases, handled for you.', bullets: ['Written for each patient’s specific objection', 'As many personalized touches as the case needs', 'Self-optimizing toward what actually converts'], Mock: SequenceMock },
+  { n: 3, title: 'Your coordinator only steps in to close', body: 'When a patient replies, it arrives with the case, the objection, and the dollar amount attached. No chasing, no cold reintroductions. Your coordinator goes straight to booking.', bullets: ['Two-way text and email in one thread', 'Case value and objection pinned to every conversation', 'Your coordinator walks in already knowing the patient'], Mock: ConversationsMock },
+  { n: 4, title: 'Your whole team closes at a higher rate', body: 'Every membership includes objection-handling training from a coordinator who has personally closed seven figures. CaseLift recovers cases while your team gets sharper.', bullets: ['Guided video courses, self-paced', 'Real objection scripts that close', 'Track every team member’s progress'], Mock: CertMock },
 ]
 
 export default function HowItWorks() {
@@ -106,7 +106,7 @@ export default function HowItWorks() {
           <p className="eyebrow">How It Works</p>
           <h2 className="mt-4 font-display text-section font-bold text-headline">From consult to closed case, on autopilot</h2>
           <p className="mt-5 text-lg text-muted">
-            CaseLift sits between your coordinator and every patient who walked without scheduling. It turns unfinished consults into booked, paid cases while your team sleeps.
+            CaseLift sits between your coordinator and every patient who walked without scheduling, turning unfinished consults into booked, paid cases while your team sleeps.
           </p>
         </RevealSection>
 
@@ -116,7 +116,7 @@ export default function HowItWorks() {
               <RevealSection className={`grid items-center gap-8 lg:grid-cols-2 ${i % 2 ? 'lg:[&>*:first-child]:order-2' : ''}`}>
                 <div>
                   <div className="flex items-center gap-3">
-                    <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-electric/15 font-display text-lg font-bold text-accent">{step.n}</span>
+                    <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-electric/15 font-display text-lg font-bold text-electric-700">{step.n}</span>
                     <span className="eyebrow">Step {step.n}</span>
                   </div>
                   <h3 className="mt-4 font-display text-2xl font-bold text-headline sm:text-3xl">{step.title}</h3>
@@ -124,7 +124,7 @@ export default function HowItWorks() {
                   <ul className="mt-5 space-y-2">
                     {step.bullets.map((b) => (
                       <li key={b} className="flex items-center gap-2.5 text-[15px] text-body">
-                        <svg className="h-4 w-4 shrink-0 text-money" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-7.5 7.5a1 1 0 01-1.4 0L3.3 9.7a1 1 0 011.4-1.4l3.1 3.1 6.8-6.8a1 1 0 011.4 0z" clipRule="evenodd" /></svg>
+                        <svg className="h-4 w-4 shrink-0 text-money-700" viewBox="0 0 20 20" fill="currentColor"><path fillRule="evenodd" d="M16.7 5.3a1 1 0 010 1.4l-7.5 7.5a1 1 0 01-1.4 0L3.3 9.7a1 1 0 011.4-1.4l3.1 3.1 6.8-6.8a1 1 0 011.4 0z" clipRule="evenodd" /></svg>
                         {b}
                       </li>
                     ))}

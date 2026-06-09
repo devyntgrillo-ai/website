@@ -73,8 +73,8 @@ export default function RoiCalculator() {
               <p className="mt-1 text-sm text-muted">in production leaving every year.</p>
             </div>
             <div className="rounded-2xl border border-money/40 bg-money/10 p-6 shadow-glow-green">
-              <div className={`font-display text-5xl font-extrabold text-money ${boost ? 'flare' : ''}`}>{fmt$(recoverable)}</div>
-              <p className="mt-1 text-sm text-money-600">recoverable per year at a conservative 15% recovery rate.</p>
+              <div className={`font-display text-5xl font-extrabold text-money-700 ${boost ? 'flare' : ''}`}>{fmt$(recoverable)}</div>
+              <p className="mt-1 text-sm text-money-700">recoverable per year at a conservative 15% recovery rate.</p>
             </div>
           </div>
         </RevealSection>

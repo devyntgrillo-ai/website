@@ -6,7 +6,7 @@ import { APPLY_URL } from '../lib/links'
 export default function FinalCta() {
   return (
     <section className="relative overflow-hidden bg-paper py-32">
-      <NodeField density="high" intensity={1} greenBias={0.4} />
+      <NodeField density="med" intensity={0.7} greenBias={0.4} className="opacity-70" />
       <div className="container-c relative text-center">
         <RevealSection>
           <h2 className="mx-auto max-w-3xl font-display text-section font-bold text-headline">

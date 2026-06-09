@@ -43,7 +43,7 @@ export default function Integrations() {
       <div className="container-c">
         <RevealSection className="max-w-2xl">
           <p className="eyebrow">Integrations</p>
-          <h2 className="mt-4 font-display text-section font-bold text-headline">It runs on top of the software you already use</h2>
+          <h2 className="mt-4 font-display text-section font-bold text-headline">CaseLift runs on top of the software you already use</h2>
           <p className="mt-5 text-lg text-muted">
             CaseLift plugs into your practice management system and syncs patients automatically. No rip and replace, no new logins for your front desk.
           </p>

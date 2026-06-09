@@ -77,7 +77,7 @@ export default function HiddenLeak() {
         <RevealSection stagger className="mt-14 grid gap-5 sm:grid-cols-3">
           {STATS.map((s, i) => (
             <div key={i} className="rounded-2xl border border-line bg-panel p-6 transition hover:border-electric/30">
-              <div className="font-display text-5xl font-extrabold text-accent">
+              <div className="font-display text-5xl font-extrabold text-electric-700">
                 {s.prefix}<StatCounter value={s.v} suffix={s.suffix} />
               </div>
               <p className="mt-3 text-sm leading-relaxed text-muted">{s.label}</p>

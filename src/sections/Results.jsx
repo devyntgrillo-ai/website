@@ -20,10 +20,10 @@ export default function Results() {
           {TESTIMONIALS.map((t) => (
             <RevealItem key={t.name}>
               <GlowCard border className="h-full p-6">
-                <div className="flex gap-0.5 text-money">{'★★★★★'}</div>
+                <div className="flex gap-0.5 text-money-700">{'★★★★★'}</div>
                 <p className="mt-4 text-[15px] leading-relaxed text-body">{t.quote}</p>
                 <div className="mt-6 border-t border-line pt-4">
-                  <div className={`font-display text-3xl font-extrabold ${t.green ? 'text-money' : 'text-headline'}`}>{t.stat}</div>
+                  <div className={`font-display text-3xl font-extrabold ${t.green ? 'text-money-700' : 'text-headline'}`}>{t.stat}</div>
                   <div className="text-xs uppercase tracking-wide text-faint">{t.statLabel}</div>
                   <div className="mt-3 text-sm font-semibold text-headline">{t.name}</div>
                   <div className="text-xs text-faint">{t.role}</div>
@@ -34,7 +34,7 @@ export default function Results() {
         </RevealSection>
         <RevealSection className="mt-12 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 rounded-2xl border border-line bg-panel px-6 py-5 text-center text-sm text-muted">
           {['4.8/5 average', '200+ practices', '$2.3M in recovered production', '6+ treatment types', 'avg 15% recovery rate', '$30k+ recovered per practice in the first 90 days'].map((s, i) => (
-            <span key={i} className="font-medium"><span className="text-money">{s.split(' ')[0]}</span> {s.split(' ').slice(1).join(' ')}</span>
+            <span key={i} className="font-medium"><span className="text-money-700">{s.split(' ')[0]}</span> {s.split(' ').slice(1).join(' ')}</span>
           ))}
         </RevealSection>
       </div>

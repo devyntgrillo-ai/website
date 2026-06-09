@@ -4,29 +4,30 @@ export default {
   theme: {
     extend: {
       colors: {
-        // Brand accents (used for the node art, energy, and proof).
-        electric: { DEFAULT: '#0EA5E9', 50: '#E0F2FE', 300: '#7DD3FC', 400: '#38BDF8', 600: '#0284C7' },
-        money: { DEFAULT: '#10B981', 300: '#6EE7B7', 400: '#34D399', 600: '#059669' },
-        accent: { DEFAULT: '#0071E3', hover: '#0077ED' }, // Apple-blue CTA / links
+        // Brand blue ramp. 500/600 = brand. 700/800 = AA-safe text on light.
+        electric: { DEFAULT: '#0EA5E9', 50: '#E0F2FE', 300: '#7DD3FC', 400: '#38BDF8', 500: '#0EA5E9', 600: '#0284C7', 700: '#0369A1', 800: '#0C4A6E', 900: '#0C4A6E' },
+        // Money / success green. 700 = readable-on-light body.
+        money: { DEFAULT: '#10B981', 300: '#6EE7B7', 400: '#34D399', 600: '#059669', 700: '#047857' },
+        accent: { DEFAULT: '#0EA5E9', hover: '#0284C7' }, // primary CTA fill
 
-        // Apple-style light surface system.
-        paper: '#FFFFFF',     // page background
-        panel: '#F5F5F7',     // cards / panels
-        panel2: '#ECECED',    // nested elements
-        panel3: '#E3E3E8',    // tracks / wells
+        // Premium clinical light surface system (slate scale).
+        paper: '#F8FAFC',     // page background
+        panel: '#F1F5F9',     // subtle fill / nested chips
+        panel2: '#E2E8F0',    // dividers / input fill
+        panel3: '#CBD5E1',    // strong surface / tracks
 
-        // Text ramp (near-black to faint).
-        headline: '#1D1D1F',
-        body: '#3A3A3C',
-        muted: '#6E6E73',
-        faint: '#86868B',
-        faint2: '#AEAEB2',
+        // Text ramp.
+        headline: '#0F172A',  // headings / emphasis
+        body: '#64748B',      // default body
+        muted: '#94A3B8',     // meta / placeholders
+        faint: '#94A3B8',
+        faint2: '#94A3B8',
 
         // Hairlines.
-        line: 'rgba(0,0,0,0.08)',
-        line2: 'rgba(0,0,0,0.12)',
+        line: '#E2E8F0',
+        line2: '#CBD5E1',
 
-        // Legacy darks (retained for the node-art SVGs only).
+        // Legacy darks (retained ONLY for node-art / pipeline SVG fills).
         ink: '#0B0F19',
         space: { DEFAULT: '#0B0F19', 800: '#111827', 700: '#1A2235', 600: '#232c44' },
       },

@@ -32,8 +32,8 @@ function Seal() {
         />
       </svg>
       <div className="absolute inset-0 flex flex-col items-center justify-center">
-        <span className="font-display text-5xl font-extrabold text-money">3X</span>
-        <span className="mt-1 text-[10px] font-bold uppercase tracking-[0.2em] text-money-600">in 90 days</span>
+        <span className="font-display text-5xl font-extrabold text-money-700">3X</span>
+        <span className="mt-1 text-[10px] font-bold uppercase tracking-[0.2em] text-money-700">in 90 days</span>
       </div>
     </div>
   )
@@ -46,11 +46,11 @@ export default function Guarantee() {
       <div className="container-c relative text-center">
         <RevealSection>
           <Seal />
-          <span className="mt-8 inline-flex items-center rounded-full border border-money/40 bg-money/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.15em] text-money-600">
+          <span className="mt-8 inline-flex items-center rounded-full border border-money/40 bg-money/10 px-4 py-1.5 text-xs font-bold uppercase tracking-[0.15em] text-money-700">
             3X ROI in 90 days or it's free
           </span>
           <h2 className="mx-auto mt-6 max-w-3xl font-display text-section font-bold text-headline">
-            Triple your investment in 90 days, <span className="text-money">or you don't pay.</span>
+            Triple your investment in 90 days, <span className="text-money-700">or you don't pay.</span>
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-muted">
             If CaseLift does not return at least 3X what you pay in your first 90 days, your membership is free until it does.

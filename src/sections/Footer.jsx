@@ -9,8 +9,8 @@ export default function Footer() {
         <div>
           <div className="font-display text-lg font-extrabold text-headline">CaseLift</div>
           <p className="mt-2 max-w-xs text-sm text-muted">We do the heavy lifting to get you more cases.</p>
-          <a href="mailto:hello@caselift.io" className="mt-3 inline-block text-sm text-accent hover:underline">hello@caselift.io</a>
-          <div className="mt-4 inline-flex items-center gap-1.5 rounded-full border border-money/30 bg-money/10 px-2.5 py-1 text-xs font-medium text-money-600">
+          <a href="mailto:hello@caselift.io" className="mt-3 inline-block text-sm text-electric-700 hover:underline">hello@caselift.io</a>
+          <div className="mt-4 inline-flex items-center gap-1.5 rounded-full border border-money/30 bg-money/10 px-2.5 py-1 text-xs font-medium text-money-700">
             <svg width="12" height="12" viewBox="0 0 20 20" fill="currentColor"><path d="M10 1l7 3v6c0 4.4-3 7.7-7 9-4-1.3-7-4.6-7-9V4l7-3z" /></svg> HIPAA Compliant
           </div>
         </div>

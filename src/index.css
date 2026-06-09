@@ -24,38 +24,40 @@ h1, h2 { letter-spacing: -0.022em; }
   /* Gradient text treatment for emphasized headline words. */
   .text-grad {
     @apply bg-clip-text text-transparent;
-    background-image: linear-gradient(100deg, #0284C7 0%, #0EA5E9 50%, #059669 100%);
+    /* Deep, AA-safe blue-to-green for large display text on white. */
+    background-image: linear-gradient(100deg, #0284C7 0%, #0369A1 45%, #047857 100%);
   }
   .eyebrow {
-    @apply text-xs font-semibold uppercase tracking-[0.18em] text-accent;
+    @apply text-xs font-semibold uppercase tracking-[0.18em] text-electric-700;
   }
   .container-c { @apply mx-auto w-full max-w-content px-5 sm:px-8; }
 }
 
-/* Clean white card with soft elevation (replaces the dark glass). */
+/* Premium clinical card: white fill, hairline border, soft shadow.
+   Hover lifts gently and the border brightens toward brand blue. No neon. */
 .glass {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(0, 0, 0, 0.07);
-  box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 12px 32px -16px rgba(0,0,0,0.14);
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
   transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), box-shadow 0.4s ease, border-color 0.4s ease;
 }
 .glass:hover {
   transform: translateY(-3px);
-  border-color: rgba(0, 0, 0, 0.10);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.05), 0 22px 48px -20px rgba(0,0,0,0.22);
+  border-color: rgba(14, 165, 233, 0.35);
+  box-shadow: 0 10px 30px -10px rgba(14, 165, 233, 0.18), 0 4px 12px rgba(15, 23, 42, 0.06);
 }
 
-/* Deep-background depth: a faint cool wash. Felt, not noticed. */
+/* Background depth: a soft pale-sky gradient mesh, like light moving across a
+   clean surface. Almost imperceptible. Replaces flat white. */
 .aurora {
-  position: fixed; inset: -20%; z-index: 0; pointer-events: none; opacity: 0.6;
+  position: fixed; inset: -20%; z-index: 0; pointer-events: none; opacity: 0.85;
   background:
-    radial-gradient(38% 34% at 16% 8%, rgba(14,165,233,0.08), transparent 70%),
-    radial-gradient(46% 42% at 80% 88%, rgba(16,185,129,0.07), transparent 72%),
-    radial-gradient(36% 32% at 70% 18%, rgba(14,165,233,0.05), transparent 70%);
-  filter: blur(44px);
-  animation: auroraDrift 26s ease-in-out infinite alternate;
+    radial-gradient(40% 36% at 15% 8%, rgba(186,230,253,0.55), transparent 70%),
+    radial-gradient(44% 40% at 82% 22%, rgba(224,242,254,0.6), transparent 72%),
+    radial-gradient(48% 44% at 72% 90%, rgba(167,243,208,0.32), transparent 72%),
+    radial-gradient(34% 30% at 28% 82%, rgba(186,230,253,0.4), transparent 70%);
+  filter: blur(48px);
+  animation: auroraDrift 30s ease-in-out infinite alternate;
   will-change: transform;
 }
 @keyframes auroraDrift {
@@ -67,12 +69,25 @@ h1, h2 { letter-spacing: -0.022em; }
 /* Luminous core behind the hero headline. */
 .hero-glow {
   position: absolute; pointer-events: none; z-index: 0;
-  left: 0; top: 8%; width: 60%; height: 70%;
-  background: radial-gradient(50% 50% at 35% 40%, rgba(14,165,233,0.10), transparent 72%);
-  filter: blur(30px);
-  animation: heroBreathe 7s ease-in-out infinite alternate;
+  left: 0; top: 6%; width: 70%; height: 75%;
+  background: radial-gradient(50% 50% at 40% 42%, rgba(186,230,253,0.5), rgba(224,242,254,0.25) 45%, transparent 72%);
+  filter: blur(40px);
+  animation: heroBreathe 8s ease-in-out infinite alternate;
 }
 @keyframes heroBreathe { from { opacity: 0.7; } to { opacity: 1; } }
+
+/* Subtle blue-to-green gradient hairline (hero + guarantee only). Clean, no neon. */
+.grad-hairline { position: relative; }
+.grad-hairline::before {
+  content: ''; position: absolute; inset: 0; border-radius: inherit; padding: 1px;
+  background: linear-gradient(125deg, rgba(14,165,233,0.55) 0%, rgba(2,132,199,0.4) 45%, rgba(16,185,129,0.5) 100%);
+  background-size: 200% 200%;
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+  pointer-events: none;
+  animation: hairlineShift 9s ease-in-out infinite alternate;
+}
+@keyframes hairlineShift { from { background-position: 0% 50%; } to { background-position: 100% 50%; } }
 
 /* Animated underline on nav links. */
 .nav-link { position: relative; }
@@ -94,6 +109,7 @@ h1, h2 { letter-spacing: -0.022em; }
 @media (prefers-reduced-motion: reduce) {
   .animate-breathe, .animate-pulseGlow, .animate-spinSlow, .animate-sheen { animation: none !important; }
   .aurora, .hero-glow, .flare { animation: none !important; }
+  .grad-hairline::before { animation: none !important; }
   .glass { transition: none; }
 }
 
@@ -101,16 +117,16 @@ h1, h2 { letter-spacing: -0.022em; }
 input[type='range'].cl-range {
   -webkit-appearance: none; appearance: none;
   height: 6px; border-radius: 9999px;
-  background: linear-gradient(90deg, #0071E3 var(--pct, 50%), #E3E3E8 var(--pct, 50%));
+  background: linear-gradient(90deg, #0EA5E9 var(--pct, 50%), #E2E8F0 var(--pct, 50%));
   outline: none;
 }
 input[type='range'].cl-range::-webkit-slider-thumb {
   -webkit-appearance: none; appearance: none;
   width: 22px; height: 22px; border-radius: 9999px;
-  background: #fff; border: 3px solid #0071E3; cursor: pointer;
-  box-shadow: 0 1px 6px rgba(0,0,0,0.18);
+  background: #fff; border: 3px solid #0EA5E9; cursor: pointer;
+  box-shadow: 0 1px 6px rgba(15,23,42,0.18);
 }
 input[type='range'].cl-range::-moz-range-thumb {
   width: 22px; height: 22px; border-radius: 9999px;
-  background: #fff; border: 3px solid #0071E3; cursor: pointer;
+  background: #fff; border: 3px solid #0EA5E9; cursor: pointer;
 }

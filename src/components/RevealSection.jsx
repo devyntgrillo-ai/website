@@ -16,7 +16,7 @@ export default function RevealSection({ children, className = '', delay = 0, as 
         initial="hidden"
         whileInView="show"
         viewport={{ once: true, margin: '-80px' }}
-        variants={{ show: { transition: { staggerChildren: 0.09, delayChildren: delay } } }}
+        variants={{ show: { transition: { staggerChildren: 0.13, delayChildren: delay } } }}
       >
         {children}
       </MotionTag>
@@ -25,10 +25,10 @@ export default function RevealSection({ children, className = '', delay = 0, as 
   return (
     <MotionTag
       className={className}
-      initial={{ opacity: 0, y: 28 }}
+      initial={{ opacity: 0, y: 44 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] }}
     >
       {children}
     </MotionTag>
@@ -43,7 +43,7 @@ export function RevealItem({ children, className = '', as = 'div' }) {
   return (
     <Tag
       className={className}
-      variants={{ hidden: { opacity: 0, y: 22 }, show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } }}
+      variants={{ hidden: { opacity: 0, y: 34 }, show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: [0.22, 1, 0.36, 1] } } }}
     >
       {children}
     </Tag>

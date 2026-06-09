@@ -26,7 +26,7 @@ export default function Nav() {
             <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-electric" />
           </span>
           CaseLift
-          <span className="rounded-full border border-electric/40 px-1.5 py-0.5 text-[10px] font-semibold text-accent">Beta</span>
+          <span className="rounded-full border border-electric/40 px-1.5 py-0.5 text-[10px] font-semibold text-electric-700">Beta</span>
         </a>
         <div className="hidden items-center gap-8 md:flex">
           {LINKS.map((l) => (

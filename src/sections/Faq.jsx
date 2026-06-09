@@ -11,7 +11,7 @@ const FAQS = [
   { q: 'Do we need any hardware?', a: 'None. Recording happens right in the browser. Nothing to buy, nothing to install, nothing for your front desk to learn beyond pressing record.' },
   { q: 'What is the TC Certification library?', a: 'A growing set of guided video courses and objection-handling scripts built by a coordinator who has personally closed seven figures in cases. Your team levels up while the software works.' },
   { q: 'How does the guarantee work?', a: 'If CaseLift does not return at least 3X what you pay in your first 90 days, your membership is free until it does. We measure recovery against your real PMS production, not our word for it.' },
-  { q: 'How is this different from other follow-up tools?', a: 'Most tools blast templates on a fixed schedule. CaseLift listens to the actual consult, writes around each patient, adapts to replies, learns what converts, and pairs it all with real human coaching. It closes cases, it does not just send reminders.' },
+  { q: 'How is this different from other follow-up tools?', a: 'Most tools blast templates on a fixed schedule. CaseLift listens to the actual consult, writes around each patient, adapts to replies, learns what converts, and pairs it all with real human coaching. CaseLift closes cases, it does not just send reminders.' },
 ]
 
 function Item({ q, a, open, onToggle }) {
@@ -21,7 +21,7 @@ function Item({ q, a, open, onToggle }) {
       <button onClick={onToggle} aria-expanded={open} aria-controls={id}
         className="flex w-full items-center justify-between gap-4 py-5 text-left">
         <span className="text-[16px] font-semibold text-headline">{q}</span>
-        <span className={`shrink-0 text-accent transition-transform duration-300 ${open ? 'rotate-45' : ''}`}>
+        <span className={`shrink-0 text-electric-700 transition-transform duration-300 ${open ? 'rotate-45' : ''}`}>
           <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2"><path d="M10 4v12M4 10h12" /></svg>
         </span>
       </button>
