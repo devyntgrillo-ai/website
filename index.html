@@ -8,7 +8,7 @@
 <link rel="apple-touch-icon" href="/favicon.png" />
 
 <!-- Primary SEO -->
-<title>CaseLift — AI Dental Consult Follow-Up &amp; Case Recovery</title>
+<title>CaseLift , AI Dental Consult Follow-Up &amp; Case Recovery</title>
 <meta name="description" content="CaseLift records dental consults, analyzes patient objections, and follows up automatically to recover the high-value treatment plans your practice is losing." />
 <link rel="canonical" href="https://caselift.io/" />
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
@@ -20,14 +20,14 @@
 <meta property="og:url" content="https://caselift.io/" />
 <meta property="og:site_name" content="CaseLift" />
 <meta property="og:locale" content="en_US" />
-<meta property="og:title" content="CaseLift — Recover the Dental Cases You're Losing" />
+<meta property="og:title" content="CaseLift , Recover the Dental Cases You're Losing" />
 <meta property="og:description" content="Record consults, analyze objections, and follow up with every patient automatically. Built for implants, full arch, Invisalign, cosmetic and more." />
 <meta property="og:image" content="https://caselift.io/favicon.png" />
 <meta property="og:image:alt" content="CaseLift" />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="CaseLift — Recover the Dental Cases You're Losing" />
+<meta name="twitter:title" content="CaseLift , Recover the Dental Cases You're Losing" />
 <meta name="twitter:description" content="Record consults, analyze objections, and follow up with every patient automatically. Built for implants, full arch, Invisalign, cosmetic and more." />
 <meta name="twitter:image" content="https://caselift.io/favicon.png" />
 
@@ -658,6 +658,272 @@
   .cancel-pill { display:inline-flex; align-items:center; gap:9px; font-size:14.5px; font-weight:700; color:var(--ink); background:#fff; border:1px solid var(--line); border-radius:999px; padding:11px 20px; }
   .cancel-pill .cp-ck { color:#16a34a; font-weight:900; }
   @media (max-width: 820px) { .human-grid { grid-template-columns:1fr; } .gtee { padding:36px 24px; } }
+  /* ---------- Motion layer (added) ---------- */
+  .cl-nodes { position: absolute; inset: 0; z-index: 0; pointer-events: none; }
+  .hero .wrap, .final-cta .wrap { position: relative; z-index: 1; }
+  .mk-bar-fill { transition: width 1.3s cubic-bezier(0.16,1,0.3,1); }
+  @keyframes clPulseDot { 0%,100% { box-shadow: 0 0 0 0 rgba(6,182,212,0.55); } 50% { box-shadow: 0 0 0 7px rgba(6,182,212,0); } }
+  .tl-dot.next { animation: clPulseDot 1.7s ease-in-out infinite; }
+  .mockup-wrap { will-change: transform; }
+  .sec-divider { height: 0; position: relative; }
+  .sec-divider i { position: absolute; left: 50%; top: -54px; width: 1.5px; height: 108px; transform: translateX(-50%); background: linear-gradient(var(--brand), rgba(6,182,212,0)); opacity: 0.5; overflow: visible; }
+  @media (prefers-reduced-motion: reduce) {
+    .cl-nodes { display: none; }
+    .tl-dot.next { animation: none; }
+    .mk-bar-fill { transition: none; }
+  }
+
+  /* ===== Hero story animation (MacBook window) ===== */
+  .cl-show { color: #fff; }
+  .cl-show-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 18px; }
+  .cl-stage-tag { font-size: 12px; font-weight: 600; padding: 6px 12px; border-radius: 999px; background: rgba(6,182,212,0.16); color: #5fd0e6; white-space: nowrap; transition: background .4s ease, color .4s ease; }
+  .cl-show[data-act="won"] .cl-stage-tag { background: rgba(40,200,64,0.18); color: #5fe07e; }
+  .cl-acts { position: relative; min-height: 250px; }
+  .cl-act { position: absolute; inset: 0; opacity: 0; transform: translateY(10px); transition: opacity .55s var(--ease), transform .55s var(--ease); pointer-events: none; }
+  .cl-show[data-act="listen"] .act-listen,
+  .cl-show[data-act="analyze"] .act-analyze,
+  .cl-show[data-act="coach"] .act-coach,
+  .cl-show[data-act="followup"] .act-followup,
+  .cl-show[data-act="won"] .act-won { opacity: 1; transform: none; }
+  .cl-progress { display: flex; gap: 6px; margin-top: 20px; }
+  .cl-progress i { height: 3px; flex: 1; border-radius: 2px; background: rgba(255,255,255,0.12); transition: background .4s ease; }
+  .cl-show[data-act="listen"] .cl-progress i:nth-child(1),
+  .cl-show[data-act="analyze"] .cl-progress i:nth-child(2),
+  .cl-show[data-act="coach"] .cl-progress i:nth-child(3),
+  .cl-show[data-act="followup"] .cl-progress i:nth-child(4),
+  .cl-show[data-act="won"] .cl-progress i:nth-child(5) { background: var(--grad); }
+
+  /* Act 1: Listening */
+  .cl-rec { display: flex; align-items: center; gap: 10px; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; color: #ff6b6b; margin-bottom: 18px; }
+  .cl-recdot { width: 9px; height: 9px; border-radius: 50%; background: #ff5f57; }
+  .act-listen.run .cl-recdot { animation: clRec 1.2s infinite; }
+  @keyframes clRec { 0%,100% { box-shadow: 0 0 0 0 rgba(255,95,87,0.6); } 50% { box-shadow: 0 0 0 6px rgba(255,95,87,0); } }
+  .cl-wave { display: flex; align-items: center; gap: 3px; height: 22px; }
+  .cl-wave i { width: 3px; border-radius: 2px; background: linear-gradient(#5fd0e6,#2563EB); height: 30%; }
+  .act-listen.run .cl-wave i { animation: clWave 1s ease-in-out infinite; }
+  @keyframes clWave { 0%,100% { height: 22%; } 50% { height: 92%; } }
+  .cl-rectime { margin-left: auto; color: rgba(255,255,255,0.5); font-weight: 600; font-variant-numeric: tabular-nums; }
+  .cl-trans { display: flex; flex-direction: column; gap: 12px; }
+  .cl-line { font-size: 13.5px; line-height: 1.5; color: rgba(255,255,255,0.88); background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 11px 14px; opacity: 0; transform: translateY(8px); }
+  .cl-spk { display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #5fd0e6; margin-right: 8px; }
+  .cl-spk.tc { color: #9db8ff; }
+  .act-listen.run .cl-l1 { animation: clIn .5s var(--ease) .25s forwards; }
+  .act-listen.run .cl-l2 { animation: clIn .5s var(--ease) 1.25s forwards; }
+  @keyframes clIn { to { opacity: 1; transform: none; } }
+  .cl-words-row { margin-top: 16px; font-size: 12px; color: rgba(255,255,255,0.5); }
+  .cl-words { color: #5fd0e6; font-weight: 700; }
+
+  /* Act 2: Analyzing */
+  /* Act 2: Analyzing, scan the transcript then extract structured insight */
+  .cl-scan { position: relative; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 14px 16px; overflow: hidden; }
+  .cl-scan-head { display: flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #5fd0e6; margin-bottom: 13px; }
+  .cl-spark { width: 9px; height: 9px; border-radius: 2px; background: linear-gradient(135deg,#5fd0e6,#2563EB); transform: rotate(45deg); }
+  .act-analyze.run .cl-spark { animation: clSpark 1.4s ease-in-out infinite; }
+  @keyframes clSpark { 0%,100% { box-shadow: 0 0 0 0 rgba(95,208,230,0); } 50% { box-shadow: 0 0 9px 1px rgba(95,208,230,0.75); } }
+  .cl-scan-lines { position: relative; display: flex; flex-direction: column; gap: 9px; }
+  .cl-sl { height: 8px; border-radius: 4px; background: rgba(255,255,255,0.10); }
+  .cl-sl.w1 { width: 94%; } .cl-sl.w2 { width: 76%; } .cl-sl.w3 { width: 88%; } .cl-sl.w4 { width: 62%; }
+  .cl-scanbar { position: absolute; left: -8px; right: -8px; top: 0; height: 22px; border-radius: 8px; pointer-events: none; opacity: 0;
+    background: linear-gradient(180deg, rgba(6,182,212,0), rgba(6,182,212,0.30), rgba(6,182,212,0)); box-shadow: 0 0 16px rgba(6,182,212,0.45); }
+  .act-analyze.run .cl-scanbar { animation: clScan 1.9s cubic-bezier(0.4,0,0.2,1) infinite; }
+  @keyframes clScan { 0% { transform: translateY(-4px); opacity: 0; } 12% { opacity: 1; } 80% { opacity: 1; } 100% { transform: translateY(62px); opacity: 0; } }
+  .cl-extract { margin-top: 15px; display: flex; flex-direction: column; gap: 10px; }
+  .cl-ex-row { display: flex; align-items: center; gap: 11px; font-size: 14px; opacity: 0; transform: translateX(-12px); }
+  .act-analyze.run .cl-ex-row.r1 { animation: clIn .45s var(--ease) .55s forwards; }
+  .act-analyze.run .cl-ex-row.r2 { animation: clIn .45s var(--ease) .95s forwards; }
+  .act-analyze.run .cl-ex-row.r3 { animation: clIn .45s var(--ease) 1.35s forwards; }
+  .cl-ex-check { width: 20px; height: 20px; border-radius: 50%; background: rgba(40,200,64,0.18); color: #4cd964; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; transform: scale(0); }
+  .act-analyze.run .cl-ex-row.r1 .cl-ex-check { animation: clCheckSm .4s var(--ease) .75s both; }
+  .act-analyze.run .cl-ex-row.r2 .cl-ex-check { animation: clCheckSm .4s var(--ease) 1.15s both; }
+  .act-analyze.run .cl-ex-row.r3 .cl-ex-check { animation: clCheckSm .4s var(--ease) 1.55s both; }
+  @keyframes clCheckSm { 0% { transform: scale(0); } 60% { transform: scale(1.3); } 100% { transform: scale(1); } }
+  .cl-ex-k { color: rgba(255,255,255,0.5); font-size: 12px; width: 92px; flex-shrink: 0; }
+  .cl-ex-v { color: #fff; font-weight: 600; }
+
+  /* Act 3: Coaching, AI insight + a real 1-on-1 coach in the private channel */
+  .cl-chan { display: flex; flex-direction: column; gap: 12px; }
+  .cl-chan-head { display: flex; align-items: center; justify-content: space-between; padding-bottom: 11px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .cl-chan-name { font-size: 13.5px; font-weight: 700; color: #fff; }
+  .cl-chan-online { display: inline-flex; align-items: center; gap: 6px; font-size: 11.5px; font-weight: 600; color: #4cd964; }
+  .cl-online-dot { width: 7px; height: 7px; border-radius: 50%; background: #4cd964; }
+  .act-coach.run .cl-online-dot { animation: clRec 1.8s infinite; }
+  .cl-cmsg { display: flex; gap: 11px; align-items: flex-start; opacity: 0; transform: translateY(10px); }
+  .act-coach.run .cl-cmsg.m1 { animation: clIn .5s var(--ease) .25s forwards; }
+  .act-coach.run .cl-cmsg.m2 { animation: clIn .5s var(--ease) 1.7s forwards; }
+  .cl-cav { width: 30px; height: 30px; border-radius: 8px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; color: #fff; }
+  .cl-cav.ai { background: var(--grad); }
+  .cl-cav.coach { border-radius: 50%; background: linear-gradient(135deg,#f59e0b,#ef4444); }
+  .cl-cbubble { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08); border-radius: 12px; border-top-left-radius: 4px; padding: 10px 13px; }
+  .cl-cmsg.coach .cl-cbubble { background: rgba(37,99,235,0.10); border-color: rgba(37,99,235,0.28); }
+  .cl-cmeta { font-size: 11px; color: rgba(255,255,255,0.5); margin-bottom: 4px; }
+  .cl-cmeta b { color: #fff; font-weight: 700; }
+  .cl-cmeta .ai-k { color: #5fd0e6; }
+  .cl-ctext { font-size: 13.5px; line-height: 1.5; color: rgba(255,255,255,0.9); }
+  .cl-typing { display: inline-flex; align-items: center; gap: 4px; margin-left: 41px; padding: 9px 13px; background: rgba(255,255,255,0.05); border-radius: 12px; opacity: 0; }
+  .act-coach.run .cl-typing { animation: clType 1.0s var(--ease) .85s forwards; }
+  @keyframes clType { 0% { opacity: 0; } 20%,80% { opacity: 1; } 100% { opacity: 0; } }
+  .cl-typing i { width: 6px; height: 6px; border-radius: 50%; background: rgba(255,255,255,0.55); }
+  .act-coach.run .cl-typing i { animation: clDot 1s infinite; }
+  .act-coach.run .cl-typing i:nth-child(2) { animation-delay: .15s; }
+  .act-coach.run .cl-typing i:nth-child(3) { animation-delay: .3s; }
+  @keyframes clDot { 0%,100% { opacity: .35; transform: translateY(0); } 50% { opacity: 1; transform: translateY(-3px); } }
+
+  /* Act 4: Follow-up */
+  .cl-msgs { display: flex; flex-direction: column; gap: 10px; margin-top: 8px; }
+  .cl-msg { display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.07); border-radius: 12px; padding: 10px 12px; opacity: 0; transform: translateX(-12px); }
+  .act-followup.run .cl-msg.m1 { animation: clMsg .5s var(--ease) .2s forwards; }
+  .act-followup.run .cl-msg.m2 { animation: clMsg .5s var(--ease) 1.0s forwards; }
+  .act-followup.run .cl-msg.m3 { animation: clMsg .5s var(--ease) 1.8s forwards; }
+  @keyframes clMsg { to { opacity: 1; transform: none; } }
+  .cl-msg .pill { font-size: 10px; font-weight: 600; padding: 3px 8px; border-radius: 6px; background: rgba(40,200,64,0.16); color: #4cd964; flex-shrink: 0; }
+  .cl-msg .pill.sms { background: rgba(90,140,255,0.18); color: #8aa9ff; }
+  .cl-msg-t { flex: 1; font-size: 12.5px; color: rgba(255,255,255,0.82); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .cl-msg-s { font-size: 11px; font-weight: 700; flex-shrink: 0; }
+  .cl-msg-s.sent { color: rgba(255,255,255,0.45); }
+  .cl-msg-s.open { color: #5fd0e6; }
+  .cl-msg-s.reply { color: #4cd964; }
+  .act-followup.run .cl-msg.m3 .cl-msg-s { animation: clPopS .4s var(--ease) 2.3s both; }
+  @keyframes clPopS { 0% { transform: scale(.5); opacity: 0; } 100% { transform: scale(1); opacity: 1; } }
+
+  /* Act 5: Won, celebratory finale */
+  .cl-won-glow { position: absolute; inset: -45% -30%; pointer-events: none; opacity: 0; filter: blur(8px);
+    background: radial-gradient(42% 46% at 32% 34%, rgba(40,200,64,0.20), rgba(40,200,64,0.06) 45%, transparent 72%); }
+  .act-won.run .cl-won-glow { animation: clIn 1s ease forwards; }
+  .cl-confetti { position: absolute; top: 26px; left: 24px; width: 0; height: 0; pointer-events: none; z-index: 2; }
+  .cl-confetti i { position: absolute; width: 7px; height: 7px; border-radius: 2px; opacity: 0; }
+  .act-won.run .cl-confetti i { animation: clConfetti 1.5s var(--ease) forwards; }
+  @keyframes clConfetti { 0% { opacity: 0; transform: translate(0,0) scale(.4) rotate(0deg); } 12% { opacity: 1; } 100% { opacity: 0; transform: translate(var(--tx), var(--ty)) scale(1) rotate(var(--rot)); } }
+  .cl-won-top { position: relative; z-index: 1; display: flex; align-items: center; gap: 15px; margin-bottom: 18px; }
+  .cl-check { position: relative; width: 50px; height: 50px; border-radius: 50%; background: linear-gradient(135deg, rgba(40,200,64,0.30), rgba(6,182,212,0.18)); box-shadow: inset 0 0 0 1px rgba(40,200,64,0.45), 0 8px 22px -8px rgba(40,200,64,0.6); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transform: scale(0); }
+  .act-won.run .cl-check { animation: clCheck .6s var(--ease) .1s forwards; }
+  @keyframes clCheck { 0% { transform: scale(0); } 60% { transform: scale(1.18); } 100% { transform: scale(1); } }
+  .cl-checkmark { width: 26px; height: 26px; }
+  .cl-checkmark path { fill: none; stroke: #6cf08a; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 30; stroke-dashoffset: 30; filter: drop-shadow(0 0 4px rgba(76,217,100,0.7)); }
+  .act-won.run .cl-checkmark path { animation: clDrawCheck .45s var(--ease) .5s forwards; }
+  @keyframes clDrawCheck { to { stroke-dashoffset: 0; } }
+  .cl-check::before { content: ''; position: absolute; inset: -7px; border-radius: 50%; border: 2px solid rgba(40,200,64,0.6); opacity: 0; }
+  .act-won.run .cl-check::before { animation: clRing 1s ease-out .3s; }
+  @keyframes clRing { 0% { opacity: .85; transform: scale(.6); } 100% { opacity: 0; transform: scale(1.7); } }
+  .cl-won-h { font-size: 12px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.5); }
+  .cl-won-amt { font-size: 33px; font-weight: 800; letter-spacing: -0.025em; line-height: 1.12; color: #6cf08a; }
+  .act-won.run .cl-won-amt { animation: clAmtGlow 1s var(--ease) 1.5s both; }
+  @keyframes clAmtGlow { 0% { text-shadow: 0 0 0 rgba(76,217,100,0); } 45% { text-shadow: 0 0 22px rgba(76,217,100,0.8); } 100% { text-shadow: 0 0 0 rgba(76,217,100,0); } }
+  .cl-rate-card { position: relative; z-index: 1; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 14px 16px; }
+  .cl-rate-head { display: flex; align-items: center; justify-content: space-between; font-size: 12.5px; color: rgba(255,255,255,0.6); margin-bottom: 10px; }
+  .cl-rate-badge { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 800; color: #4cd964; background: rgba(40,200,64,0.14); border: 1px solid rgba(40,200,64,0.32); padding: 3px 10px; border-radius: 999px; opacity: 0; transform: scale(.7); }
+  .act-won.run .cl-rate-badge { animation: clCheckSm .45s var(--ease) 1.7s both; }
+  .cl-rate-num { font-weight: 800; }
+  .cl-chart { width: 100%; height: 58px; display: block; overflow: visible; }
+  .cl-chart-line { fill: none; stroke: url(#clChartGrad); stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; stroke-dasharray: 360; stroke-dashoffset: 360; filter: drop-shadow(0 2px 6px rgba(40,200,64,0.35)); }
+  .act-won.run .cl-chart-line { animation: clDrawChart 1.5s ease forwards .35s; }
+  @keyframes clDrawChart { to { stroke-dashoffset: 0; } }
+  .cl-chart-area { fill: url(#clAreaGrad); opacity: 0; }
+  .act-won.run .cl-chart-area { animation: clIn .8s ease forwards 1.2s; }
+  .cl-chart-end { fill: #6cf08a; transform-box: fill-box; transform-origin: center; opacity: 0; transform: scale(0); filter: drop-shadow(0 0 6px #4cd964); }
+  .act-won.run .cl-chart-end { animation: clCheckSm .5s var(--ease) 1.75s forwards; }
+  .cl-chart-end-ring { fill: none; stroke: #4cd964; stroke-width: 1.5; transform-box: fill-box; transform-origin: center; opacity: 0; }
+  .act-won.run .cl-chart-end-ring { animation: clEndRing 1.6s ease-out 2.0s infinite; }
+  @keyframes clEndRing { 0% { opacity: .6; transform: scale(.5); } 100% { opacity: 0; transform: scale(2); } }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cl-act { transition: none; }
+    .act-listen.run .cl-l1, .act-listen.run .cl-l2,
+    .act-analyze.run .cl-ex-row, .act-analyze.run .cl-ex-check,
+    .act-coach.run .cl-cmsg, .act-followup.run .cl-msg, .cl-wave i, .cl-recdot, .cl-online-dot,
+    .act-won .cl-check, .act-won .cl-rate-badge, .act-won .cl-chart-end { animation: none !important; opacity: 1 !important; transform: none !important; }
+    .act-won .cl-checkmark path, .act-won .cl-chart-line { stroke-dashoffset: 0 !important; animation: none !important; }
+    .act-won .cl-chart-area { opacity: 1 !important; animation: none !important; }
+    .cl-scanbar, .cl-typing, .cl-won-glow, .cl-confetti, .cl-chart-end-ring { display: none !important; }
+  }
+
+  /* ===== High-end polish layer ===== */
+  * { -webkit-tap-highlight-color: transparent; }
+  ::selection { background: rgba(37,99,235,0.18); color: var(--ink); }
+  body { letter-spacing: -0.011em; font-feature-settings: 'cv11' 1, 'ss01' 1, 'calt' 1; text-rendering: optimizeLegibility; }
+  :focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; border-radius: 6px; }
+
+  /* Refined typographic rhythm */
+  h1.hero-title, h2.sec-title, .showcase-text h3, .final-cta h2 { text-wrap: balance; }
+  .sec-lead, .hero-sub, .problem-body p, .step-body p { text-wrap: pretty; }
+  h2.sec-title { letter-spacing: -0.032em; line-height: 1.08; }
+  .eyebrow, .hero-eyebrow, .price-tag, .test-label, .treat-val, .mk-section-label, .co-label, .rc-label { letter-spacing: 0.14em; }
+  .leak-stat, .kpi-val, .price-amount, .co-val, .cr-num, .cl-won-amt, .rc-result, .hero-rating b { font-variant-numeric: tabular-nums; }
+
+  /* Airier section rhythm (desktop only, keep mobile tight) */
+  @media (min-width: 768px) {
+    .sec { padding: 126px 0; }
+    .hero { padding: 188px 0 122px; }
+  }
+
+  /* Whisper of grain for an expensive, non-flat surface */
+  body::before {
+    content: ''; position: fixed; inset: 0; z-index: 999; pointer-events: none;
+    opacity: 0.035; mix-blend-mode: soft-light;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Buttons: layered depth + a sheen sweep on hover */
+  .btn { letter-spacing: -0.01em; position: relative; overflow: hidden; }
+  .btn-brand { box-shadow: inset 0 1px 0 rgba(255,255,255,0.28), 0 2px 6px rgba(37,99,235,0.26), 0 12px 30px -8px rgba(37,99,235,0.5); }
+  .btn-brand:hover { transform: translateY(-2px) scale(1.015); box-shadow: inset 0 1px 0 rgba(255,255,255,0.32), 0 4px 10px rgba(37,99,235,0.3), 0 18px 42px -8px rgba(37,99,235,0.62); }
+  .btn-brand::after { content: ''; position: absolute; inset: 0; background: linear-gradient(120deg, transparent 32%, rgba(255,255,255,0.4) 50%, transparent 68%); transform: translateX(-130%); transition: transform 0.75s var(--ease); }
+  .btn-brand:hover::after { transform: translateX(130%); }
+  .btn-outline { backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+
+  /* Nav: crisper glass */
+  nav.scrolled { background: rgba(248,250,252,0.72); box-shadow: 0 1px 0 rgba(15,23,42,0.05), 0 8px 30px -18px rgba(15,23,42,0.45); border-bottom: 1px solid rgba(15,23,42,0.06); }
+
+  /* Light cards: cool hairline, subtle gradient surface, layered shadow, refined hover */
+  .treat-card, .feat-card, .test-card, .intg-card, .price-card {
+    border-color: rgba(15,23,42,0.07);
+    background: linear-gradient(180deg, #ffffff, #fbfcff);
+    box-shadow: 0 1px 2px rgba(15,23,42,0.04), 0 16px 36px -18px rgba(15,23,42,0.13);
+  }
+  .treat-card:hover, .feat-card:hover, .test-card:hover, .intg-card:hover {
+    border-color: rgba(37,99,235,0.30);
+    box-shadow: 0 1px 2px rgba(15,23,42,0.05), 0 28px 60px -24px rgba(37,99,235,0.30);
+  }
+  .price-card { box-shadow: 0 2px 8px rgba(15,23,42,0.05), 0 44px 96px -34px rgba(37,99,235,0.24); }
+
+  /* Dark surfaces: top inset highlight + deeper, softer shadow */
+  .dash, .roi-card, .leak-card, .community-card, .calc, .human-card {
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), 0 30px 80px -32px rgba(2,8,23,0.6);
+    border-color: rgba(255,255,255,0.11);
+  }
+
+  /* Hero window: luminous halo behind it + cinematic shadow */
+  .mockup-wrap::before {
+    content: ''; position: absolute; inset: -8% -4% -12%; z-index: -1;
+    background: radial-gradient(58% 54% at 50% 38%, rgba(37,99,235,0.38), rgba(6,182,212,0.12) 55%, transparent 72%);
+    filter: blur(54px); opacity: 0.75;
+  }
+  .mockup { box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 50px 120px -34px rgba(2,8,23,0.72), 0 0 0 1px rgba(255,255,255,0.05); }
+
+  /* Richer depth on dark sections */
+  .sec-dark::after, .final-cta::after {
+    content: ''; position: absolute; inset: 0; z-index: 0; pointer-events: none;
+    background: radial-gradient(72% 58% at 50% -4%, rgba(37,99,235,0.12), transparent 60%);
+  }
+  .sec-dark > .wrap { position: relative; z-index: 1; }
+  footer { box-shadow: inset 0 1px 0 rgba(255,255,255,0.05); }
+
+  @media (prefers-reduced-motion: reduce) {
+    .btn-brand::after { display: none; }
+  }
+
+  /* ===== Follow-up Sequence mock: calmer, on-brand ===== */
+  .tl-top .pill { font-size: 10px; font-weight: 700; letter-spacing: 0.02em; padding: 2px 7px; border-radius: 5px; background: rgba(255,255,255,0.09); color: rgba(255,255,255,0.6); }
+  .tl-top .pill.sms { background: rgba(37,99,235,0.22); color: #93b4ff; }
+  .tl-dot.sent { background: rgba(37,99,235,0.16); color: #7da6ff; }
+  .tl-stat.ok { color: rgba(255,255,255,0.42); }
+  .tl-stat.opened { color: #4cd964; }
+  .tl-stat.q { color: #5fd0e6; }
+  .tl-msg { font-size: 12.5px; color: rgba(255,255,255,0.72); overflow: hidden; text-overflow: ellipsis; }
+  .ctx-chip { color: rgba(255,255,255,0.72); background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.12); }
+  .ai-opt { background: rgba(37,99,235,0.07); border-color: rgba(37,99,235,0.22); }
+  .ai-opt-h b { color: #93b4ff; background: rgba(37,99,235,0.18); }
+  .mk-bar-label { color: rgba(255,255,255,0.72); }
+
 </style>
 </head>
 <body>
@@ -697,6 +963,7 @@
 <!-- ============ HERO ============ -->
 <header class="hero" id="top">
   <div class="hero-bg"></div>
+  <canvas class="cl-nodes" aria-hidden="true"></canvas>
   <div class="wrap">
     <div class="badge hero-anim d1"><span class="dot"></span>DENTISTS LOOKING TO GROW PRODUCTION:</div>
     <h1 class="hero-title hero-anim d2">We Do The Heavy Lifting To Help You Close More <span class="accent">High-Value Dental Cases</span></h1>
@@ -710,29 +977,87 @@
     <!-- Mockup -->
     <div class="mockup-wrap hero-anim d6">
       <div class="mockup">
-        <div class="mockup-bar"><i></i><i></i><i></i><span>CaseLift · Consult Analysis</span></div>
+        <div class="mockup-bar"><i></i><i></i><i></i><span id="clTitle">CaseLift · Consult Analysis</span></div>
         <div class="mockup-body">
-          <div class="mk-head">
+          <div class="cl-show" id="clShow" data-act="listen">
+          <div class="cl-show-head">
             <div class="mk-patient">
               <div class="mk-avatar">MC</div>
-              <div>
-                <div class="mk-name">Margaret C.</div>
-                <div class="mk-meta">Implant consult · 1 day ago</div>
+              <div><div class="mk-name">Margaret C.</div><div class="mk-meta">Implant consult · $26,400</div></div>
+            </div>
+            <div class="cl-stage-tag" id="clTag">● Listening</div>
+          </div>
+          <div class="cl-acts">
+            <div class="cl-act act-listen">
+              <div class="cl-rec"><span class="cl-recdot"></span>REC<div class="cl-wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="cl-rectime">02:14</span></div>
+              <div class="cl-trans">
+                <div class="cl-line cl-l1"><span class="cl-spk">Patient</span>"It sounds great, I just need to talk it over with my husband first."</div>
+                <div class="cl-line cl-l2"><span class="cl-spk tc">TC</span>"Of course. Would a quick call with both of you help?"</div>
+              </div>
+              <div class="cl-words-row"><span class="cl-words">0</span> · transcribing live, de-identified</div>
+            </div>
+            <div class="cl-act act-analyze">
+              <div class="cl-scan">
+                <div class="cl-scan-head"><span class="cl-spark"></span>Analyzing the conversation</div>
+                <div class="cl-scan-lines">
+                  <span class="cl-sl w1"></span><span class="cl-sl w2"></span><span class="cl-sl w3"></span><span class="cl-sl w4"></span>
+                  <div class="cl-scanbar"></div>
+                </div>
+              </div>
+              <div class="cl-extract">
+                <div class="cl-ex-row r1"><span class="cl-ex-check">✓</span><span class="cl-ex-k">Objection</span><span class="cl-ex-v">Needs spouse buy-in</span></div>
+                <div class="cl-ex-row r2"><span class="cl-ex-check">✓</span><span class="cl-ex-k">Case value</span><span class="cl-ex-v">$26,400 · full arch</span></div>
+                <div class="cl-ex-row r3"><span class="cl-ex-check">✓</span><span class="cl-ex-k">Exit intent</span><span class="cl-ex-v">Warm · likely to close</span></div>
               </div>
             </div>
-            <div class="mk-tag">Exit intent: Warm</div>
+            <div class="cl-act act-coach">
+              <div class="cl-chan">
+                <div class="cl-chan-head">
+                  <span class="cl-chan-name"># Private 1-on-1 Coaching</span>
+                  <span class="cl-chan-online"><span class="cl-online-dot"></span>Coach online</span>
+                </div>
+                <div class="cl-cmsg ai m1">
+                  <div class="cl-cav ai">◆</div>
+                  <div class="cl-cbubble"><div class="cl-cmeta"><b>CaseLift</b> <span class="ai-k">· AI insight</span></div><div class="cl-ctext">Spouse objection. Offer a joint call.</div></div>
+                </div>
+                <div class="cl-typing"><i></i><i></i><i></i></div>
+                <div class="cl-cmsg coach m2">
+                  <div class="cl-cav coach">LC</div>
+                  <div class="cl-cbubble"><div class="cl-cmeta"><b>Laura, your TC coach</b> · just now</div><div class="cl-ctext">Lead with his health, not the price. Want me to review your script?</div></div>
+                </div>
+              </div>
+            </div>
+            <div class="cl-act act-followup">
+              <div class="cl-msgs">
+                <div class="cl-msg m1"><span class="pill sms">SMS</span><span class="cl-msg-t">"Loved meeting you, Margaret. Any questions come up?"</span><span class="cl-msg-s sent">Sent</span></div>
+                <div class="cl-msg m2"><span class="pill">Email</span><span class="cl-msg-t">Financing breakdown + a couple's success story</span><span class="cl-msg-s open">Opened</span></div>
+                <div class="cl-msg m3"><span class="pill sms">SMS</span><span class="cl-msg-t">"Would a quick joint call this week help?"</span><span class="cl-msg-s reply">Replied ✓</span></div>
+              </div>
+            </div>
+            <div class="cl-act act-won">
+              <div class="cl-won-glow"></div>
+              <div class="cl-confetti"><i style="--tx:50px;--ty:33px;--rot:0deg;background:#2563EB;animation-delay:0.15s"></i><i style="--tx:43px;--ty:58px;--rot:61deg;background:#06B6D4;animation-delay:0.19s"></i><i style="--tx:24px;--ty:79px;--rot:122deg;background:#28c840;animation-delay:0.23s"></i><i style="--tx:-6px;--ty:91px;--rot:183deg;background:#fbbf24;animation-delay:0.27s"></i><i style="--tx:-40px;--ty:87px;--rot:244deg;background:#7da6ff;animation-delay:0.31s"></i><i style="--tx:-72px;--ty:67px;--rot:305deg;background:#4cd964;animation-delay:0.35s"></i><i style="--tx:-93px;--ty:32px;--rot:6deg;background:#ffffff;animation-delay:0.15s"></i><i style="--tx:-53px;--ty:2px;--rot:67deg;background:#2563EB;animation-delay:0.19s"></i><i style="--tx:-45px;--ty:-24px;--rot:128deg;background:#06B6D4;animation-delay:0.23s"></i><i style="--tx:-25px;--ty:-46px;--rot:189deg;background:#28c840;animation-delay:0.27s"></i><i style="--tx:6px;--ty:-58px;--rot:250deg;background:#fbbf24;animation-delay:0.31s"></i><i style="--tx:42px;--ty:-54px;--rot:311deg;background:#7da6ff;animation-delay:0.35s"></i><i style="--tx:74px;--ty:-33px;--rot:12deg;background:#4cd964;animation-delay:0.15s"></i><i style="--tx:96px;--ty:4px;--rot:73deg;background:#ffffff;animation-delay:0.19s"></i></div>
+              <div class="cl-won-top">
+                <div class="cl-check"><svg class="cl-checkmark" viewBox="0 0 26 26" aria-hidden="true"><path d="M5 14 l5 5 L21 7"/></svg></div>
+                <div><div class="cl-won-h">Treatment plan accepted</div><div class="cl-won-amt">$0</div></div>
+              </div>
+              <div class="cl-rate-card">
+                <div class="cl-rate-head"><span>Case acceptance rate</span><span class="cl-rate-badge">▲ <span class="cl-rate-num">31%</span></span></div>
+                <svg class="cl-chart" viewBox="0 0 280 58" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="clChartGrad" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#28c840"/></linearGradient>
+                    <linearGradient id="clAreaGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="rgba(40,200,64,0.32)"/><stop offset="1" stop-color="rgba(40,200,64,0)"/></linearGradient>
+                  </defs>
+                  <path class="cl-chart-area" d="M6,50 L52,46 L98,41 L144,31 L190,22 L236,12 L274,6 L274,58 L6,58 Z"/>
+                  <path class="cl-chart-line" d="M6,50 L52,46 L98,41 L144,31 L190,22 L236,12 L274,6"/>
+                  <circle class="cl-chart-end-ring" cx="274" cy="6" r="4.5"/>
+                  <circle class="cl-chart-end" cx="274" cy="6" r="3.6"/>
+                </svg>
+              </div>
+            </div>
           </div>
-
-          <div class="mk-section-label">What CaseLift heard</div>
-          <div class="mk-objection"><div class="mk-ico">💬</div><div class="mk-obj-text"><b>Spouse objection.</b> Wants to talk it over with her husband before moving forward.</div></div>
-
-          <div class="mk-section-label">CaseLift coaching</div>
-          <div class="mk-objection"><div class="mk-ico">🎯</div><div class="mk-obj-text">Offer a joint call with her husband. She's the decision maker, but he holds the veto.</div></div>
-
-          <div class="mk-section-label">Next message</div>
-          <div class="mk-seq">
-            <div class="mk-seq-row"><span class="pill sms">SMS</span><span class="t">"Hi Margaret, would it help to hop on a quick call together with your husband?"</span><span class="d">Day 3 · in 2 days</span></div>
-          </div>
+          <div class="cl-progress"><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
         </div>
       </div>
     </div>
@@ -743,14 +1068,14 @@
 <section class="sec sec-dark" id="problem">
   <div class="wrap sec-center">
     <div class="eyebrow reveal">The Hidden Leak</div>
-    <h2 class="sec-title reveal" data-delay="1">The follow-up gap costing your practice 6&ndash;7 figures</h2>
-    <p class="sec-lead reveal" data-delay="2">Your practice is losing production every single week. Patients hear your treatment plan and leave without scheduling. Your TC follows up once or twice, then moves on &mdash; and a $5K&ndash;$60K case quietly disappears.</p>
+    <h2 class="sec-title reveal" data-delay="1">The follow-up gap costing your practice 6 to 7 figures</h2>
+    <p class="sec-lead reveal" data-delay="2">Your practice is losing production every single week. Patients hear your treatment plan and leave without scheduling. Your TC follows up once or twice, then moves on , and a $5K to $60K case quietly disappears.</p>
   </div>
   <div class="wrap">
     <div class="leak-grid">
       <div class="leak-card reveal" data-delay="1">
         <div class="leak-ico">🔁</div>
-        <div class="leak-stat">5&ndash;12</div>
+        <div class="leak-stat">5 to 12</div>
         <p class="leak-desc">follow-up touchpoints most treatment plans need before they close, far more than almost any practice manages on its own.</p>
       </div>
       <div class="leak-card reveal" data-delay="2">
@@ -764,7 +1089,7 @@
         <p class="leak-desc">stop following up entirely by the fourth attempt, so the cases that need the most nurturing quietly disappear.</p>
       </div>
     </div>
-    <p class="leak-foot reveal">That's how <span>6&ndash;7 figures</span> slip out the door every year. CaseLift fixes that.</p>
+    <p class="leak-foot reveal">That's how <span>6 to 7 figures</span> slip out the door every year. CaseLift fixes that.</p>
     <p class="proof-src" style="text-align:center;">Source: Salesforce</p>
   </div>
 </section>
@@ -781,8 +1106,8 @@
     <!-- 1: Recording / listening -->
     <div class="showcase">
       <div class="showcase-text reveal-left">
-        <h3>It listens in on the consult</h3>
-        <p>Hit record at the start of any high-value consult. CaseLift listens, transcribes in real time, and analyzes the conversation the moment it ends, no extra hardware, no manual notes.</p>
+        <h3>CaseLift hears the real objection, not the polite one</h3>
+        <p>Your coordinator remembers the gist. CaseLift remembers every word, and the exact reason the patient walked. Recorded and analyzed the second the consult ends.</p>
         <ul class="sc-list">
           <li><span class="ck">✓</span>Records right in the browser, nothing to install</li>
           <li><span class="ck">✓</span>Live transcription, automatically de-identified</li>
@@ -811,8 +1136,8 @@
     <!-- 2: Automated sequence -->
     <div class="showcase flip">
       <div class="showcase-text reveal-right">
-        <h3>A follow-up sequence, built around each patient</h3>
-        <p>CaseLift doesn't blast a fixed template. It builds a sequence around each patient's specific objection and intent, SMS and email, with as many touches as it takes and timing tuned to how ready they are. And it's self-optimizing: it learns which messages earn replies, across your practice and every practice on CaseLift, and leads with the winners.</p>
+        <h3>CaseLift does the follow-up your team never has time for</h3>
+        <p>Five to twelve personalized touches per patient, built around their specific objection, sent automatically by text and email. The work that actually closes big cases, handled for you. And it is self-optimizing: it leads with the messages that earn replies.</p>
         <ul class="sc-list">
           <li><span class="ck">✓</span>Fully customized to each patient's objection and intent</li>
           <li><span class="ck">✓</span>As many personalized touches as the case needs</li>
@@ -823,19 +1148,19 @@
         <div class="dash">
           <div class="dash-bar"><i></i><i></i><i></i><span>CaseLift · Follow-Up Sequence</span></div>
           <div class="dash-body">
-            <div class="ctx-chip">🦷 Margaret C. · Full-arch · $26,400 · Objection: spouse</div>
+            <div class="ctx-chip">🦷 Margaret C. · $26,400 · spouse objection</div>
             <div class="tl" style="margin-top:4px">
-              <div class="tl-row"><span class="tl-dot sent">✓</span><div class="tl-card"><div class="tl-top"><span class="pill sms">SMS</span><span class="tl-day">Day 1</span><span class="tl-stat ok">Sent</span></div><div class="tl-msg">"Hi Margaret, it was great meeting you today. Any questions come up since the consult?"</div></div></div>
-              <div class="tl-row"><span class="tl-dot sent">✓</span><div class="tl-card"><div class="tl-top"><span class="pill">Email</span><span class="tl-day">Day 3</span><span class="tl-stat ok">Opened</span></div><div class="tl-msg">Financing breakdown + a patient story about doing it together as a couple.</div></div></div>
-              <div class="tl-row"><span class="tl-dot next">➤</span><div class="tl-card"><div class="tl-top"><span class="pill sms">SMS</span><span class="tl-day">Day 5</span><span class="tl-stat q">Sending now</span></div><div class="tl-msg">"Would it help to hop on a quick call together with your husband?"</div></div></div>
-              <div class="tl-row"><span class="tl-dot queued">5</span><div class="tl-card"><div class="tl-top"><span class="pill">Email</span><span class="tl-day">Day 9</span><span class="tl-stat q">Queued</span></div><div class="tl-msg">Limited surgical openings + price-lock reminder.</div></div></div>
+              <div class="tl-row"><span class="tl-dot sent">✓</span><div class="tl-card"><div class="tl-top"><span class="pill sms">SMS</span><span class="tl-day">Day 1</span><span class="tl-stat ok">Sent</span></div><div class="tl-msg">"Loved meeting you today. Any questions come up?"</div></div></div>
+              <div class="tl-row"><span class="tl-dot sent">✓</span><div class="tl-card"><div class="tl-top"><span class="pill">Email</span><span class="tl-day">Day 3</span><span class="tl-stat opened">Opened</span></div><div class="tl-msg">Financing breakdown + a couple's success story.</div></div></div>
+              <div class="tl-row"><span class="tl-dot next">➤</span><div class="tl-card"><div class="tl-top"><span class="pill sms">SMS</span><span class="tl-day">Day 5</span><span class="tl-stat q">Sending now</span></div><div class="tl-msg">"Want to hop on a quick call with your husband?"</div></div></div>
+              
             </div>
             <div class="ai-opt">
-              <div class="ai-opt-h"><b>Self-optimizing</b> CaseLift picked the winning messages</div>
+              <div class="ai-opt-h"><b>Self-optimizing</b> Leading with your highest-replying message</div>
               <div class="mk-bars">
-                <div class="mk-bar-row"><div class="mk-bar-label">Day 3 financing email</div><div class="mk-bar-track"><div class="mk-bar-fill" style="width:92%"></div></div></div>
-                <div class="mk-bar-row"><div class="mk-bar-label">Day 5 joint-call SMS</div><div class="mk-bar-track"><div class="mk-bar-fill" style="width:71%"></div></div></div>
-                <div class="mk-bar-row"><div class="mk-bar-label">Generic check-in</div><div class="mk-bar-track"><div class="mk-bar-fill" style="width:23%"></div></div></div>
+                <div class="mk-bar-row"><div class="mk-bar-label">Top message · 92% reply rate</div><div class="mk-bar-track"><div class="mk-bar-fill" style="width:92%"></div></div></div>
+                
+                
               </div>
             </div>
           </div>
@@ -846,8 +1171,8 @@
     <!-- 3: Conversations -->
     <div class="showcase">
       <div class="showcase-text reveal-left">
-        <h3>Every conversation, with full context</h3>
-        <p>When a patient replies, it lands in front of your TC with the entire consult story attached: the case, the objection, the dollar amount. No scrambling, no cold re-introductions.</p>
+        <h3>Your coordinator only steps in to close</h3>
+        <p>When a patient replies, it arrives with the case, the objection, and the dollar amount attached. No chasing, no cold reintroductions. Your coordinator goes straight to booking.</p>
         <ul class="sc-list">
           <li><span class="ck">✓</span>Two-way SMS and email in one thread</li>
           <li><span class="ck">✓</span>Case value and objection pinned to every chat</li>
@@ -873,8 +1198,8 @@
     <!-- 4: Training course preview -->
     <div class="showcase flip">
       <div class="showcase-text reveal-right">
-        <h3>Built-in training that levels up your TC</h3>
-        <p>Every membership includes the TC Certification library, guided video courses and objection-handling playbooks built by a 7-figure treatment coordinator, so your whole team gets better at closing, not just your software.</p>
+        <h3>Your whole team closes at a higher rate</h3>
+        <p>Every membership includes objection-handling training from a coordinator who has personally closed seven figures. CaseLift recovers cases while your team gets sharper.</p>
         <ul class="sc-list">
           <li><span class="ck">✓</span>Guided video courses, watch at your own pace</li>
           <li><span class="ck">✓</span>Real objection-handling scripts and playbooks</li>
@@ -1023,7 +1348,7 @@
       </div>
     </div>
     <div class="roi-cta reveal">
-      <a href="/apply.html" class="btn btn-red">Schedule A Demo</a>
+      <a class='btn btn-red' href='/apply'>Schedule A Demo</a>
     </div>
   </div>
 </section>
@@ -1048,7 +1373,7 @@
         <li class="guar"><span class="ck">★</span>3X ROI in 90 days, or it's free</li>
       </ul>
       <p class="price-note">Pricing is based on your practice's case volume. We'll build your custom quote on the call.</p>
-      <a href="/apply.html" class="btn btn-brand">Get My Custom Price &rarr;</a>
+      <a class='btn btn-brand' href='/apply'>Get My Custom Price &rarr;</a>
     </div>
     <div class="cancel-row reveal">
       <span class="cancel-pill"><span class="cp-ck">✓</span>Cancel anytime</span>
@@ -1134,11 +1459,12 @@
 <!-- ============ FINAL CTA ============ -->
 <section class="final-cta">
   <div class="glow"></div>
+  <canvas class="cl-nodes" aria-hidden="true"></canvas>
   <div class="wrap">
     <h2 class="reveal">Ready to recover the cases you're losing?</h2>
     <p class="reveal" data-delay="1">Your TC records the consult. CaseLift handles everything after, backed by real humans and our 3X-ROI-in-90-days-or-it's-free guarantee.</p>
     <div class="reveal" data-delay="2"><a href="/apply" class="btn btn-brand">Schedule A Demo</a></div>
-    <p class="final-note reveal" data-delay="3">Cancel anytime, no contract · Limited spots available</p>
+    
   </div>
 </section>
 
@@ -1250,6 +1576,152 @@
     rRecover.textContent = '$' + recoverPerYear.toLocaleString('en-US');
   }
   if (cConsults) { cConsults.addEventListener('input', updateCalc); cValue.addEventListener('input', updateCalc); cRate.addEventListener('input', updateCalc); updateCalc(); }
+  // ===== Motion layer (added) =====
+  (function () {
+    var reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var mobile = matchMedia('(max-width: 768px)').matches;
+    var BLUE = [37, 99, 235], CYAN = [6, 182, 212];
+    function mix(a, b, t) {
+      return Math.round(a[0] + (b[0]-a[0])*t) + ',' + Math.round(a[1] + (b[1]-a[1])*t) + ',' + Math.round(a[2] + (b[2]-a[2])*t);
+    }
+    // --- Animated node blueprint (Canvas 2D) ---
+    function initNodes(canvas) {
+      var ctx = canvas.getContext('2d'), wrap = canvas.parentElement;
+      var dpr = Math.min(window.devicePixelRatio || 1, 2), w = 0, h = 0;
+      var nodes = [], edges = [], packets = [], raf = 0, frame = 0, running = true;
+      var COUNT = mobile ? 16 : 34, MAXD = mobile ? 150 : 200;
+      function resize() {
+        var r = wrap.getBoundingClientRect(); w = r.width; h = r.height;
+        canvas.width = w*dpr; canvas.height = h*dpr; canvas.style.width = w+'px'; canvas.style.height = h+'px';
+        ctx.setTransform(dpr,0,0,dpr,0,0); seed();
+      }
+      function seed() {
+        nodes = [];
+        for (var i=0;i<COUNT;i++) nodes.push({ x:Math.random()*w, y:Math.random()*h, vx:(Math.random()-.5)*.18, vy:(Math.random()-.5)*.18, r:1.4+Math.random()*1.8, ph:Math.random()*6.28, green:Math.random()<.32 });
+        computeEdges(); packets = [];
+      }
+      function computeEdges() {
+        edges = [];
+        for (var i=0;i<nodes.length;i++) for (var j=i+1;j<nodes.length;j++) {
+          var dx=nodes[i].x-nodes[j].x, dy=nodes[i].y-nodes[j].y;
+          if (dx*dx+dy*dy < MAXD*MAXD) edges.push([i,j]);
+        }
+      }
+      function spawn() { if(!edges.length) return; var e=edges[(Math.random()*edges.length)|0]; packets.push({a:e[0],b:e[1],t:0,s:.004+Math.random()*.006}); }
+      function draw() {
+        raf = requestAnimationFrame(draw); frame++; ctx.clearRect(0,0,w,h);
+        for (var k=0;k<nodes.length;k++){ var n=nodes[k]; n.x+=n.vx; n.y+=n.vy; if(n.x<0||n.x>w)n.vx*=-1; if(n.y<0||n.y>h)n.vy*=-1; }
+        if (frame%30===0) computeEdges();
+        for (var i2=0;i2<edges.length;i2++){ var a=nodes[edges[i2][0]], b=nodes[edges[i2][1]];
+          ctx.strokeStyle='rgba('+(a.green&&b.green?mix(BLUE,CYAN,.8):'90,130,230')+',0.16)'; ctx.lineWidth=1;
+          ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(b.x,b.y); ctx.stroke();
+        }
+        if (!reduce && running) {
+          if (frame % 12 === 0 && packets.length < (mobile?8:16)) spawn();
+          for (var p2=packets.length-1;p2>=0;p2--){ var p=packets[p2]; p.t+=p.s;
+            if (p.t>=1){ packets.splice(p2,1); continue; }
+            var a2=nodes[p.a], b2=nodes[p.b]; if(!a2||!b2){ packets.splice(p2,1); continue; }
+            var depth=(a2.y+(b2.y-a2.y)*p.t)/Math.max(1,h);
+            var col=mix(BLUE,CYAN,Math.min(1,depth*.6+(b2.green?.3:0)));
+            var x=a2.x+(b2.x-a2.x)*p.t, y=a2.y+(b2.y-a2.y)*p.t;
+            ctx.beginPath(); ctx.fillStyle='rgba('+col+',0.95)'; ctx.shadowColor='rgba('+col+',1)'; ctx.shadowBlur=10;
+            ctx.arc(x,y,2.4,0,6.2832); ctx.fill(); ctx.shadowBlur=0;
+          }
+        }
+        for (var m=0;m<nodes.length;m++){ var nd=nodes[m]; nd.ph+=.02; var pulse=reduce?1:.7+.3*Math.sin(nd.ph);
+          var c=nd.green?CYAN:BLUE; ctx.beginPath(); ctx.fillStyle='rgba('+c[0]+','+c[1]+','+c[2]+','+(0.7*pulse)+')';
+          ctx.arc(nd.x,nd.y,nd.r,0,6.2832); ctx.fill();
+        }
+      }
+      resize();
+      if (reduce) { draw(); cancelAnimationFrame(raf); } else raf = requestAnimationFrame(draw);
+      var io = new IntersectionObserver(function(e){ running=e[0].isIntersecting; if(running&&!reduce&&!raf)raf=requestAnimationFrame(draw); if(!running){cancelAnimationFrame(raf);raf=0;} }, {threshold:.01});
+      io.observe(wrap);
+      window.addEventListener('resize', resize);
+    }
+    document.querySelectorAll('canvas.cl-nodes').forEach(initNodes);
+
+    // --- Count-up on scroll (single-number elements only) ---
+    function countUp(el) {
+      var m = el.textContent.trim().match(/^(\D*)([\d.,]+)(\D*)$/); if(!m) return;
+      var pre=m[1], numStr=m[2], suf=m[3], target=parseFloat(numStr.replace(/,/g,'')); if(isNaN(target)) return;
+      var dec=(numStr.split('.')[1]||'').length, start=null, dur=1300;
+      function step(ts){ if(!start)start=ts; var t=Math.min(1,(ts-start)/dur), e=1-Math.pow(1-t,3), v=target*e;
+        el.textContent = pre + (dec?v.toFixed(dec):Math.round(v).toLocaleString('en-US')) + suf;
+        if(t<1) requestAnimationFrame(step); }
+      requestAnimationFrame(step);
+    }
+    if (!reduce) {
+      var cuObs = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ countUp(e.target); cuObs.unobserve(e.target);} }); }, {threshold:.6});
+      document.querySelectorAll('.leak-stat').forEach(function(el){ cuObs.observe(el); });
+    }
+
+    // --- Live recording timer ---
+    var rt = document.querySelector('.rec-time');
+    if (rt && !reduce) { var sec = 12*60+47; setInterval(function(){ sec++; rt.textContent = String((sec/60)|0).padStart(2,'0')+':'+String(sec%60).padStart(2,'0'); }, 1000); }
+
+    // --- Self-optimizing bars fill on view ---
+    document.querySelectorAll('.mk-bar-fill').forEach(function(el){ el.dataset.w = el.style.width || '0'; if(!reduce) el.style.width='0'; });
+    var bObs = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.querySelectorAll('.mk-bar-fill').forEach(function(el){ el.style.width = el.dataset.w; }); bObs.unobserve(e.target); } }); }, {threshold:.4});
+    document.querySelectorAll('.ai-opt, .dash').forEach(function(el){ bObs.observe(el); });
+
+    // --- Subtle hero parallax ---
+    var mw = document.querySelector('.mockup-wrap');
+    if (mw && !reduce) window.addEventListener('scroll', function(){ var y=window.scrollY; if(y<1000) mw.style.transform='translateY('+(y*0.05)+'px)'; }, {passive:true});
+  })();
+
+  // ===== Hero story controller =====
+  (function () {
+    var show = document.getElementById('clShow');
+    if (!show) return;
+    var reduceM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var tag = document.getElementById('clTag');
+    var title = document.getElementById('clTitle');
+    var acts = [
+      { id: 'listen',   tag: '● Listening',        title: 'CaseLift · Listening',  ms: 3900 },
+      { id: 'analyze',  tag: '● Analyzing',        title: 'CaseLift · Analyzing',  ms: 3700 },
+      { id: 'coach',    tag: '● Coaching insight', title: 'CaseLift · Coaching',   ms: 6500 },
+      { id: 'followup', tag: '● Building follow-up', title: 'CaseLift · Follow-up', ms: 4600 },
+      { id: 'won',      tag: '✓ Case won',         title: 'CaseLift · Won',        ms: 4900 },
+    ];
+    function num(el, from, to, dur, pre, suf) {
+      if (!el) return; var st = null;
+      function s(ts) { if (!st) st = ts; var t = Math.min(1, (ts - st) / dur); var e = 1 - Math.pow(1 - t, 3);
+        el.textContent = pre + Math.round(from + (to - from) * e).toLocaleString('en-US') + suf;
+        if (t < 1) requestAnimationFrame(s); }
+      requestAnimationFrame(s);
+    }
+    var i = -1, timer = 0;
+    function enter() {
+      i = (i + 1) % acts.length; var a = acts[i];
+      show.dataset.act = a.id;
+      if (tag) tag.textContent = a.tag;
+      if (title) title.textContent = a.title;
+      show.querySelectorAll('.cl-act').forEach(function (el) { el.classList.remove('run'); });
+      var active = show.querySelector('.act-' + a.id);
+      if (active) { void active.offsetWidth; active.classList.add('run'); }
+      if (a.id === 'listen') num(show.querySelector('.cl-words'), 0, 1420, 1800, '', ' words');
+      if (a.id === 'won') {
+        num(show.querySelector('.cl-won-amt'), 0, 26400, 1500, '$', '');
+        num(show.querySelector('.cl-rate-num'), 31, 58, 1700, '', '%');
+      }
+      timer = setTimeout(enter, a.ms);
+    }
+    if (reduceM) {
+      // Static, fully-resolved final frame.
+      show.dataset.act = 'won';
+      var amt = show.querySelector('.cl-won-amt'); if (amt) amt.textContent = '$26,400';
+      var rn = show.querySelector('.cl-rate-num'); if (rn) rn.textContent = '58%';
+      if (tag) tag.textContent = '✓ Case won';
+      return;
+    }
+    var io = new IntersectionObserver(function (e) {
+      if (e[0].isIntersecting && i < 0) enter();
+      else if (!e[0].isIntersecting && timer) { clearTimeout(timer); timer = 0; i = -1; }
+    }, { threshold: 0.25 });
+    io.observe(show);
+  })();
+
 </script>
 </body>
 </html>
