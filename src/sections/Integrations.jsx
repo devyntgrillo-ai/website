@@ -1,6 +1,41 @@
+import { useState } from 'react'
 import RevealSection from '../components/RevealSection'
 
-const LOGOS = ['Dentrix', 'Open Dental', 'Eaglesoft', 'Curve', 'Carestream', 'Denticon', 'CareStack', 'NexHealth', 'Weave', 'tab32']
+const LOGOS = [
+  { name: 'Dentrix', domain: 'dentrix.com' },
+  { name: 'Open Dental', domain: 'opendental.com' },
+  { name: 'Eaglesoft', domain: 'eaglesoft.net' },
+  { name: 'Curve Dental', domain: 'curvedental.com' },
+  { name: 'Carestream', domain: 'carestreamdental.com' },
+  { name: 'Denticon', domain: 'planetdds.com' },
+  { name: 'CareStack', domain: 'carestack.com' },
+  { name: 'NexHealth', domain: 'nexhealth.com' },
+  { name: 'Weave', domain: 'getweave.com' },
+  { name: 'tab32', domain: 'tab32.com' },
+]
+
+function LogoChip({ name, domain, i }) {
+  const [failed, setFailed] = useState(false)
+  return (
+    <div
+      className="group flex h-20 items-center justify-center rounded-xl border border-white/10 bg-white/95 px-4 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-electric/50 hover:shadow-glow motion-safe:animate-breathe"
+      style={{ animationDelay: `${(i % 5) * 0.4}s` }}
+    >
+      {failed ? (
+        <span className="text-sm font-bold text-ink">{name}</span>
+      ) : (
+        <img
+          src={`https://logo.clearbit.com/${domain}`}
+          alt={name}
+          loading="lazy"
+          width="120" height="40"
+          onError={() => setFailed(true)}
+          className="max-h-9 w-auto max-w-[120px] object-contain opacity-80 transition group-hover:opacity-100"
+        />
+      )}
+    </div>
+  )
+}
 
 export default function Integrations() {
   return (
@@ -14,10 +49,8 @@ export default function Integrations() {
           </p>
         </RevealSection>
         <RevealSection stagger className="mt-12 grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-5">
-          {LOGOS.map((name) => (
-            <div key={name} className="flex h-20 items-center justify-center rounded-xl border border-white/10 bg-space-800/40 text-sm font-semibold text-slate-300 transition hover:border-electric/40 hover:text-white motion-safe:animate-breathe" style={{ animationDelay: `${Math.random() * 2}s` }}>
-              {name}
-            </div>
+          {LOGOS.map((l, i) => (
+            <LogoChip key={l.name} name={l.name} domain={l.domain} i={i} />
           ))}
         </RevealSection>
         <p className="mt-8 text-center text-sm text-slate-500">And 20+ more, synced automatically through our universal integration engine.</p>

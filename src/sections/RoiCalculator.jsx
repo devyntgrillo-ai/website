@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import NodeField from '../components/NodeField'
 import RevealSection from '../components/RevealSection'
 import PulseButton from '../components/PulseButton'
@@ -28,11 +28,21 @@ export default function RoiCalculator() {
   const [consults, setConsults] = useState(20)
   const [caseValue, setCaseValue] = useState(15000)
   const [noShowPct, setNoShowPct] = useState(60)
+  const [boost, setBoost] = useState(false)
+  const boostTimer = useRef(0)
+
+  // Dragging any slider briefly charges up the surrounding node energy.
+  const bump = () => {
+    setBoost(true)
+    clearTimeout(boostTimer.current)
+    boostTimer.current = setTimeout(() => setBoost(false), 700)
+  }
+  const set = (fn) => (v) => { fn(v); bump() }
 
   const walkPerYear = Math.round(consults * (noShowPct / 100) * 12)
   const lostProduction = walkPerYear * caseValue
   const recoverable = lostProduction * 0.15
-  const intensity = Math.min(1, 0.4 + (noShowPct / 100) * 0.6)
+  const intensity = Math.min(1, 0.4 + (noShowPct / 100) * 0.6 + (boost ? 0.35 : 0))
 
   return (
     <section className="relative overflow-hidden bg-ink py-24 sm:py-32">
@@ -48,9 +58,9 @@ export default function RoiCalculator() {
 
         <RevealSection className="mt-12 grid gap-8 lg:grid-cols-2">
           <div className="space-y-8 rounded-2xl border border-white/10 bg-space-800/50 p-7">
-            <Slider label="High-value consults per month" min={5} max={120} step={1} value={consults} onChange={setConsults} format={(v) => v} />
-            <Slider label="Average case value" min={3000} max={60000} step={500} value={caseValue} onChange={setCaseValue} format={fmt$} />
-            <Slider label="Percent that don't schedule same day" min={20} max={90} step={1} value={noShowPct} onChange={setNoShowPct} format={(v) => v + '%'} />
+            <Slider label="High-value consults per month" min={5} max={120} step={1} value={consults} onChange={set(setConsults)} format={(v) => v} />
+            <Slider label="Average case value" min={3000} max={60000} step={500} value={caseValue} onChange={set(setCaseValue)} format={fmt$} />
+            <Slider label="Percent that don't schedule same day" min={20} max={90} step={1} value={noShowPct} onChange={set(setNoShowPct)} format={(v) => v + '%'} />
           </div>
 
           <div className="flex flex-col gap-4">
@@ -63,7 +73,7 @@ export default function RoiCalculator() {
               <p className="mt-1 text-sm text-slate-400">in production leaving every year.</p>
             </div>
             <div className="rounded-2xl border border-money/40 bg-money/10 p-6 shadow-glow-green">
-              <div className="font-display text-5xl font-extrabold text-money">{fmt$(recoverable)}</div>
+              <div className={`font-display text-5xl font-extrabold text-money ${boost ? 'flare' : ''}`}>{fmt$(recoverable)}</div>
               <p className="mt-1 text-sm text-money-300">recoverable per year at a conservative 15% recovery rate.</p>
             </div>
           </div>

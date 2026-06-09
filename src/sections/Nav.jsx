@@ -30,7 +30,7 @@ export default function Nav() {
         </a>
         <div className="hidden items-center gap-8 md:flex">
           {LINKS.map((l) => (
-            <a key={l.href} href={l.href} className="text-sm font-medium text-slate-300 transition hover:text-white">{l.label}</a>
+            <a key={l.href} href={l.href} className="nav-link text-sm font-medium text-slate-300 transition hover:text-white">{l.label}</a>
           ))}
         </div>
         <div className="flex items-center gap-3">

@@ -9,6 +9,7 @@ export default function Hero() {
   return (
     <section id="top" className="relative isolate overflow-hidden bg-ink pt-28 pb-20 sm:pt-36 sm:pb-28">
       <NodeField density="high" intensity={1} greenBias={0.3} />
+      <div className="hero-glow" aria-hidden="true" />
       <div className="absolute inset-0 -z-0 bg-gradient-to-b from-ink/30 via-transparent to-ink" />
 
       <div className="container-c relative grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
@@ -35,7 +36,12 @@ export default function Hero() {
 
         <RevealSection delay={0.15} className="space-y-6">
           {/* The pipeline tells the story before they read a word. */}
-          <GlowCard border className="p-5">
+          <GlowCard border glow="green" className="p-6">
+            <div className="mb-1 flex items-center justify-between">
+              <span className="eyebrow !text-money-300">The Living Pipeline</span>
+              <span className="text-[11px] text-slate-500">live</span>
+            </div>
+            <p className="mb-2 text-sm text-slate-400">Watch a walked consult become a booked, paid case.</p>
             <HeroPipeline />
           </GlowCard>
 

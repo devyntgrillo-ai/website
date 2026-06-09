@@ -28,8 +28,8 @@ export default function NodeField({ density = 'med', intensity = 1, greenBias = 
     const isMobile = window.matchMedia('(max-width: 768px)').matches
 
     let w = 0, h = 0, dpr = Math.min(window.devicePixelRatio || 1, 2)
-    const COUNT = { low: 14, med: 26, high: 40 }[density] * (isMobile ? 0.55 : 1)
-    const MAX_DIST = isMobile ? 150 : 190
+    const COUNT = { low: 20, med: 36, high: 54 }[density] * (isMobile ? 0.5 : 1)
+    const MAX_DIST = isMobile ? 160 : 215
     const nodes = []
     let edges = []
     const packets = []
@@ -98,27 +98,30 @@ export default function NodeField({ density = 'med', intensity = 1, greenBias = 
       // Edges.
       for (const [i, j] of edges) {
         const a = nodes[i], b = nodes[j]
-        const near = mouse.active && (Math.hypot(mouse.x - a.x, mouse.y - a.y) < 160 || Math.hypot(mouse.x - b.x, mouse.y - b.y) < 160)
-        ctx.strokeStyle = `rgba(${a.green && b.green ? mix(ELECTRIC, GREEN, 0.8) : '90,120,170'},${(near ? 0.35 : 0.13) * intensity})`
-        ctx.lineWidth = 1
+        const near = mouse.active && (Math.hypot(mouse.x - a.x, mouse.y - a.y) < 170 || Math.hypot(mouse.x - b.x, mouse.y - b.y) < 170)
+        ctx.strokeStyle = `rgba(${a.green && b.green ? mix(ELECTRIC, GREEN, 0.8) : '96,165,250'},${(near ? 0.55 : 0.22) * intensity})`
+        ctx.lineWidth = near ? 1.3 : 1
         ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke()
       }
 
       // Energy packets along edges.
       if (!reduced && running) {
-        if (frame % Math.round(22 / Math.max(0.3, intensity)) === 0 && packets.length < (isMobile ? 8 : 16)) spawnPacket()
+        const cap = isMobile ? 10 : 22
+        if (frame % Math.round(10 / Math.max(0.3, intensity)) === 0 && packets.length < cap) { spawnPacket(); if (!isMobile) spawnPacket() }
         for (let k = packets.length - 1; k >= 0; k--) {
           const p = packets[k]
           p.t += p.speed
           if (p.t >= 1) { packets.splice(k, 1); continue }
           const a = nodes[p.a], b = nodes[p.b]
           if (!a || !b) { packets.splice(k, 1); continue }
+          // Pulses shift cyan → green as they travel toward the bottom of the field.
+          const depth = lerp(a.y, b.y, p.t) / Math.max(1, h)
+          const col = mix(ELECTRIC, GREEN, Math.min(1, depth * 0.7 + (b.green ? 0.3 : 0) + greenBias * 0.3))
           const x = lerp(a.x, b.x, p.t), y = lerp(a.y, b.y, p.t)
-          const col = mix(ELECTRIC, GREEN, b.green ? Math.min(1, p.t + 0.3) : p.t * 0.4)
           ctx.beginPath()
-          ctx.fillStyle = `rgba(${col},${0.9 * intensity})`
-          ctx.shadowColor = `rgba(${col},0.9)`; ctx.shadowBlur = 8
-          ctx.arc(x, y, 2.2, 0, Math.PI * 2); ctx.fill()
+          ctx.fillStyle = `rgba(${col},${Math.min(1, 1.1 * intensity)})`
+          ctx.shadowColor = `rgba(${col},1)`; ctx.shadowBlur = 12
+          ctx.arc(x, y, 2.6, 0, Math.PI * 2); ctx.fill()
           ctx.shadowBlur = 0
         }
       }

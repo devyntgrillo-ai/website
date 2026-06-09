@@ -11,25 +11,42 @@ import HumanAI from './sections/HumanAI'
 import Faq from './sections/Faq'
 import FinalCta from './sections/FinalCta'
 import Footer from './sections/Footer'
+import EnergyBeam from './components/EnergyBeam'
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-ink">
-      <Nav />
-      <main>
-        <Hero />
-        <HiddenLeak />
-        <HowItWorks />
-        <Integrations />
-        <Results />
-        <RoiCalculator />
-        <Guarantee />
-        <Pricing />
-        <HumanAI />
-        <Faq />
-        <FinalCta />
-      </main>
-      <Footer />
+    <div className="relative min-h-screen overflow-x-clip bg-ink">
+      {/* Deep-background depth: aurora wash + whisper-quiet film grain. */}
+      <div className="aurora" aria-hidden="true" />
+      <div className="grain" aria-hidden="true" />
+
+      <div className="relative z-[2]">
+        <Nav />
+        <main>
+          <Hero />
+          <EnergyBeam height={120} />
+          <HiddenLeak />
+          <EnergyBeam height={120} />
+          <HowItWorks />
+          <EnergyBeam height={120} />
+          <Integrations />
+          <EnergyBeam height={120} />
+          <Results />
+          <EnergyBeam height={120} />
+          <RoiCalculator />
+          <EnergyBeam height={120} />
+          <Guarantee />
+          <EnergyBeam height={120} />
+          <Pricing />
+          <EnergyBeam height={120} />
+          <HumanAI />
+          <EnergyBeam height={120} />
+          <Faq />
+          <EnergyBeam height={120} />
+          <FinalCta />
+        </main>
+        <Footer />
+      </div>
     </div>
   )
 }
