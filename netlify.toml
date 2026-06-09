@@ -1,0 +1,16 @@
+# CaseLift marketing site (Vite + React). Builds to dist/.
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# /apply is a self-contained static page served from public/ (GHL form embed).
+[[redirects]]
+  from = "/apply"
+  to = "/apply.html"
+  status = 200
+
+# SPA-style fallback for the single-page marketing site (anchors handled client-side).
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
