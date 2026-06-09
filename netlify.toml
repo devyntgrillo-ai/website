@@ -3,6 +3,10 @@
   command = "npm run build"
   publish = "dist"
 
+[build.environment]
+  NODE_VERSION = "20"
+  NPM_FLAGS = "--no-audit --no-fund"
+
 # /apply is a self-contained static page served from public/ (GHL form embed).
 [[redirects]]
   from = "/apply"
