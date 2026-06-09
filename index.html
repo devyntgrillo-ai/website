@@ -692,7 +692,7 @@
   .cl-recdot { width: 9px; height: 9px; border-radius: 50%; background: #ff5f57; }
   .act-listen.run .cl-recdot { animation: clRec 1.2s infinite; }
   @keyframes clRec { 0%,100% { box-shadow: 0 0 0 0 rgba(255,95,87,0.6); } 50% { box-shadow: 0 0 0 6px rgba(255,95,87,0); } }
-  .cl-wave { display: flex; align-items: center; gap: 3px; height: 22px; }
+  .cl-wave { display: flex; align-items: center; justify-content: space-between; flex: 1; gap: 2px; height: 26px; }
   .cl-wave i { width: 3px; border-radius: 2px; background: linear-gradient(#5fd0e6,#2563EB); height: 30%; }
   .act-listen.run .cl-wave i { animation: clWave 1s ease-in-out infinite; }
   @keyframes clWave { 0%,100% { height: 22%; } 50% { height: 92%; } }
@@ -704,8 +704,14 @@
   .act-listen.run .cl-l1 { animation: clIn .5s var(--ease) .25s forwards; }
   .act-listen.run .cl-l2 { animation: clIn .5s var(--ease) 1.25s forwards; }
   @keyframes clIn { to { opacity: 1; transform: none; } }
-  .cl-words-row { margin-top: 16px; font-size: 12px; color: rgba(255,255,255,0.5); }
+  .cl-words-row { margin-top: auto; padding-top: 16px; font-size: 12px; color: rgba(255,255,255,0.5); }
   .cl-words { color: #5fd0e6; font-weight: 700; }
+  /* Fill the stage so Listening isn't top-heavy with empty space below: REC
+     pinned to the top, the conversation centered in the body, and the live
+     word-count pinned to the bottom edge. */
+  .cl-act.act-listen { display: flex; flex-direction: column; }
+  .act-listen .cl-trans { flex: 1 1 auto; justify-content: center; }
+  .act-listen.run .cl-l3 { animation: clIn .5s var(--ease) 2.05s forwards; }
 
   /* Act 2: Analyzing */
   /* Act 2: Analyzing, scan the transcript then extract structured insight */
@@ -987,6 +993,7 @@
               <div class="cl-trans">
                 <div class="cl-line cl-l1"><span class="cl-spk">Patient</span>"It sounds great, I just need to talk it over with my husband first."</div>
                 <div class="cl-line cl-l2"><span class="cl-spk tc">TC</span>"Of course. Would a quick call with both of you help?"</div>
+                <div class="cl-line cl-l3"><span class="cl-spk">Patient</span>"That would help. Honestly, he's the one worried about the cost."</div>
               </div>
               <div class="cl-words-row"><span class="cl-words">0</span> · transcribing live, de-identified</div>
             </div>
