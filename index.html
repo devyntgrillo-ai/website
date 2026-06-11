@@ -142,6 +142,12 @@
   .logo { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 22px; letter-spacing: -0.025em; color: #fff; transition: color 0.4s var(--ease); }
   nav.scrolled .logo { color: var(--ink); }
   .logo-mark { width: 36px; height: 36px; flex-shrink: 0; display: block; }
+  /* Image logo (light wordmark) shows on the dark/transparent nav; the text
+     logo takes over once the nav turns white on scroll. */
+  .logo-img { height: 34px; width: auto; display: block; flex-shrink: 0; }
+  .logo-text { display: none; align-items: center; gap: 10px; }
+  nav.scrolled .logo-img { display: none; }
+  nav.scrolled .logo-text { display: inline-flex; }
   .beta { font-size: 9.5px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--brand); background: rgba(37,99,235,0.14); border: 1px solid rgba(37,99,235,0.4); padding: 2px 6px; border-radius: 5px; line-height: 1; align-self: center; }
   nav.scrolled .beta { color: var(--brand); }
   .nav-links { display: flex; align-items: center; gap: 32px; }
@@ -932,12 +938,13 @@
 <nav id="nav">
   <div class="wrap nav-inner">
     <a href="#top" class="logo">
-      <svg class="logo-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <img class="logo-img" src="assets/caselift-logo.png" alt="CaseLift" />
+      <span class="logo-text"><svg class="logo-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
         <defs><linearGradient id="clGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#06B6D4"/></linearGradient></defs>
         <rect width="32" height="32" rx="8" fill="url(#clGrad)"/>
         <path d="M16 6.5 L23.5 15.5 H19 V20.5 H13 V15.5 H8.5 Z" fill="#fff"/>
         <rect x="10.5" y="23" width="11" height="2.6" rx="1.3" fill="#fff" opacity="0.9"/>
-      </svg>CaseLift<span class="beta">Beta</span></a>
+      </svg>CaseLift</span><span class="beta">Beta</span></a>
     <div class="nav-links">
       <a href="#how-it-works" class="link">How It Works</a>
       <a href="#results" class="link">Results</a>
@@ -1475,12 +1482,8 @@
     <div class="foot-top">
       <div class="foot-brand">
         <div class="logo">
-          <svg class="logo-mark" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-            <defs><linearGradient id="clGradFoot" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2563EB"/><stop offset="1" stop-color="#06B6D4"/></linearGradient></defs>
-            <rect width="32" height="32" rx="8" fill="url(#clGradFoot)"/>
-            <path d="M16 6.5 L23.5 15.5 H19 V20.5 H13 V15.5 H8.5 Z" fill="#fff"/>
-            <rect x="10.5" y="23" width="11" height="2.6" rx="1.3" fill="#fff" opacity="0.9"/>
-          </svg>CaseLift</div>
+          <img src="assets/caselift-logo.png" alt="CaseLift" style="height:40px;width:auto;display:block;" />
+        </div>
         <p>We do the heavy lifting.</p>
         <div class="foot-contact"><a href="mailto:hello@caselift.io">hello@caselift.io</a></div>
         <div class="hipaa-badge">
